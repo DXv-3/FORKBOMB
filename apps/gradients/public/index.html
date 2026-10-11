@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FORKBOMB Gradients — every gradient, live</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<header><h1>FORKBOMB <b>Gradients</b></h1>
+<nav id="tabs"><button data-tab="css" class="on">CSS</button><button data-tab="mesh">Mesh</button><button data-tab="aurora">Aurora</button><button data-tab="dots">Dots</button></nav>
+<span id="count"></span></header>
+<main>
+  <section id="stage"><div id="cssPreview"></div><canvas id="gl"></canvas><canvas id="dots"></canvas><div id="grainLayer"></div></section>
+  <aside id="controls"></aside>
+</main>
+<section id="lib"><input id="q" placeholder="search 556 gradients…"><div id="grid"></div></section>
+<footer>Gradient data: <a href="https://github.com/ghosh/uiGradients">uiGradients</a> (MIT) + <a href="https://github.com/itmeo/webgradients">WebGradients</a> (MIT). Mesh/aurora/grain/dots: original FORKBOMB code (MIT); dot effects are clean-room, inspired by <a href="https://dotsui.dev">dotsui.dev</a>.</footer>
+<pre id="out"></pre>
+<script src="/include.js"></script><script src="/core.js"></script><script src="/app.js"></script>
+</body></html>
