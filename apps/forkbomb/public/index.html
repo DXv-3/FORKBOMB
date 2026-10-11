@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FORKBOMB — paste, shaders, gradients and dots on one origin</title>
+<meta name="description" content="FORKBOMB: a zero-dependency creative toolbox. Pastebin, WebGL2 shader playground, 556-gradient gallery and Dots Studio, all assembled from permissively licensed GitHub parts.">
+<meta name="theme-color" content="#0d1117">
+<meta property="og:title" content="FORKBOMB"><meta property="og:description" content="Paste, shaders, gradients and dots. Zero dependencies, one origin."><meta property="og:type" content="website">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon.ico" sizes="32x32">
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--line:#30363d;--fg:#e6edf3;--mut:#9da7b3;--acc:#ff5f1f;--acc2:#ffb38a}
+*{box-sizing:border-box}body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--fg)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--acc2);color:#000;padding:8px 12px;border-radius:6px}.skip:focus{left:8px}
+header,main,footer{max-width:1040px;margin:0 auto;padding:0 24px}
+header{padding-top:56px}h1{font-size:clamp(2.2rem,6vw,3.6rem);line-height:1.05;margin:0 0 12px;letter-spacing:-.02em}h1 b{color:var(--acc)}
+.lede{color:var(--mut);font-size:1.15rem;max-width:44rem;margin:0}
+ul.apps{list-style:none;padding:0;margin:40px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.apps a{display:block;height:100%;padding:22px;border:1px solid var(--line);border-radius:14px;background:var(--panel);color:var(--fg);text-decoration:none;transition:border-color .15s,transform .15s}
+.apps a:hover{border-color:var(--acc);transform:translateY(-2px)}
+a:focus-visible{outline:3px solid var(--acc2);outline-offset:3px}
+.apps h2{margin:0 0 6px;font-size:1.25rem}.apps h2 span{color:var(--acc2)}.apps p{margin:0;color:var(--mut)}
+.sw{height:6px;border-radius:3px;margin-bottom:16px}
+.s1{background:linear-gradient(90deg,#ff5f1f,#ffb38a)}.s2{background:linear-gradient(90deg,#7b2ff7,#f107a3)}.s3{background:linear-gradient(90deg,#00c6ff,#0072ff)}.s4{background:radial-gradient(circle,#fff 1.5px,transparent 2px) 0 0/8px 6px,#1f2937}
+footer{color:var(--mut);font-size:.9rem;padding-bottom:48px}footer a{color:var(--acc2)}
+</style></head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header><h1><b>FORKBOMB</b> — every app, one origin</h1>
+<p class="lede">A zero-dependency creative toolbox assembled from permissively licensed parts found across GitHub. Paste code, live-code shaders, explore gradients and choreograph particles.</p></header>
+<main id="main">
+<ul class="apps">
+<li><a href="/paste/"><div class="sw s1"></div><h2>Paste <span>→</span></h2><p>Share code with syntax highlighting, expiry and a JSON API.</p></a></li>
+<li><a href="/shaders/"><div class="sw s2"></div><h2>Shaders <span>→</span></h2><p>WebGL2 live-coding playground with a composable GLSL library.</p></a></li>
+<li><a href="/gradients/"><div class="sw s3"></div><h2>Gradients <span>→</span></h2><p>556 MIT gradients, mesh, aurora and grain with copy-ready CSS/GLSL.</p></a></li>
+<li><a href="/dots/"><div class="sw s4"></div><h2>Dots Studio <span>→</span></h2><p>Particle shapes, morphs, physics and timelines, exportable as embeds.</p></a></li>
+</ul>
+</main>
+<footer><p>Open source under MIT · <a href="https://github.com/DXv-3/FORKBOMB">github.com/DXv-3/FORKBOMB</a> · <a href="/healthz">status</a></p></footer>
+</body></html>
