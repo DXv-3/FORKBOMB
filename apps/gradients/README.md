@@ -4,7 +4,7 @@
 
 ```bash
 node apps/gradients/server.js      # http://localhost:3002  (PORT=... to change)
-node --test apps/gradients/test/   # tests
+(cd apps/gradients && npm test)   # tests
 ```
 
 Deep links: `/?tab=css|mesh|aurora|dots&g=<gradient-id>`.

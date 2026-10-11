@@ -72,9 +72,12 @@ function compile(tab) {
   G.bindAttribLocation(p, 0, "p"); G.linkProgram(p); if (!G.getProgramParameter(p, G.LINK_STATUS)) throw new Error(G.getProgramInfoLog(p));
   prog = p; progFor = tab;
 }
+let glDead = false; // WebGL2 missing: keep the CSS/canvas gradient views working, stop retrying every frame
 function drawGl(now) {
-  if (!G && !glInit()) return;
-  if (progFor !== S.tab) compile(S.tab);
+  if (glDead) return;
+  if (!G && !glInit()) { glDead = true; gl.title = "WebGL2 is not available in this browser; showing CSS gradients only."; console.warn(gl.title); return; }
+  if (progFor !== S.tab) { try { compile(S.tab); } catch (e) { prog = null; progFor = S.tab; console.warn("shader compile failed:", e.message); } }
+  if (!prog) return;
   const w = gl.clientWidth * devicePixelRatio | 0, h = gl.clientHeight * devicePixelRatio | 0; if (gl.width !== w || gl.height !== h) { gl.width = w; gl.height = h; }
   G.viewport(0, 0, w, h); G.useProgram(prog); G.enableVertexAttribArray(0); G.vertexAttribPointer(0, 2, G.FLOAT, false, 0, 0);
   const u = (n) => G.getUniformLocation(prog, n);

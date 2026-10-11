@@ -58,7 +58,7 @@
   // ---------- renderer ----------
   function setRenderer(kind) {
     scene.renderer = kind; c2d.style.display = kind === "canvas" ? "" : "none"; cgl.style.display = kind === "webgl" ? "" : "none";
-    try { renderer = kind === "webgl" ? (ST.gl = ST.gl || new R.WebGLRenderer(cgl)) : (ST.c = ST.c || new R.Canvas2DRenderer(c2d)); } catch (e) { log("WebGL2 unavailable, using canvas2D"); setRenderer("canvas"); }
+    try { renderer = kind === "webgl" ? (ST.gl = ST.gl || new R.WebGLRenderer(cgl)) : (ST.c = ST.c || new R.Canvas2DRenderer(c2d)); } catch (e) { if (kind === "canvas") throw e; log("WebGL2 unavailable, using canvas2D"); setRenderer("canvas"); }
   }
   const canvasEl = () => (scene.renderer === "webgl" ? cgl : c2d);
   function setCount(n) { scene.count = n; sw.resize(n); rgb = new Uint8Array(n * 3); imageColors = null; if (ST.idx >= 0) goStep(ST.idx); }
@@ -100,6 +100,8 @@
   function el(html, on) { const d = document.createElement("div"); d.innerHTML = html; const e = d.firstElementChild; panel.append(e); if (on) on(e); return e; }
   const btns = (list) => { const r = el(`<div class="row"></div>`); for (const [t, f] of list) { const b = document.createElement("button"); b.textContent = t; b.onclick = f; r.append(b); } return r; };
   const range = (label, get, set, min, max, step) => el(`<label>${label}<input type=range min=${min} max=${max} step=${step} value=${get()}></label>`, (e) => (e.querySelector("input").oninput = (ev) => set(+ev.target.value)));
+  const MAX_IMAGE = 16 << 20, MAX_AUDIO = 64 << 20;
+  const escAttr = (v) => String(v).replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
   function log(t) { $("#out").textContent = t; console.log(t); }
   const download = (name, href) => { const a = document.createElement("a"); a.download = name; a.href = href; a.click(); };
   const copy = (t) => { navigator.clipboard && navigator.clipboard.writeText(t).catch(() => {}); log(t); };
@@ -122,7 +124,7 @@
     el(`<textarea id="svg" placeholder='<svg viewBox="0 0 24 24"><path d="..."/></svg> or a path d'>M12 2l3 7h7l-5.5 4.5 2 7.5-6.5-4.5-6.5 4.5 2-7.5L2 9h7z</textarea>`);
     btns([["Form SVG", () => { ST.playing = false; ST.uiDyn = false; morphTo(Sh.svgPoints($("#svg").value, sw.n)); }], ["+ timeline", () => live({ kind: "svg", value: $("#svg").value, duration: 1.5, hold: 1.2, ease: "inOutCubic", stagger: 0.3, order: "radial" })]]);
     h3("Image → dots");
-    el(`<input type=file accept="image/*">`, (e) => (e.onchange = () => { const f = e.files[0]; if (!f) return; const img = new Image(); img.onload = () => { ST.image = img; ST.playing = false; ST.uiDyn = false; const r = Sh.imagePoints(img, sw.n); imageColors = r.colors; scene.colorMode = "image"; buildPanel(); morphTo(r.points, { order: "random", stagger: 0.5 }); }; img.src = URL.createObjectURL(f); }));
+    el(`<input type=file accept="image/*">`, (e) => (e.onchange = () => { const f = e.files[0]; if (!f) return; if (!/^image\//.test(f.type) || f.size > MAX_IMAGE) return log(`image rejected: must be an image under ${MAX_IMAGE >> 20} MB`); const img = new Image(), url = URL.createObjectURL(f); img.onerror = () => { URL.revokeObjectURL(url); log("image could not be decoded"); }; img.onload = () => { URL.revokeObjectURL(url); if (img.width * img.height > 40e6) return log("image rejected: too many pixels"); ST.image = img; ST.playing = false; ST.uiDyn = false; const r = Sh.imagePoints(img, sw.n); imageColors = r.colors; scene.colorMode = "image"; buildPanel(); morphTo(r.points, { order: "random", stagger: 0.5 }); }; img.src = url; }));
     h3("Physics");
     btns([["Explode", () => sw.explode(0, 0, 2.5)], ["Rain", () => { sw.release(); for (let i = 0; i < sw.n; i++) sw.vy[i] = -Math.random() * 0.5; }], ["Reform", () => sw.reform()], ["Dot UI", () => { ST.playing = false; ST.uiDyn = true; }]]);
     range("spring", () => scene.physics.spring, (v) => (scene.physics.spring = v), 5, 200, 1);
@@ -137,14 +139,14 @@
     h3("Color");
     el(`<label>mode<select>${Sc.COLOR_MODES.map((k) => `<option ${k === scene.colorMode ? "selected" : ""}>${k}</option>`).join("")}</select></label>`, (e) => (e.querySelector("select").onchange = (ev) => (scene.colorMode = ev.target.value)));
     btns(Object.entries(Sc.PALETTES).map(([k, p]) => [k, () => (scene.palette = p.slice())]));
-    el(`<select id="gradSel"><option>gradient from dataset…</option></select>`, (e) => { fetch("/api/gradients").then((r) => r.json()).then((d) => { e.innerHTML += d.gradients.map((g) => `<option value="${g.stops.map((s) => s.color).join(",")}">${g.name.replace(/</g, "")}</option>`).join(""); }).catch(() => {}); e.onchange = () => { if (e.value.startsWith("#")) scene.palette = e.value.split(","); }; });
+    el(`<select id="gradSel"><option>gradient from dataset…</option></select>`, (e) => { fetch("/api/gradients").then((r) => r.json()).then((d) => { e.innerHTML += d.gradients.map((g) => `<option value="${escAttr(g.stops.map((s) => s.color).join(","))}">${escAttr(g.name)}</option>`).join(""); }).catch(() => {}); e.onchange = () => { if (e.value.startsWith("#")) scene.palette = e.value.split(","); }; });
     h3("Audio-reactive (optional)");
     btns([["Mic", () => startAudio().catch((e) => log("audio: " + e.message))]]);
-    el(`<input type=file accept="audio/*">`, (e) => (e.onchange = () => e.files[0] && startAudio(e.files[0]).catch((x) => log("audio: " + x.message))));
+    el(`<input type=file accept="audio/*">`, (e) => (e.onchange = () => e.files[0] && (e.files[0].size > MAX_AUDIO ? Promise.reject(new Error(`file over ${MAX_AUDIO >> 20} MB`)) : startAudio(e.files[0])).catch((x) => log("audio: " + x.message))));
     h3("Export");
     btns([["PNG", () => download("forkbomb-dots.png", canvasEl().toDataURL("image/png"))], ["Record WebM", (ev) => record(ev.target)], ["Copy embed", () => copy(Sc.snippet(scene, location.origin + "/dots/forkbomb-dots.js"))]]);
     btns([["Save JSON", () => download("dots-scene.json", "data:application/json," + encodeURIComponent(Sc.toJSON(scene)))], ["Share link", () => { location.hash = Sc.toHash(scene); copy(location.href); }]]);
-    el(`<label>Load JSON<input type=file accept="application/json,.json"></label>`, (e) => (e.querySelector("input").onchange = async (ev) => { const f = ev.target.files[0]; if (!f) return; load(Sc.fromJSON(await f.text())); }));
+    el(`<label>Load JSON<input type=file accept="application/json,.json"></label>`, (e) => (e.querySelector("input").onchange = async (ev) => { const f = ev.target.files[0]; if (!f) return; if (f.size > Sc.MAX_JSON) return log(`scene rejected: over ${Sc.MAX_JSON >> 10} KB`); try { load(Sc.fromJSON(await f.text())); } catch (x) { log("scene rejected: " + x.message); } }));
   }
   function record(btn) {
     if (ST.rec) { ST.rec.stop(); return; }
@@ -161,7 +163,7 @@
     stepsEl.innerHTML = "";
     scene.timeline.forEach((s, i) => {
       const d = document.createElement("div"); d.className = "step" + (i === ST.idx ? " on" : "");
-      const valueInput = s.kind === "shape" ? `<select data-k="value">${Sh.NAMES.map((n) => `<option ${n === s.value ? "selected" : ""}>${n}</option>`).join("")}</select>` : `<input data-k="value" value="${String(s.value).slice(0, 200).replace(/"/g, "&quot;")}">`;
+      const valueInput = s.kind === "shape" ? `<select data-k="value">${Sh.NAMES.map((n) => `<option ${n === s.value ? "selected" : ""}>${n}</option>`).join("")}</select>` : `<input data-k="value" value="${escAttr(String(s.value).slice(0, 200))}">`;
       d.innerHTML = `<b>#${i + 1}</b><select data-k="kind">${Sc.STEP_KINDS.map((k) => `<option ${k === s.kind ? "selected" : ""}>${k}</option>`).join("")}</select>${valueInput}
         <select data-k="ease">${Object.keys(M.EASE).map((k) => `<option ${k === s.ease ? "selected" : ""}>${k}</option>`).join("")}</select>
         <label>dur<input data-k="duration" type=number step=0.1 value=${s.duration}></label><label>hold<input data-k="hold" type=number step=0.1 value=${s.hold}></label>
