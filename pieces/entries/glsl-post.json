@@ -1,0 +1,11 @@
+{
+  "id": "glsl-post",
+  "name": "Post-processing finish (GLSL)",
+  "category": "ui",
+  "license": "MIT",
+  "source": { "url": "https://github.com/DXv-3/FORKBOMB", "path": "apps/shaders/lib/post.glsl" },
+  "seams": { "inputs": ["hdr colour", "fragCoord", "iTime"], "outputs": ["tonemapped ldr colour"], "events": [] },
+  "summary": "ACES/Reinhard tonemap, gamma, vignette, film grain, scanlines, chromatic offset, one-call postFinish().",
+  "snap": "#include \"post.glsl\" then fragColor = vec4(postFinish(hdr, fragCoord, 0.25, 0.02), 1.0).",
+  "trust": { "tests": true, "maintained": true, "security_reviewed": false }
+}

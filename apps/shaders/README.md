@@ -42,3 +42,22 @@ Includes are resolved in JS (`public/include.js`, also usable from Node): recurs
 | `glsl-fbm-warp`, `glsl-raymarch`, `glsl-include-resolver`, `shaders-app` | this repo | MIT | Original FORKBOMB code |
 
 Deliberately **not** used: Shadertoy shaders under the default CC BY-NC-SA 3.0 license, and AGPL results (e.g. robclouth/noise-canvas). Demo shaders are original.
+
+## Showcase shaders (original)
+
+Ten original, portfolio-grade presets (all fresh MIT code) built on three new helper libs:
+`camera.glsl` (screenUV, lookAt, camRay, orbitCam), `lighting.glsl` (Schlick fresnel, Blinn spec,
+envSky/envStudio, thinFilm interference) and `post.glsl` (ACES tonemap, vignette, grain, scanlines, postFinish).
+
+| Preset | What it is |
+| --- | --- |
+| `liquid-chrome` | Raymarched mercury blob of smooth-merged orbiting droplets, fresnel mirror reflections of a studio env, AO |
+| `nebula-volume` | Front-to-back volumetric fbm nebula lit by an embedded star, depth-coloured emission, starfield |
+| `synthwave-grid` | Neon perspective grid, banded gradient sun, mountain silhouettes, scanlines + grain |
+| `turing-bloom` | Single-pass reaction-diffusion look: band-passed warped noise into labyrinth stripes/spots with bump lighting |
+| `kaleido-tunnel` | 8-fold kaleidoscopic IFS fractal tunnel, 2x2 supersampled, ACES graded glow |
+| `soap-film` | Iridescent bubble with thin-film interference, draining/swirling thickness, front+back films, 2x2 SS |
+| `prism-glass` | Glass solid refracting a neon backdrop with per-channel IOR dispersion and fresnel reflection |
+| `ocean-dusk` | Heightfield-raymarched sharp-crested swell, fresnel sky reflection, subsurface tint, sun glitter, haze |
+| `ink-bloom` | Two pigments advected through a curl-noise flow, subtractive mixing and tidelines on milky water |
+| `galaxy-spiral` | Hashed star particles on log-spiral arms with dust lanes, HII regions, bulge glow, tilted orbit |

@@ -15,6 +15,9 @@
     "glsl-cosine-palette",
     "glsl-raymarch",
     "glsl-include-resolver",
+    "glsl-camera",
+    "glsl-lighting",
+    "glsl-post",
     "shaders-app"
   ],
   "connectors": [
