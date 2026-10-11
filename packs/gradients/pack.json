@@ -3,7 +3,7 @@
   "name": "FORKBOMB Gradients",
   "version": "0.1.0",
   "license": "MIT",
-  "summary": "Every gradient, live: 556 MIT-licensed CSS gradients plus WebGL mesh, aurora, grain and dot effects.",
+  "summary": "Every gradient, live: 556 MIT-licensed CSS gradients plus WebGL mesh, aurora, grain, dot effects and an original Dots Studio (90 particle shapes, dot UI, physics, timeline).",
   "job": "Browse, tweak and ship gradients: copy CSS or GLSL, export PNG, #include gradient/mesh helpers in shaders.",
   "app": "apps/gradients",
   "run": "node apps/gradients/server.js",
@@ -14,7 +14,9 @@
     "glsl-mesh-gradient",
     "dot-effects",
     "glsl-include-resolver",
-    "gradients-app"
+    "gradients-app",
+    "dots-studio",
+    "forkbomb-dots-lib"
   ],
   "connectors": [
     "http-json"
@@ -47,12 +49,30 @@
       "license": "OKLab matrices public domain / MIT",
       "found_by": "known technique",
       "use": "published OKLab conversion constants, fresh code"
+    },
+    {
+      "piece": "dots-studio",
+      "url": "https://dotsui.dev",
+      "license": "feature survey of public pages only (dots-swarm core MIT, Pro proprietary)",
+      "found_by": "user ask: 'look into all the Pro and add more, along with dotsui.dev'",
+      "use": "features catalogued in docs/dotsui-feature-map.md; all code original from standard math; no Pro/Studio code, artwork or shape data; dots-swarm npm package not downloaded"
+    },
+    {
+      "piece": "forkbomb-dots-lib",
+      "url": "https://github.com/DXv-3/FORKBOMB",
+      "license": "MIT",
+      "found_by": "original",
+      "use": "standalone vanilla lib written fresh"
     }
   ],
   "rejected": [
     {
       "what": "dotsui.dev Pro artwork, Studio, @dots-swarm/pro",
       "why": "paid/proprietary license"
+    },
+    {
+      "what": "@dots-swarm/pro 118 specialist shapes, avatars, multi-track sequences/event graphs, ProSwarmPhysics, Studio cloud editor, private registry",
+      "why": "paid/proprietary; not downloaded, installed, decompiled or copied; equivalents (where any) written from scratch"
     },
     {
       "what": "vendoring dots-swarm (MIT) source",

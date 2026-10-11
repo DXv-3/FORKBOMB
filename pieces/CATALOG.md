@@ -62,5 +62,7 @@ FORKBOMB's first product: a pastebin assembled from GitHub parts. See [apps/past
 | `glsl-mesh-gradient` | Mesh gradient, aurora, grain (GLSL) | ui | MIT | product |
 | `dot-effects` | Dot grid / halftone / morph (canvas) | ui | MIT | product |
 | `gradients-app` | FORKBOMB Gradients gallery | ui | MIT | product |
+| `dots-studio` | Dots Studio: 90 shapes, text/SVG/image, dot UI, physics, timeline | ui | MIT | product |
+| `forkbomb-dots-lib` | forkbomb-dots.js embeddable particle lib (zero deps) | ui | MIT | product |
 
 Add new rows when you drop a brick into `toolkit/` or `pieces/entries/`. `node toolkit/process/cycle.js` checks every entry has a row.

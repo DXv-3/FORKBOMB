@@ -1,0 +1,11 @@
+{
+  "id": "forkbomb-dots-lib",
+  "name": "forkbomb-dots.js embeddable particle-shape lib",
+  "category": "ui",
+  "license": "MIT",
+  "source": { "url": "https://github.com/DXv-3/FORKBOMB", "path": "apps/gradients/public/dots/forkbomb-dots.js" },
+  "seams": { "inputs": ["canvas element", "shape name / points / text", "sequence steps"], "outputs": ["animated canvas"], "events": [] },
+  "summary": "Single-file, zero-dependency MIT library: ForkbombDots.create(canvas, opts) with morph/text/explode/play(sequence); 17 built-in math shapes, pointer repel, gradient colours. Example at apps/gradients/public/dots/example.html.",
+  "snap": "<script src=forkbomb-dots.js></script> then ForkbombDots.create('#c').play([{shape:'heart'},{text:'Hi'}])",
+  "trust": { "tests": true, "maintained": true, "security_reviewed": false }
+}

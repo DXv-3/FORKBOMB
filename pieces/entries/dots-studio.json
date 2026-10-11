@@ -1,0 +1,15 @@
+{
+  "id": "dots-studio",
+  "name": "Dots Studio (particle shapes, dot UI, physics, timeline)",
+  "category": "ui",
+  "license": "MIT",
+  "source": { "url": "https://github.com/DXv-3/FORKBOMB", "path": "apps/gradients/public/dots/studio.js" },
+  "seams": {
+    "inputs": ["shape name", "text", "SVG path/markup", "image file", "audio (mic/file)", "scene JSON / #scene= link", "pointer"],
+    "outputs": ["canvas2D/WebGL2 frames", "PNG", "WebM", "scene JSON", "share link", "embed snippet"],
+    "events": []
+  },
+  "summary": "Original vanilla Dots Studio at /dots: 90 procedural shapes (polygons, stars, superformula, lissajous, roses, hearts, 3D projections, icons) + text/SVG/image sampling, staggered eased morphs, spring/gravity/pointer/collisions-lite physics, dots-rendered UI controls, palettes/dataset gradients, audio-reactive mode, timeline editor. Feature set catalogued from public dotsui.dev pages; no Pro/Studio code, artwork or shape data used.",
+  "snap": "open /dots; modules public/dots/{shapes,morph,physics,scene,ui,render}.js are UMD (require() in Node, window.Dots* in browser)",
+  "trust": { "tests": true, "maintained": true, "security_reviewed": false }
+}
