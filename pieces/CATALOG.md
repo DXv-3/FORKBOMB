@@ -45,5 +45,13 @@ FORKBOMB's first product: a pastebin assembled from GitHub parts. See [apps/past
 | `nanoid-short-id` | nanoid short IDs | data | MIT | product |
 | `paste-file-store` | Paste file store with expiry | data | MIT | product |
 | `paste-app` | FORKBOMB Paste app | infra | MIT | product |
+| `glsl-simplex-noise` | Ashima/stegu simplex noise (GLSL) | ui | MIT | product |
+| `glsl-fbm-warp` | fBm + domain warp (GLSL) | ui | MIT | product |
+| `glsl-hash-without-sine` | Hash without Sine (GLSL) | ui | MIT | product |
+| `glsl-sdf-primitives` | SDF primitives + operators (GLSL) | ui | MIT | product |
+| `glsl-cosine-palette` | Cosine gradient palettes (GLSL) | ui | MIT | product |
+| `glsl-raymarch` | Sphere-tracing helpers (GLSL) | ui | MIT | product |
+| `glsl-include-resolver` | GLSL #include preprocessor | ui | MIT | product |
+| `shaders-app` | FORKBOMB Shaders playground | ui | MIT | product |
 
 Add new rows when you drop a brick into `toolkit/` or `pieces/entries/`. `node toolkit/process/cycle.js` checks every entry has a row.

@@ -1,0 +1,28 @@
+{
+  "id": "glsl-include-resolver",
+  "name": "GLSL #include preprocessor",
+  "category": "ui",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/DXv-3/FORKBOMB",
+    "path": "apps/shaders/public/include.js"
+  },
+  "seams": {
+    "inputs": [
+      "glsl source",
+      "library map"
+    ],
+    "outputs": [
+      "resolved glsl",
+      "line map"
+    ],
+    "events": []
+  },
+  "summary": "Recursive include-once #include resolver with cycle detection and a line map so driver errors point back to the right file/line; also builds the WebGL2 prelude and a no-GL brace/main lint. Same file runs in Node and the browser.",
+  "snap": "require('apps/shaders/public/include.js').build(src, lib) or <script src=include.js> -> window.ShaderInclude.",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}

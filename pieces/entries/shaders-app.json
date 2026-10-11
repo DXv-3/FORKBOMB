@@ -1,0 +1,28 @@
+{
+  "id": "shaders-app",
+  "name": "FORKBOMB Shaders playground",
+  "category": "ui",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/DXv-3/FORKBOMB",
+    "path": "apps/shaders/server.js"
+  },
+  "seams": {
+    "inputs": [
+      "HTTP GET"
+    ],
+    "outputs": [
+      "playground HTML",
+      "/api/library JSON",
+      "/lib/*.glsl"
+    ],
+    "events": []
+  },
+  "summary": "Zero-dep Node server + WebGL2 live-coding playground: editor, mapped compile errors, iTime/iResolution/iMouse, 7-preset gallery, fullscreen, PNG screenshot, URL-hash sharing.",
+  "snap": "node apps/shaders/server.js  # http://localhost:3001",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}

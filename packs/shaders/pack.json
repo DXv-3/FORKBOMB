@@ -1,0 +1,63 @@
+{
+  "id": "shaders",
+  "name": "FORKBOMB Shaders",
+  "version": "0.1.0",
+  "license": "MIT",
+  "summary": "A WebGL2 shader playground and composable GLSL library snapped together from permissive GitHub parts.",
+  "job": "Live-code fragment shaders in the browser with #include-able noise, SDF, palette, hash and raymarch bricks; share by URL, export PNG.",
+  "app": "apps/shaders",
+  "run": "node apps/shaders/server.js",
+  "pieces": [
+    "glsl-simplex-noise",
+    "glsl-fbm-warp",
+    "glsl-hash-without-sine",
+    "glsl-sdf-primitives",
+    "glsl-cosine-palette",
+    "glsl-raymarch",
+    "glsl-include-resolver",
+    "shaders-app"
+  ],
+  "connectors": [
+    "http-json"
+  ],
+  "provenance": [
+    {
+      "piece": "glsl-simplex-noise",
+      "url": "https://github.com/ashima/webgl-noise",
+      "license": "MIT",
+      "found_by": "scan.js \"webgl noise\" --mode repo (rank 61)",
+      "use": "vendored verbatim @6abed1e"
+    },
+    {
+      "piece": "glsl-hash-without-sine",
+      "url": "https://www.shadertoy.com/view/4djSRW",
+      "license": "MIT",
+      "found_by": "GitHub search \"glsl hash\" + author's explicit MIT header",
+      "use": "constants/algorithm adapted"
+    },
+    {
+      "piece": "glsl-sdf-primitives",
+      "url": "https://github.com/marklundin/glsl-sdf-primitives",
+      "license": "MIT",
+      "found_by": "scan.js \"glsl sdf\" --mode repo (rank 49)",
+      "use": "API shape; rewritten from standard formulas"
+    },
+    {
+      "piece": "glsl-cosine-palette",
+      "url": "https://iquilezles.org/articles/palettes/",
+      "license": "formula (implementation MIT)",
+      "found_by": "known technique",
+      "use": "formula only, fresh code"
+    }
+  ],
+  "rejected": [
+    {
+      "what": "Shadertoy shaders under the default CC BY-NC-SA 3.0",
+      "why": "non-commercial/share-alike; not permissive"
+    },
+    {
+      "what": "robclouth/noise-canvas",
+      "why": "AGPL-3.0"
+    }
+  ]
+}
