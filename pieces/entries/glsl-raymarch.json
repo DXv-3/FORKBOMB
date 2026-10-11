@@ -1,0 +1,31 @@
+{
+  "id": "glsl-raymarch",
+  "name": "Sphere-tracing helpers (GLSL)",
+  "category": "ui",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/DXv-3/FORKBOMB",
+    "path": "apps/shaders/lib/raymarch.glsl"
+  },
+  "seams": {
+    "inputs": [
+      "map(vec3)",
+      "ray origin",
+      "ray dir"
+    ],
+    "outputs": [
+      "hit distance",
+      "normal",
+      "shadow",
+      "ao"
+    ],
+    "events": []
+  },
+  "summary": "raymarch(), calcNormal(), softShadow(), calcAO(), camera() over a user-defined map(p).",
+  "snap": "Define float map(vec3 p), optionally #define RM_STEPS, then #include \"raymarch.glsl\".",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}

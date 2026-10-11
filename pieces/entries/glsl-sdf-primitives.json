@@ -1,0 +1,27 @@
+{
+  "id": "glsl-sdf-primitives",
+  "name": "SDF primitives + operators (GLSL)",
+  "category": "ui",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/marklundin/glsl-sdf-primitives",
+    "path": "apps/shaders/lib/sdf.glsl",
+    "commit": "efc461edd95d218f8e9fe548f1bf1359c58e54a7"
+  },
+  "seams": {
+    "inputs": [
+      "vec3 point"
+    ],
+    "outputs": [
+      "float signed distance"
+    ],
+    "events": []
+  },
+  "summary": "Sphere/box/round-box/torus/capsule/plane/circle distances plus union/subtract/intersect/smooth-union/repeat. Primitive set modeled on marklundin/glsl-sdf-primitives + glsl-sdf-ops (MIT, scanner rank 49/47); written fresh from the standard formulas.",
+  "snap": "#include \"sdf.glsl\" inside your map(p).",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}

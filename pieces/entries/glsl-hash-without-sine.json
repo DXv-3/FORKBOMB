@@ -1,0 +1,26 @@
+{
+  "id": "glsl-hash-without-sine",
+  "name": "Hash without Sine (GLSL)",
+  "category": "ui",
+  "license": "MIT",
+  "source": {
+    "url": "https://www.shadertoy.com/view/4djSRW",
+    "path": "apps/shaders/lib/hash.glsl"
+  },
+  "seams": {
+    "inputs": [
+      "float|vec2|vec3 seed"
+    ],
+    "outputs": [
+      "pseudo-random float|vec2|vec3 in [0,1)"
+    ],
+    "events": []
+  },
+  "summary": "Dave Hoskins' sine-free hash family (hash11/12/13/22/33); the shader is explicitly MIT-licensed by its author (Copyright (c) 2014 David Hoskins). Also surfaced by scan.js \"glsl hash\".",
+  "snap": "#include \"hash.glsl\"; stable across GPUs, no sin() precision artifacts.",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}
