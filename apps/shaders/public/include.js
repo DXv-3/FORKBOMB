@@ -13,7 +13,7 @@
         const m = text.match(RE);
         if (!m) { out.push(text); map.push({ file, line: i + 1 }); return; }
         const name = m[1];
-        if (!(name in lib)) throw new Error(`${file}:${i + 1}: unknown include "${name}"`);
+        if (!Object.prototype.hasOwnProperty.call(lib, name) || typeof lib[name] !== "string") throw new Error(`${file}:${i + 1}: unknown include "${name}"`);
         if (stack.includes(name)) throw new Error(`include cycle: ${stack.concat(name).join(" -> ")}`);
         if (seen.has(name)) return;
         seen.add(name);
