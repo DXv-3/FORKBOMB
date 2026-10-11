@@ -42,6 +42,8 @@ The loop above isn't advice — it ships as a product. Every step is a cataloged
 `discover-bricks → tag-piece → snap-via-connector → ship-edge → earn-loop → improve-upstream → (repeat)`, orchestrated by `run-cycle`.
 
 ```bash
+node toolkit/scanner/scan.js "retry backoff" --lang js   # scan GitHub for ranked bricks
+node toolkit/scanner/scan.js "deploy" --kind workflow --emit-entries .forkbomb/drafts
 node toolkit/process/cycle.js checklist
 ```
 

@@ -26,7 +26,7 @@ node toolkit/process/cycle.js checklist
 
 ### 1. Discover
 - **Piece:** `discover-bricks` · **Connector:** `process-stage` · **Playbook:** [1-discover](../toolkit/process/playbooks/1-discover.md)
-- Read the wanted-bricks board, search GitHub by capability and topic, keep single-job licensed candidates.
+- Read the wanted-bricks board, then run the parts scanner: `node toolkit/scanner/scan.js "<capability>" --lang <lang> --kind <kind> --out candidates.json`. It searches GitHub code/repos, scores every hit (license, stars, recency, path, size) and ranks single-job licensed candidates. See [toolkit/scanner](../toolkit/scanner/README.md).
 - **Ships:** a candidate list. **Emits:** `stage.discover.done`.
 
 ### 2. Tag
