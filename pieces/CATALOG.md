@@ -52,6 +52,9 @@ FORKBOMB's first product: a pastebin assembled from GitHub parts. See [apps/past
 | `glsl-cosine-palette` | Cosine gradient palettes (GLSL) | ui | MIT | product |
 | `glsl-raymarch` | Sphere-tracing helpers (GLSL) | ui | MIT | product |
 | `glsl-include-resolver` | GLSL #include preprocessor | ui | MIT | product |
+| `glsl-camera` | Camera helpers (GLSL) | ui | MIT | product |
+| `glsl-lighting` | PBR-ish lighting + environment (GLSL) | ui | MIT | product |
+| `glsl-post` | Post-processing finish (GLSL) | ui | MIT | product |
 | `shaders-app` | FORKBOMB Shaders playground | ui | MIT | product |
 | `uigradients-data` | uiGradients colour stops | ui | MIT | product |
 | `webgradients-data` | WebGradients colour stops | ui | MIT | product |

@@ -6,7 +6,7 @@ const { createApp, loadLibrary } = require("../server");
 const SI = require("../public/include.js");
 const ROOT = path.join(__dirname, "..");
 const { lib, presets } = loadLibrary();
-const LIBS = ["noise.glsl", "fbm.glsl", "sdf.glsl", "palette.glsl", "hash.glsl", "raymarch.glsl", "gradient.glsl", "mesh.glsl"];
+const LIBS = ["noise.glsl", "fbm.glsl", "sdf.glsl", "palette.glsl", "hash.glsl", "raymarch.glsl", "camera.glsl", "lighting.glsl", "post.glsl", "gradient.glsl", "mesh.glsl"];
 
 test("library files exist and are non-empty", () => {
   for (const f of LIBS) assert.ok(lib[f] && lib[f].length > 100, `${f} missing`);
@@ -63,4 +63,30 @@ test("server serves playground, assets, library and presets", async () => {
   assert.equal((await fetch(base + "/lib/../server.js")).status, 404);
   assert.equal((await fetch(base + "/nope")).status, 404);
   assert.equal((await fetch(base + "/", { method: "POST" })).status, 405);
+});
+
+const CUSTOM = ["liquid-chrome", "nebula-volume", "synthwave-grid", "turing-bloom", "kaleido-tunnel", "soap-film", "prism-glass", "ocean-dusk", "ink-bloom", "galaxy-spiral"];
+test("custom showcase presets exist, resolve includes, lint clean, use post/camera helpers", () => {
+  for (const id of CUSTOM) {
+    const p = presets.find((x) => x.id === id);
+    assert.ok(p, `${id} preset missing`);
+    assert.ok(p.title && p.title.length > 10, `${id} needs a description comment`);
+    const { code } = SI.build(p.source, lib);
+    assert.deepEqual(SI.lint(code), [], `${id} lint`);
+    assert.ok(!/#include/.test(code), `${id} fully resolved`);
+    assert.ok(/mainImage\s*\(/.test(code), `${id} defines mainImage`);
+    assert.ok(SI.includesOf(p.source).includes("post.glsl"), `${id} uses post.glsl finishing`);
+  }
+});
+test("new helper libs expose their API", () => {
+  assert.match(lib["post.glsl"], /vec3 tonemapACES\(/); assert.match(lib["post.glsl"], /float vignette\(/); assert.match(lib["post.glsl"], /float grain\(/);
+  assert.match(lib["camera.glsl"], /mat3 lookAt\(/); assert.match(lib["camera.glsl"], /vec3 orbitCam\(/);
+  assert.match(lib["lighting.glsl"], /float fresnelSchlick\(/); assert.match(lib["lighting.glsl"], /vec3 thinFilm\(/);
+});
+test("gradient + mesh libs: API, coexist with post.glsl, presets build", () => {
+  assert.match(lib["gradient.glsl"], /vec3 mixOklab\(/); assert.match(lib["mesh.glsl"], /vec3 mesh4\(/); assert.match(lib["mesh.glsl"], /vec3 aurora\(/);
+  const { code } = SI.build('#include "mesh.glsl"\n#include "post.glsl"\nvoid mainImage(out vec4 c, in vec2 f){ c = vec4(1); }', lib);
+  const names = (code.match(/^\s*(?:float|vec[234]|mat3)\s+(\w+)\s*\(/gm) || []).map((s) => s.trim());
+  assert.equal(new Set(names).size, names.length, "no duplicate function definitions when mixing libs");
+  for (const id of ["mesh-gradient", "aurora-grain"]) { const p = presets.find((x) => x.id === id); assert.ok(p, id); assert.deepEqual(SI.lint(SI.build(p.source, lib).code), [], id); }
 });
