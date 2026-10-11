@@ -8,14 +8,17 @@ const EXPIRY = { never: 0, "10m": 600e3, "1h": 3600e3, "1d": 86400e3, "1w": 6048
 
 class Store {
   constructor(dir) { this.dir = dir; fs.mkdirSync(dir, { recursive: true }); }
-  file(id) { return path.join(this.dir, id + ".json"); }
+  file(id) {
+    if (!ID_RE.test(id)) throw Object.assign(new Error("invalid id"), { code: "bad_id" }); // ids never reach the filesystem unchecked
+    return path.join(this.dir, id + ".json");
+  }
   create({ content, language = "plaintext", expiry = "never", title = "" }, now = Date.now()) {
-    if (!(expiry in EXPIRY)) throw Object.assign(new Error(`expiry must be one of ${Object.keys(EXPIRY).join(", ")}`), { code: "bad_expiry" });
+    if (typeof expiry !== "string" || !Object.prototype.hasOwnProperty.call(EXPIRY, expiry)) throw Object.assign(new Error(`expiry must be one of ${Object.keys(EXPIRY).join(", ")}`), { code: "bad_expiry" });
     let id; do id = nanoid(); while (fs.existsSync(this.file(id)));
     const paste = { id, title: String(title).slice(0, 120), language, content, createdAt: new Date(now).toISOString(),
       expiresAt: EXPIRY[expiry] ? new Date(now + EXPIRY[expiry]).toISOString() : null };
     const tmp = this.file(id) + ".tmp";
-    fs.writeFileSync(tmp, JSON.stringify(paste));
+    fs.writeFileSync(tmp, JSON.stringify(paste), { flag: "wx", mode: 0o600 });
     fs.renameSync(tmp, this.file(id));
     return paste;
   }
@@ -26,9 +29,15 @@ class Store {
     return p;
   }
   remove(id) { try { fs.unlinkSync(this.file(id)); } catch {} }
+  // Remove expired pastes and orphaned temp files (from a crash mid-write) older than an hour.
   sweep(now = Date.now()) {
     let n = 0;
-    for (const f of fs.readdirSync(this.dir)) if (f.endsWith(".json") && !this.get(f.slice(0, -5), now)) n++;
+    for (const f of fs.readdirSync(this.dir)) {
+      if (f.endsWith(".json")) { const id = f.slice(0, -5); if (ID_RE.test(id) && fs.existsSync(this.file(id)) && !this.get(id, now)) n++; }
+      else if (f.endsWith(".json.tmp")) {
+        try { if (now - fs.statSync(path.join(this.dir, f)).mtimeMs > 3600e3) { fs.unlinkSync(path.join(this.dir, f)); n++; } } catch {}
+      }
+    }
     return n;
   }
 }

@@ -37,6 +37,9 @@ function home(maxBytes) {
 <button type="submit">Create paste</button></div></form>`);
 }
 
+// The only inline script; the server allows it by sha256 hash in its CSP (no 'unsafe-inline').
+const VIEW_SCRIPT = `\nconst flash=(b,t)=>{const o=b.textContent;b.textContent=t;setTimeout(()=>b.textContent=o,1200)};\nconst cp=(b,s)=>navigator.clipboard.writeText(s).then(()=>flash(b,"Copied!"),()=>flash(b,"Failed"));\ndocument.getElementById("copy").onclick=e=>cp(e.target,document.getElementById("code").textContent);\ndocument.getElementById("link").onclick=e=>cp(e.target,location.href);\n`;
+
 function view(p) {
   const lang = safeLang(p.language);
   const head = `<link rel="stylesheet" href="${PRISM}/themes/prism-tomorrow.min.css">`;
@@ -47,13 +50,8 @@ function view(p) {
 <pre><code id="code" class="language-${esc(prismLang(lang))}">${esc(p.content)}</code></pre>
 <script src="${PRISM}/components/prism-core.min.js"></script>
 <script src="${PRISM}/plugins/autoloader/prism-autoloader.min.js"></script>
-<script>
-const flash=(b,t)=>{const o=b.textContent;b.textContent=t;setTimeout(()=>b.textContent=o,1200)};
-const cp=(b,s)=>navigator.clipboard.writeText(s).then(()=>flash(b,"Copied!"),()=>flash(b,"Failed"));
-document.getElementById("copy").onclick=e=>cp(e.target,document.getElementById("code").textContent);
-document.getElementById("link").onclick=e=>cp(e.target,location.href);
-</script>`;
+<script>${VIEW_SCRIPT}</script>`;
   return page(p.title || "Paste " + p.id, body, head);
 }
 const notFound = () => page("Not found", `<h2>Paste not found</h2><p>It may have expired. <a class="btn" href="/">Make a new one</a></p>`);
-module.exports = { esc, home, view, notFound, safeLang, LANGS };
+module.exports = { CSS, VIEW_SCRIPT, esc, home, view, notFound, safeLang, LANGS };
