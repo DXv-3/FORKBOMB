@@ -1,0 +1,25 @@
+name: validate-pieces
+
+on:
+  push:
+    paths:
+      - "pieces/**"
+  pull_request:
+    paths:
+      - "pieces/**"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate piece entries against schema
+        run: |
+          npm install -g ajv-cli
+          for f in pieces/entries/*.json; do
+            echo "Checking $f"
+            ajv validate -s pieces/schema.json -d "$f"
+          done

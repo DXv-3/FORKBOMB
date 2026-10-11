@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/DXv-3/FORKBOMB/pieces/schema.json",
+  "title": "FORKBOMB Piece",
+  "type": "object",
+  "required": ["id", "name", "category", "license", "source", "seams", "summary"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "name": { "type": "string" },
+    "category": {
+      "type": "string",
+      "enum": ["reliability", "ci", "data", "ui", "agent", "infra", "auth", "commerce", "other"]
+    },
+    "license": { "type": "string" },
+    "source": {
+      "type": "object",
+      "required": ["url"],
+      "properties": {
+        "url": { "type": "string", "format": "uri" },
+        "path": { "type": "string" },
+        "commit": { "type": "string" }
+      }
+    },
+    "seams": {
+      "type": "object",
+      "properties": {
+        "inputs": { "type": "array", "items": { "type": "string" } },
+        "outputs": { "type": "array", "items": { "type": "string" } },
+        "events": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "summary": { "type": "string" },
+    "snap": { "type": "string", "description": "How to wire this piece into a project" },
+    "trust": {
+      "type": "object",
+      "properties": {
+        "tests": { "type": "boolean" },
+        "maintained": { "type": "boolean" },
+        "security_reviewed": { "type": "boolean" }
+      }
+    }
+  }
+}

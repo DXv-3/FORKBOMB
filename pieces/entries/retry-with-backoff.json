@@ -1,0 +1,22 @@
+{
+  "id": "retry-with-backoff",
+  "name": "Retry with backoff",
+  "category": "reliability",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/DXv-3/FORKBOMB",
+    "path": "toolkit/reliability/retry.js"
+  },
+  "seams": {
+    "inputs": ["fn", "retries", "baseMs"],
+    "outputs": ["result", "error"],
+    "events": ["retry"]
+  },
+  "summary": "Call any async function with exponential backoff until it succeeds or retries run out.",
+  "snap": "Import retry() and wrap any flaky network or API call.",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}

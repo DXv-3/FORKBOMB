@@ -1,0 +1,22 @@
+{
+  "id": "ci-node-matrix",
+  "name": "Node CI matrix",
+  "category": "ci",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/DXv-3/FORKBOMB",
+    "path": "toolkit/ci/node-matrix.yml"
+  },
+  "seams": {
+    "inputs": ["node-versions", "package-manager"],
+    "outputs": ["ci-status"],
+    "events": ["push", "pull_request"]
+  },
+  "summary": "Reusable GitHub Actions workflow that tests a Node project across versions.",
+  "snap": "Copy into .github/workflows/ or call as a reusable workflow.",
+  "trust": {
+    "tests": false,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}
