@@ -1,0 +1,9 @@
+{
+  "name": "forkbomb-shaders",
+  "version": "0.1.0",
+  "description": "FORKBOMB shader pack: WebGL2 live-coding playground + composable GLSL library assembled from permissive GitHub parts.",
+  "license": "MIT",
+  "main": "server.js",
+  "scripts": { "start": "node server.js", "test": "node --test test/" },
+  "engines": { "node": ">=18" }
+}
