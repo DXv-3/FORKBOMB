@@ -1,0 +1,30 @@
+{
+  "id": "run-cycle",
+  "name": "Run cycle",
+  "category": "agent",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/DXv-3/FORKBOMB",
+    "path": "toolkit/process/cycle.js"
+  },
+  "seams": {
+    "inputs": [
+      "packs/forkbomb-core/pack.json"
+    ],
+    "outputs": [
+      "cycle-report",
+      "next-stage"
+    ],
+    "events": [
+      "cycle.started",
+      "cycle.completed"
+    ]
+  },
+  "summary": "Orchestrate one full Discover -> Tag -> Snap -> Ship -> Earn -> Improve loop by walking the forkbomb-core pack.",
+  "snap": "Run node toolkit/process/cycle.js (or the process-cycle workflow) to validate the system and print the next stage.",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}

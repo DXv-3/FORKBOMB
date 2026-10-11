@@ -1,0 +1,69 @@
+{
+  "id": "forkbomb-core",
+  "name": "FORKBOMB Core Process",
+  "version": "0.1.0",
+  "license": "MIT",
+  "summary": "FORKBOMB applied to itself: the operating loop shipped as a pack of pieces and connectors.",
+  "job": "Run FORKBOMB on FORKBOMB: discover, tag, snap, ship, earn, improve, repeat.",
+  "pieces": [
+    "run-cycle",
+    "discover-bricks",
+    "tag-piece",
+    "snap-via-connector",
+    "ship-edge",
+    "earn-loop",
+    "improve-upstream"
+  ],
+  "connectors": [
+    "process-stage",
+    "event-bus",
+    "gh-action",
+    "cli-stdin"
+  ],
+  "stages": [
+    {
+      "stage": "discover",
+      "piece": "discover-bricks",
+      "playbook": "toolkit/process/playbooks/1-discover.md",
+      "emits": "stage.discover.done",
+      "next": "tag"
+    },
+    {
+      "stage": "tag",
+      "piece": "tag-piece",
+      "playbook": "toolkit/process/playbooks/2-tag.md",
+      "emits": "stage.tag.done",
+      "next": "snap"
+    },
+    {
+      "stage": "snap",
+      "piece": "snap-via-connector",
+      "playbook": "toolkit/process/playbooks/3-snap.md",
+      "emits": "stage.snap.done",
+      "next": "ship"
+    },
+    {
+      "stage": "ship",
+      "piece": "ship-edge",
+      "playbook": "toolkit/process/playbooks/4-ship.md",
+      "emits": "stage.ship.done",
+      "next": "earn"
+    },
+    {
+      "stage": "earn",
+      "piece": "earn-loop",
+      "playbook": "toolkit/process/playbooks/5-earn.md",
+      "emits": "stage.earn.done",
+      "next": "improve"
+    },
+    {
+      "stage": "improve",
+      "piece": "improve-upstream",
+      "playbook": "toolkit/process/playbooks/6-improve.md",
+      "emits": "stage.improve.done",
+      "next": "discover"
+    }
+  ],
+  "entrypoint": "node toolkit/process/cycle.js",
+  "docs": "docs/PROCESS.md"
+}

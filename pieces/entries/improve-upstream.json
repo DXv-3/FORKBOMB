@@ -1,0 +1,32 @@
+{
+  "id": "improve-upstream",
+  "name": "Improve upstream",
+  "category": "reliability",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/DXv-3/FORKBOMB",
+    "path": "toolkit/process/playbooks/6-improve.md"
+  },
+  "seams": {
+    "inputs": [
+      "usage-signals",
+      "issues",
+      "revenue-path"
+    ],
+    "outputs": [
+      "upstream-pr",
+      "wanted-board"
+    ],
+    "events": [
+      "stage.improve.done",
+      "upstream.fixed"
+    ]
+  },
+  "summary": "Feed the bin: send fixes upstream, refresh trust flags, and post new wanted bricks that seed the next Discover.",
+  "snap": "Open upstream PRs, update trust fields in entries, and add wanted bricks for the next cycle.",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}

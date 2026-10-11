@@ -1,0 +1,31 @@
+{
+  "id": "earn-loop",
+  "name": "Earn loop",
+  "category": "commerce",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/DXv-3/FORKBOMB",
+    "path": "toolkit/process/playbooks/5-earn.md"
+  },
+  "seams": {
+    "inputs": [
+      "release",
+      "usage-signals"
+    ],
+    "outputs": [
+      "revenue-path",
+      "sponsor-link"
+    ],
+    "events": [
+      "stage.earn.done",
+      "value.captured"
+    ]
+  },
+  "summary": "Attach value paths to what shipped: sponsorships, premium packs, support/SLAs, hosted runtimes.",
+  "snap": "Add FUNDING links, a support tier, or a premium pack listing to the shipped release.",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}
