@@ -1,0 +1,15 @@
+{
+  "name": "forkbomb",
+  "version": "1.0.0",
+  "private": true,
+  "description": "FORKBOMB: paste, shaders, gradients and Dots Studio on one zero-dependency, production-ready Node server.",
+  "license": "MIT",
+  "main": "apps/forkbomb/server.js",
+  "scripts": {
+    "start": "node apps/forkbomb/server.js",
+    "test": "node --test apps/*/test/*.test.js",
+    "smoke": "bash scripts/smoke.sh",
+    "e2e": "node scripts/e2e.js"
+  },
+  "engines": { "node": ">=18" }
+}
