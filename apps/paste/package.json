@@ -4,6 +4,6 @@
   "description": "FORKBOMB's first product pack: a pastebin assembled from parts found across GitHub.",
   "license": "MIT",
   "main": "server.js",
-  "scripts": { "start": "node server.js", "test": "node --test test/" },
+  "scripts": { "start": "node server.js", "test": "node --test test/*.test.js" },
   "engines": { "node": ">=18" }
 }

@@ -17,6 +17,12 @@ docker build -t forkbomb-paste apps/paste && docker run -p 3000:3000 -v paste:/d
 | `PORT` | `3000` | listen port |
 | `DATA_DIR` | `apps/paste/data` | one JSON file per paste |
 | `MAX_BYTES` | `524288` | max paste size (413 above) |
+| `HOST` | all interfaces | bind address (e.g. `127.0.0.1`) |
+| `RATE_LIMIT` | `30` | paste creations per minute per IP (429 + `Retry-After` above) |
+| `READ_RATE_LIMIT` | `600` | requests per minute per IP |
+| `TRUST_PROXY` | off | `1` = rate-limit by first `X-Forwarded-For` hop (only behind your own proxy) |
+
+Security: strict CSP (no `unsafe-inline` scripts; the one inline script is hash-allowed), raw pastes are sandboxed `text/plain`, ids are validated before touching disk, 30 s request timeout, graceful shutdown on SIGTERM. See [SECURITY.md](../../SECURITY.md).
 
 ## Routes
 
