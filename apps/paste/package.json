@@ -1,0 +1,9 @@
+{
+  "name": "forkbomb-paste",
+  "version": "0.1.0",
+  "description": "FORKBOMB's first product pack: a pastebin assembled from parts found across GitHub.",
+  "license": "MIT",
+  "main": "server.js",
+  "scripts": { "start": "node server.js", "test": "node --test test/" },
+  "engines": { "node": ">=18" }
+}
