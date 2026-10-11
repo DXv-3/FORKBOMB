@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>forkbomb-dots.js example</title>
+<style>body{margin:0;background:#07070c;color:#ddd;font:14px system-ui}canvas{width:100%;height:70vh;display:block}.b{padding:10px;display:flex;gap:6px;flex-wrap:wrap}button{background:#181826;color:#ddd;border:1px solid #333;border-radius:6px;padding:6px 10px}</style></head>
+<body>
+<canvas id="dots"></canvas>
+<div class="b" id="b"><button id="ex">explode</button><button id="tx">text</button></div>
+<script src="forkbomb-dots.js"></script>
+<script>
+  // forkbomb-dots.js — MIT, zero deps. See header of forkbomb-dots.js for the API.
+  const d = ForkbombDots.create("#dots", { count: 1400, size: 2, colors: ["#22d3ee", "#a78bfa", "#f472b6"], bg: "#07070c" });
+  d.play([{ shape: "heart", duration: 1.4, hold: 1.2 }, { shape: "star", ease: "outBack" }, { text: "Hello", duration: 1.8, hold: 1.6 }, { shape: "infinity" }], { loop: true });
+  for (const s of ForkbombDots.shapes) { const b = document.createElement("button"); b.textContent = s; b.onclick = () => { d.stop(); d.morph(s, { stagger: 0.4 }); }; document.getElementById("b").append(b); }
+  document.getElementById("ex").onclick = () => d.explode();
+  document.getElementById("tx").onclick = () => { d.stop(); d.text(prompt("Text?", "FORKBOMB") || "dots"); };
+</script>
+</body></html>
