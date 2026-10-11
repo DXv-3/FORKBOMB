@@ -5,7 +5,7 @@
   "license": "MIT",
   "source": {
     "url": "https://github.com/DXv-3/FORKBOMB",
-    "path": "toolkit/process/playbooks/1-discover.md"
+    "path": "toolkit/scanner/scan.js"
   },
   "seams": {
     "inputs": [
@@ -13,14 +13,15 @@
       "search-queries"
     ],
     "outputs": [
-      "candidate-list"
+      "candidate-list",
+      "draft-piece-entries"
     ],
     "events": [
       "stage.discover.done"
     ]
   },
-  "summary": "Harvest candidate bricks from GitHub using code search, topics, and the wanted-bricks board.",
-  "snap": "Run the discover playbook; emit a candidate list on the process-stage connector.",
+  "summary": "Scan GitHub for reusable bricks (functions, workflows, Dockerfiles, schemas, modules), score them on license, stars, recency, path and size, and emit a ranked candidate-list.",
+  "snap": "node toolkit/scanner/scan.js \"<capability>\" --lang <lang> --kind <kind> --out candidates.json [--emit-entries .forkbomb/drafts]; then node toolkit/process/cycle.js check .forkbomb/drafts.",
   "trust": {
     "tests": true,
     "maintained": true,

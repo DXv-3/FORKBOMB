@@ -16,10 +16,20 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - name: Validate piece entries against schema
+      # ajv-cli defaults to draft-07 and can't load the 2020-12 meta-schema or "format": "uri"
+      # without extra plugins, so validate with ajv's 2020 build + ajv-formats.
+      - name: Validate piece entries against schema (JSON Schema 2020-12)
         run: |
-          npm install -g ajv-cli
-          for f in pieces/entries/*.json; do
-            echo "Checking $f"
-            ajv validate -s pieces/schema.json -d "$f"
-          done
+          npm install --no-save ajv@8 ajv-formats@3
+          node -e '
+            const Ajv = require("ajv/dist/2020"); const fmt = require("ajv-formats"); const fs = require("fs");
+            const ajv = new Ajv({ allErrors: true }); fmt(ajv);
+            const v = ajv.compile(JSON.parse(fs.readFileSync("pieces/schema.json")));
+            let bad = 0;
+            for (const f of fs.readdirSync("pieces/entries").filter(f => f.endsWith(".json"))) {
+              const ok = v(JSON.parse(fs.readFileSync("pieces/entries/" + f)));
+              console.log((ok ? "ok   " : "FAIL ") + f); if (!ok) { bad++; console.log(v.errors); }
+            }
+            process.exit(bad ? 1 : 0);'
+      - name: Validate the system on itself
+        run: node toolkit/process/cycle.js validate

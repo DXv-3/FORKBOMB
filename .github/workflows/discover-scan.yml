@@ -1,0 +1,45 @@
+name: discover-scan
+
+on:
+  workflow_dispatch:
+    inputs:
+      query:
+        description: "What brick to scan for"
+        required: true
+        default: "retry backoff"
+      kind:
+        description: "any | function | workflow | docker | schema | module"
+        default: "any"
+      lang:
+        description: "language filter (optional)"
+        default: ""
+  schedule:
+    - cron: "0 9 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      Q: ${{ github.event.inputs.query || 'path:.github/workflows reusable workflow_call' }}
+      KIND: ${{ github.event.inputs.kind || 'workflow' }}
+      LANG_FILTER: ${{ github.event.inputs.lang }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Scan GitHub for bricks
+        run: |
+          mkdir -p .forkbomb/cycles
+          node toolkit/scanner/scan.js "$Q" --kind "$KIND" ${LANG_FILTER:+--lang "$LANG_FILTER"} \
+            --limit 25 --out .forkbomb/cycles/candidates.json --emit-entries .forkbomb/drafts | tee -a "$GITHUB_STEP_SUMMARY"
+          node toolkit/process/cycle.js check .forkbomb/drafts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: candidate-list
+          path: .forkbomb/
+          include-hidden-files: true

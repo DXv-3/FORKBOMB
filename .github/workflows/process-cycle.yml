@@ -7,12 +7,16 @@ on:
       - "packs/**"
       - "connectors/**"
       - "toolkit/process/**"
+      - "toolkit/scanner/**"
+      - ".github/workflows/**"
   pull_request:
     paths:
       - "pieces/**"
       - "packs/**"
       - "connectors/**"
       - "toolkit/process/**"
+      - "toolkit/scanner/**"
+      - ".github/workflows/**"
 
 jobs:
   cycle:
@@ -26,3 +30,5 @@ jobs:
         run: node toolkit/process/cycle.js validate
       - name: Print the cycle checklist
         run: node toolkit/process/cycle.js checklist >> "$GITHUB_STEP_SUMMARY"
+      - name: Scanner offline tests
+        run: node toolkit/scanner/test.js
