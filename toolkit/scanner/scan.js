@@ -45,25 +45,71 @@ function token() {
   catch { return null; }
 }
 
-const cache = new Map();
-function api(p, tok) {
-  if (cache.has(p)) return cache.get(p);
-  const pr = new Promise((resolve, reject) => {
+// Never let a credential reach stdout/stderr/files: scrub the token (and anything token-shaped) from every message.
+let activeToken = null;
+function redact(text) {
+  let t = String(text);
+  if (activeToken) t = t.split(activeToken).join("***");
+  return t.replace(/\b(gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,})\b/g, "***").replace(/(authorization:?\s*(bearer|token)\s+)\S+/gi, "$1***");
+}
+
+const MAX_BODY = 20 * 1024 * 1024;
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// How long to wait before retrying a failed request, or -1 to give up. Handles GitHub primary rate limits
+// (x-ratelimit-remaining: 0 + x-ratelimit-reset), secondary rate limits (403/429 + retry-after, or "secondary rate limit"
+// in the message) and transient 5xx/network errors with exponential backoff. Waits are capped so CI never hangs.
+function retryDelay({ status, headers = {}, message = "", attempt, now = Date.now(), maxWaitMs = 60e3 }) {
+  if (attempt >= 4) return -1;
+  const backoff = Math.min(maxWaitMs, 1000 * 2 ** attempt + Math.floor(Math.random() * 250));
+  const ra = Number(headers["retry-after"]);
+  if ((status === 403 || status === 429) && Number.isFinite(ra) && ra >= 0) return ra * 1000 <= maxWaitMs ? Math.max(1000, ra * 1000) : -1;
+  if ((status === 403 || status === 429) && headers["x-ratelimit-remaining"] === "0") {
+    const wait = Number(headers["x-ratelimit-reset"]) * 1000 - now + 1000;
+    return Number.isFinite(wait) && wait <= maxWaitMs ? Math.max(1000, wait) : -1;
+  }
+  if ((status === 403 || status === 429) && /secondary rate limit|abuse/i.test(message)) return Math.max(backoff, 5000);
+  if (status === 429) return backoff;
+  if (status === undefined || status >= 500) return backoff; // network error / server error
+  return -1; // 401, 404, 422, plain 403 (permissions) ... are not retryable
+}
+
+function request(p, tok) {
+  return new Promise((resolve, reject) => {
     const headers = { "User-Agent": "forkbomb-scanner", Accept: "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28" };
     if (tok) headers.Authorization = `Bearer ${tok}`;
-    https.get({ host: "api.github.com", path: p, headers }, (res) => {
-      let b = ""; res.on("data", (d) => (b += d));
-      res.on("end", () => {
-        let j; try { j = JSON.parse(b); } catch { j = {}; }
-        if (res.statusCode >= 400) {
-          const reset = res.headers["x-ratelimit-reset"];
-          const hint = res.statusCode === 403 || res.statusCode === 429 ? ` (rate limit; resets ${reset ? new Date(reset * 1000).toLocaleTimeString() : "soon"})` : "";
-          return reject(new Error(`GitHub ${res.statusCode} on ${p.split("?")[0]}: ${j.message || b.slice(0, 120)}${hint}`));
-        }
-        resolve(j);
-      });
-    }).on("error", reject);
+    const req = https.get({ host: "api.github.com", path: p, headers, timeout: 20e3 }, (res) => {
+      const chunks = []; let n = 0;
+      res.on("data", (d) => { n += d.length; if (n > MAX_BODY) { req.destroy(new Error("response too large")); } else chunks.push(d); });
+      res.on("end", () => resolve({ status: res.statusCode, headers: res.headers, body: Buffer.concat(chunks).toString("utf8") }));
+      res.on("error", reject);
+    });
+    req.on("timeout", () => req.destroy(new Error("request timed out")));
+    req.on("error", reject);
   });
+}
+
+const cache = new Map();
+function api(p, tok, { send = request, wait = sleep } = {}) {
+  if (cache.has(p)) return cache.get(p);
+  const pr = (async () => {
+    for (let attempt = 0; ; attempt++) {
+      let res, netErr;
+      try { res = await send(p, tok); } catch (e) { netErr = e; }
+      let j = {};
+      if (res) { try { j = JSON.parse(res.body); } catch { j = {}; } }
+      if (res && res.status < 400) return j;
+      const message = netErr ? netErr.message : (j && j.message) || "";
+      const d = retryDelay({ status: res && res.status, headers: (res && res.headers) || {}, message, attempt });
+      if (d >= 0) { progress(`retrying in ${Math.ceil(d / 1000)}s (${res ? res.status : "network"})`); await wait(d); continue; }
+      if (netErr) throw new Error(redact(`network error on ${p.split("?")[0]}: ${netErr.message}`));
+      const reset = res.headers["x-ratelimit-reset"];
+      const limited = res.status === 429 || (res.status === 403 && (res.headers["x-ratelimit-remaining"] === "0" || /rate limit/i.test(message)));
+      const hint = limited ? ` (rate limit; resets ${reset ? new Date(reset * 1000).toLocaleTimeString() : "soon"})` : "";
+      throw new Error(redact(`GitHub ${res.status} on ${p.split("?")[0]}: ${message || res.body.slice(0, 120)}${hint}`));
+    }
+  })();
+  pr.catch(() => cache.delete(p)); // don't cache failures
   cache.set(p, pr);
   return pr;
 }
@@ -115,6 +161,7 @@ function scoreCandidate(x) {
 }
 
 async function scan(o, tok) {
+  activeToken = tok || null;
   const mode = o.mode === "auto" ? (tok ? "code" : "repo") : o.mode;
   if (mode === "code" && !tok) throw new Error("code search needs auth: run `gh auth login` or export GITHUB_TOKEN (or use --mode repo)");
   const q = buildQuery({ ...o, mode });
@@ -161,19 +208,40 @@ async function scan(o, tok) {
 }
 
 function toEntry(x) {
-  const base = (x.path ? path.basename(x.path).replace(/\.[^.]+$/, "") : x.repo.split("/")[1]);
-  const id = `${x.repo.split("/")[0]}-${base}`.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60);
+  const repo = String(x.repo || "unknown/unknown");
+  const base = (x.path ? path.posix.basename(String(x.path)).replace(/\.[^.]+$/, "") : repo.split("/")[1] || "piece");
+  const id = `${repo.split("/")[0]}-${base}`.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60).replace(/-+$/, "") || "piece";
   const category = { workflow: "ci", docker: "infra", schema: "data" }[x.kind] || "other";
   const e = {
     id, name: base, category: CATS.includes(category) ? category : "other",
     license: x.license || "UNKNOWN",
-    source: { url: x.url, ...(x.path && { path: x.path }), ...(x.commit && { commit: x.commit }) },
+    source: { url: /^https:\/\/github\.com\/[\w.-]+\/[\w.-]+$/.test(String(x.url)) ? x.url : `https://github.com/${repo.replace(/[^\w./-]/g, "")}`, ...(x.path && { path: x.path }), ...(x.commit && { commit: x.commit }) },
     seams: { inputs: [], outputs: [], events: [] },
     summary: x.job || `Candidate ${x.kind} brick from ${x.repo}`,
     snap: "TODO (tag stage): describe how to wire this piece in.",
     trust: { tests: false, maintained: !!x.pushed_at && Date.now() - Date.parse(x.pushed_at) < 365 * 864e5, security_reviewed: false },
   };
   return e;
+}
+
+// Write draft entries safely: ids are re-checked, every target must resolve inside dir, duplicate ids get a numeric
+// suffix instead of overwriting each other, and files are written atomically via a temp file + rename.
+function writeEntries(dir, entries) {
+  fs.mkdirSync(dir, { recursive: true });
+  const root = fs.realpathSync(dir), used = new Set(), written = [];
+  for (const e of entries) {
+    if (!/^[a-z0-9][a-z0-9-]{0,63}$/.test(e.id)) throw new Error(`refusing unsafe entry id ${JSON.stringify(e.id)}`);
+    let id = e.id;
+    for (let i = 2; used.has(id); i++) id = `${e.id.slice(0, 58)}-${i}`;
+    used.add(id); e.id = id;
+    const file = path.join(root, `${id}.json`);
+    if (path.dirname(file) !== root) throw new Error(`refusing to write outside ${dir}`);
+    const tmp = `${file}.${process.pid}.tmp`;
+    fs.writeFileSync(tmp, JSON.stringify(e, null, 2) + "\n", { flag: "wx" });
+    fs.renameSync(tmp, file);
+    written.push(file);
+  }
+  return written;
 }
 
 const HELP = `forkbomb scan — find reusable GitHub bricks
@@ -208,10 +276,7 @@ async function main() {
     meta: { query: r.q, mode: r.mode, total_matches: r.total, scanned_at: new Date().toISOString() },
   };
   if (o.out) fs.writeFileSync(o.out, JSON.stringify(env, null, 2) + "\n");
-  if (o.emit) {
-    fs.mkdirSync(o.emit, { recursive: true });
-    for (const x of r.candidates) { const e = toEntry(x); fs.writeFileSync(path.join(o.emit, `${e.id}.json`), JSON.stringify(e, null, 2) + "\n"); }
-  }
+  if (o.emit) writeEntries(o.emit, r.candidates.map(toEntry));
   if (o.json) return console.log(JSON.stringify(env, null, 2));
   console.log(c(1, `\n FORKBOMB scan`) + c(2, `  ${r.mode} search · "${r.q}" · ${r.total.toLocaleString()} matches · top ${r.candidates.length}\n`));
   r.candidates.forEach((x, i) => {
@@ -228,5 +293,5 @@ async function main() {
   console.log(c(2, `\n next: tag stage → node toolkit/process/cycle.js next discover`));
 }
 
-if (require.main === module) main().catch((e) => { done(); console.error(c(31, "scan failed: ") + e.message); process.exit(1); });
-module.exports = { parseArgs, buildQuery, classify, scoreCandidate, toEntry };
+if (require.main === module) main().catch((e) => { done(); console.error(c(31, "scan failed: ") + redact(e.message)); process.exit(1); });
+module.exports = { parseArgs, buildQuery, classify, scoreCandidate, toEntry, writeEntries, retryDelay, redact, api, _setToken: (t) => (activeToken = t) };
