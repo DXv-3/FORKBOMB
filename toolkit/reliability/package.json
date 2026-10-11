@@ -1,0 +1,5 @@
+{
+  "private": true,
+  "type": "module",
+  "description": "retry.js is an ES module piece (export syntax); this marks it as ESM for every Node version."
+}

@@ -28,7 +28,7 @@ jobs:
       KIND: ${{ github.event.inputs.kind || 'workflow' }}
       LANG_FILTER: ${{ github.event.inputs.lang }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
