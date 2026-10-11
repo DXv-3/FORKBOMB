@@ -1,0 +1,36 @@
+{
+  "id": "paste",
+  "name": "FORKBOMB Paste",
+  "version": "0.1.0",
+  "license": "MIT",
+  "summary": "FORKBOMB's first product pack: a working pastebin assembled from parts found across GitHub.",
+  "job": "Paste text, get a short shareable URL with syntax highlighting, raw view and a JSON API.",
+  "app": "apps/paste",
+  "run": "node apps/paste/server.js",
+  "pieces": [
+    "prism-highlight",
+    "nanoid-short-id",
+    "paste-file-store",
+    "paste-app"
+  ],
+  "connectors": [
+    "http-json",
+    "cli-stdin"
+  ],
+  "provenance": [
+    {
+      "piece": "prism-highlight",
+      "url": "https://github.com/PrismJS/prism",
+      "license": "MIT",
+      "found_by": "scan.js \"syntax highlighting\" --lang js (rank 75)",
+      "use": "CDN, pinned 1.29.0"
+    },
+    {
+      "piece": "nanoid-short-id",
+      "url": "https://github.com/ai/nanoid",
+      "license": "MIT",
+      "found_by": "scan.js \"nanoid\" --lang js (rank 75)",
+      "use": "algorithm adapted, zero-dep"
+    }
+  ]
+}

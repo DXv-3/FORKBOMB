@@ -49,6 +49,16 @@ node toolkit/process/cycle.js checklist
 
 Read the full inverted process in [docs/PROCESS.md](docs/PROCESS.md).
 
+## First product: FORKBOMB Paste
+
+"Build me the paste app from anywhere on GitHub" — done. The scanner found the bricks (Prism for highlighting, nanoid for short IDs), FORKBOMB snapped them to a zero-dependency Node server, and it ships as pack [`packs/paste`](packs/paste/pack.json).
+
+```bash
+node apps/paste/server.js   # http://localhost:3000
+```
+
+See [apps/paste](apps/paste/README.md) for the API and the full parts/provenance table.
+
 ## Start now
 
 - Read [docs/VISION.md](docs/VISION.md)

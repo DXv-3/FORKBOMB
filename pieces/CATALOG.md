@@ -35,4 +35,15 @@ FORKBOMB's own operating loop, cataloged like any other brick. See [docs/PROCESS
 | `improve-upstream` | Improve upstream | reliability | MIT | core |
 | `run-cycle` | Run cycle | agent | MIT | core |
 
+### Product pieces — pack [`paste`](../packs/paste/pack.json)
+
+FORKBOMB's first product: a pastebin assembled from GitHub parts. See [apps/paste](../apps/paste/README.md).
+
+| ID | Name | Category | License | Status |
+| --- | --- | --- | --- | --- |
+| `prism-highlight` | Prism syntax highlighter | ui | MIT | product |
+| `nanoid-short-id` | nanoid short IDs | data | MIT | product |
+| `paste-file-store` | Paste file store with expiry | data | MIT | product |
+| `paste-app` | FORKBOMB Paste app | infra | MIT | product |
+
 Add new rows when you drop a brick into `toolkit/` or `pieces/entries/`. `node toolkit/process/cycle.js` checks every entry has a row.

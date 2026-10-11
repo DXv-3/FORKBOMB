@@ -1,0 +1,31 @@
+{
+  "id": "paste-file-store",
+  "name": "Paste file store with expiry",
+  "category": "data",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/DXv-3/FORKBOMB",
+    "path": "apps/paste/lib/store.js"
+  },
+  "seams": {
+    "inputs": [
+      "content",
+      "language",
+      "expiry"
+    ],
+    "outputs": [
+      "paste-record"
+    ],
+    "events": [
+      "paste.created",
+      "paste.expired"
+    ]
+  },
+  "summary": "One-JSON-file-per-record store with atomic writes, ID validation, lazy expiry on read and a periodic sweep.",
+  "snap": "new Store(dir).create({content, language, expiry}); store.get(id); store.sweep().",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}

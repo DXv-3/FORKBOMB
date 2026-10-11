@@ -1,0 +1,26 @@
+{
+  "id": "nanoid-short-id",
+  "name": "nanoid short IDs",
+  "category": "data",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/ai/nanoid"
+  },
+  "seams": {
+    "inputs": [
+      "alphabet",
+      "size"
+    ],
+    "outputs": [
+      "id"
+    ],
+    "events": []
+  },
+  "summary": "Secure, URL-safe short ID generator (bitmask + rejection sampling over crypto bytes). Adapted zero-dep copy lives at apps/paste/lib/nanoid.js. Scanner rank 75, MIT, 27k stars.",
+  "snap": "require('apps/paste/lib/nanoid').customAlphabet(alphabet, size)() or npm i nanoid.",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}

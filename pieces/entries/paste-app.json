@@ -1,0 +1,31 @@
+{
+  "id": "paste-app",
+  "name": "FORKBOMB Paste app",
+  "category": "infra",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/DXv-3/FORKBOMB",
+    "path": "apps/paste/server.js"
+  },
+  "seams": {
+    "inputs": [
+      "POST /api/paste",
+      "POST /new"
+    ],
+    "outputs": [
+      "/p/<id>",
+      "/raw/<id>",
+      "GET /api/paste/:id"
+    ],
+    "events": [
+      "paste.created"
+    ]
+  },
+  "summary": "Zero-dependency Node http pastebin: escaped HTML views, CSP headers, size limit, http-json error contract. Snaps prism-highlight + nanoid-short-id + paste-file-store.",
+  "snap": "node apps/paste/server.js (PORT, DATA_DIR, MAX_BYTES) or docker build apps/paste.",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}

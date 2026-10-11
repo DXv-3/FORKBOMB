@@ -1,0 +1,29 @@
+{
+  "id": "prism-highlight",
+  "name": "Prism syntax highlighter",
+  "category": "ui",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/PrismJS/prism",
+    "commit": "v1.29.0"
+  },
+  "seams": {
+    "inputs": [
+      "code-text",
+      "language"
+    ],
+    "outputs": [
+      "highlighted-html"
+    ],
+    "events": [
+      "DOMContentLoaded"
+    ]
+  },
+  "summary": "Lightweight browser syntax highlighting with on-demand language loading (autoloader). Scanner rank 75, MIT, 13k stars.",
+  "snap": "Load prism-core + plugins/autoloader from https://cdn.jsdelivr.net/npm/prismjs@1.29.0 and wrap escaped code in <code class=\"language-X\">.",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}
