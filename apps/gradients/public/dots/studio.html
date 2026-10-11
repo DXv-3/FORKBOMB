@@ -1,16 +1,26 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>FORKBOMB Dots Studio — original particle shapes, UI and sequences</title><link rel="stylesheet" href="/dots/studio.css"></head>
+<title>FORKBOMB Dots Studio — original particle shapes, UI and sequences</title>
+<meta name="description" content="Choreograph particle shapes, text, SVG and images with physics and a timeline; export PNG, WebM or an embed."><meta name="theme-color" content="#07070c"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="studio.css"></head>
 <body>
-<header><a href="/?tab=dots" class="back">← Gradients</a><h1>FORKBOMB <b>Dots Studio</b></h1>
-<nav id="views"><button data-view="studio" class="on">Studio</button><button data-view="grid">Shape grid</button><button data-view="ui">Dot UI</button></nav>
-<span id="fps"></span></header>
+<header><a href="../?tab=dots" class="back">← Gradients</a><h1>FORKBOMB <b>Dots Studio</b></h1>
+<nav id="views" aria-label="Studio views"><button data-view="studio" class="on">Studio</button><button data-view="grid">Shape grid</button><button data-view="ui">Dot UI</button></nav>
+<span id="fps" aria-hidden="true"></span></header>
 <main>
-  <aside id="panel"></aside>
-  <section id="stage"><canvas id="c2d"></canvas><canvas id="cgl"></canvas><div id="gridView"></div><div id="uiLabels"></div></section>
+  <aside id="panel" aria-label="Studio controls"></aside>
+  <section id="stage" aria-label="Stage"><canvas id="c2d" role="img" aria-label="Particle animation"></canvas><canvas id="cgl" role="img" aria-label="Particle animation (WebGL)"></canvas><div id="gridView"></div><div id="uiLabels" aria-hidden="true"></div>
+  <div id="uiA11y" role="group" aria-label="Dot UI controls (accessible equivalents of the canvas widgets)">
+    <button id="a-btn" type="button" aria-pressed="false">Make something</button>
+    <label>slider <input id="a-slider" type="range" min="0" max="100" value="40"></label>
+    <label><input id="a-toggle" type="checkbox" role="switch" checked> toggle</label>
+    <label><input id="a-check" type="checkbox" checked> checkbox</label>
+    <label>dropdown <select id="a-drop"><option>Cloud</option><option>Heart</option><option>Star</option></select></label>
+    <label>progress <input id="a-prog" type="range" min="0" max="100" value="65"></label>
+    <span id="a-live" class="sr" role="status" aria-live="polite"></span>
+  </div></section>
 </main>
-<section id="timeline"><div class="tlbar"><button id="play">▶ Play</button><input id="scrub" type="range" min="0" max="1000" value="0"><span id="tltime">0.0s</span><button id="addStep">+ step</button></div><div id="steps"></div></section>
-<footer>Original MIT code (standard math: parametric/polar curves, superformula, SDF fills, pixel-mask sampling). Feature set catalogued from public <a href="https://dotsui.dev">dotsui.dev</a> pages; no dots-swarm Pro code, artwork, shape data or Studio code used. <a href="/dots/example.html">Embed example</a></footer>
+<section id="timeline" aria-label="Timeline"><div class="tlbar"><button id="play" aria-label="Play or pause the timeline">▶ Play</button><input id="scrub" aria-label="Timeline position" type="range" min="0" max="1000" value="0"><span id="tltime" aria-live="off">0.0s</span><button id="addStep">+ step</button></div><div id="steps" role="list" aria-label="Timeline steps"></div></section>
+<footer>Original MIT code (standard math: parametric/polar curves, superformula, SDF fills, pixel-mask sampling). Feature set catalogued from public <a href="https://dotsui.dev">dotsui.dev</a> pages; no dots-swarm Pro code, artwork, shape data or Studio code used. <a href="example.html">Embed example</a></footer>
 <pre id="out"></pre>
-<script src="/dots/shapes.js"></script><script src="/dots/morph.js"></script><script src="/dots/physics.js"></script><script src="/dots/scene.js"></script><script src="/dots/ui.js"></script><script src="/dots/render.js"></script><script src="/dots/studio.js"></script>
+<script defer src="shapes.js"></script><script defer src="morph.js"></script><script defer src="physics.js"></script><script defer src="scene.js"></script><script defer src="ui.js"></script><script defer src="render.js"></script><script defer src="studio.js"></script>
 </body></html>

@@ -43,7 +43,7 @@
     ];
   }
   function uiClick(x, y) {
-    const L = uiLayout(), i = U.hitTest(L, x, y); if (i < 0) return false; const c = L[i];
+    const L = uiLayout(), i = U.hitTest(L, x, y); if (i < 0) return false; const c = L[i]; setTimeout(() => syncA11y(`${c.type} changed`));
     if (c.type === "button") { uiState.pressed = !uiState.pressed; if (uiState.pressed) sw.explode(c.x, c.y, 0.6); }
     if (c.type === "slider") uiState.slider = Math.min(1, Math.max(0, (x - (c.x - c.w / 2)) / c.w));
     if (c.type === "toggle") uiState.toggle = !uiState.toggle; if (c.type === "checkbox") uiState.check = !uiState.check;
@@ -96,7 +96,7 @@
   }
 
   // ---------- panel ----------
-  const h3 = (t) => panel.insertAdjacentHTML("beforeend", `<h3>${t}</h3>`);
+  const h3 = (t) => panel.insertAdjacentHTML("beforeend", `<h2>${t}</h2>`);
   function el(html, on) { const d = document.createElement("div"); d.innerHTML = html; const e = d.firstElementChild; panel.append(e); if (on) on(e); return e; }
   const btns = (list) => { const r = el(`<div class="row"></div>`); for (const [t, f] of list) { const b = document.createElement("button"); b.textContent = t; b.onclick = f; r.append(b); } return r; };
   const range = (label, get, set, min, max, step) => el(`<label>${label}<input type=range min=${min} max=${max} step=${step} value=${get()}></label>`, (e) => (e.querySelector("input").oninput = (ev) => set(+ev.target.value)));
@@ -110,21 +110,21 @@
     panel.innerHTML = "";
     h3(`Shapes (${Sh.NAMES.length})`);
     const cats = Sh.categories();
-    el(`<select id="shapeSel">${Object.entries(cats).map(([c, l]) => `<optgroup label="${c}">${l.map((n) => `<option>${n}</option>`).join("")}</optgroup>`).join("")}</select>`, (e) => (e.onchange = () => { ST.playing = false; ST.uiDyn = false; morphTo(Sh.shape(e.value, sw.n), { ease: $("#easeSel").value, stagger: +$("#stagSel").value, order: $("#ordSel").value }); }));
+    el(`<select id="shapeSel" aria-label="Shape">${Object.entries(cats).map(([c, l]) => `<optgroup label="${c}">${l.map((n) => `<option>${n}</option>`).join("")}</optgroup>`).join("")}</select>`, (e) => (e.onchange = () => { ST.playing = false; ST.uiDyn = false; morphTo(Sh.shape(e.value, sw.n), { ease: $("#easeSel").value, stagger: +$("#stagSel").value, order: $("#ordSel").value }); }));
     el(`<label>ease<select id="easeSel">${Object.keys(M.EASE).map((k) => `<option ${k === "inOutCubic" ? "selected" : ""}>${k}</option>`).join("")}</select></label>`);
     el(`<label>stagger<input id="stagSel" type=range min=0 max=0.9 step=0.05 value=0.35></label>`);
     el(`<label>order<select id="ordSel">${["radial", "angle", "x", "y", "index", "random"].map((k) => `<option>${k}</option>`).join("")}</select></label>`);
     btns([["+ add to timeline", () => live({ kind: "shape", value: $("#shapeSel").value, duration: 1.5, hold: 1.2, ease: $("#easeSel").value, stagger: +$("#stagSel").value, order: $("#ordSel").value })]]);
     h3("Text → particles");
-    el(`<input id="txt" value="FORKBOMB" maxlength="60">`);
+    el(`<input id="txt" value="FORKBOMB" maxlength="60" aria-label="Text to form from particles">`);
     btns([["Form text", () => { ST.playing = false; ST.uiDyn = false; morphTo(Sh.textPoints($("#txt").value, sw.n), { order: "x", ease: "outExpo" }); }],
           ["Explode + reassemble", () => { sw.explode(0, 0, 3); setTimeout(() => morphTo(Sh.textPoints($("#txt").value, sw.n), { order: "random", stagger: 0.6, duration: 1.8, ease: "outBack" }), 450); }],
           ["+ timeline", () => live({ kind: "text", value: $("#txt").value, duration: 1.8, hold: 1.5, ease: "outExpo", stagger: 0.4, order: "x" })]]);
     h3("SVG icon (paste your own)");
-    el(`<textarea id="svg" placeholder='<svg viewBox="0 0 24 24"><path d="..."/></svg> or a path d'>M12 2l3 7h7l-5.5 4.5 2 7.5-6.5-4.5-6.5 4.5 2-7.5L2 9h7z</textarea>`);
+    el(`<textarea id="svg" aria-label="SVG markup or path data" placeholder='<svg viewBox="0 0 24 24"><path d="..."/></svg> or a path d'>M12 2l3 7h7l-5.5 4.5 2 7.5-6.5-4.5-6.5 4.5 2-7.5L2 9h7z</textarea>`);
     btns([["Form SVG", () => { ST.playing = false; ST.uiDyn = false; morphTo(Sh.svgPoints($("#svg").value, sw.n)); }], ["+ timeline", () => live({ kind: "svg", value: $("#svg").value, duration: 1.5, hold: 1.2, ease: "inOutCubic", stagger: 0.3, order: "radial" })]]);
     h3("Image → dots");
-    el(`<input type=file accept="image/*">`, (e) => (e.onchange = () => { const f = e.files[0]; if (!f) return; if (!/^image\//.test(f.type) || f.size > MAX_IMAGE) return log(`image rejected: must be an image under ${MAX_IMAGE >> 20} MB`); const img = new Image(), url = URL.createObjectURL(f); img.onerror = () => { URL.revokeObjectURL(url); log("image could not be decoded"); }; img.onload = () => { URL.revokeObjectURL(url); if (img.width * img.height > 40e6) return log("image rejected: too many pixels"); ST.image = img; ST.playing = false; ST.uiDyn = false; const r = Sh.imagePoints(img, sw.n); imageColors = r.colors; scene.colorMode = "image"; buildPanel(); morphTo(r.points, { order: "random", stagger: 0.5 }); }; img.src = url; }));
+    el(`<input type=file accept="image/*" aria-label="Image to convert into dots">`, (e) => (e.onchange = () => { const f = e.files[0]; if (!f) return; if (!/^image\//.test(f.type) || f.size > MAX_IMAGE) return log(`image rejected: must be an image under ${MAX_IMAGE >> 20} MB`); const img = new Image(), url = URL.createObjectURL(f); img.onerror = () => { URL.revokeObjectURL(url); log("image could not be decoded"); }; img.onload = () => { URL.revokeObjectURL(url); if (img.width * img.height > 40e6) return log("image rejected: too many pixels"); ST.image = img; ST.playing = false; ST.uiDyn = false; const r = Sh.imagePoints(img, sw.n); imageColors = r.colors; scene.colorMode = "image"; buildPanel(); morphTo(r.points, { order: "random", stagger: 0.5 }); }; img.src = url; }));
     h3("Physics");
     btns([["Explode", () => sw.explode(0, 0, 2.5)], ["Rain", () => { sw.release(); for (let i = 0; i < sw.n; i++) sw.vy[i] = -Math.random() * 0.5; }], ["Reform", () => sw.reform()], ["Dot UI", () => { ST.playing = false; ST.uiDyn = true; }]]);
     range("spring", () => scene.physics.spring, (v) => (scene.physics.spring = v), 5, 200, 1);
@@ -139,12 +139,12 @@
     h3("Color");
     el(`<label>mode<select>${Sc.COLOR_MODES.map((k) => `<option ${k === scene.colorMode ? "selected" : ""}>${k}</option>`).join("")}</select></label>`, (e) => (e.querySelector("select").onchange = (ev) => (scene.colorMode = ev.target.value)));
     btns(Object.entries(Sc.PALETTES).map(([k, p]) => [k, () => (scene.palette = p.slice())]));
-    el(`<select id="gradSel"><option>gradient from dataset…</option></select>`, (e) => { fetch("/api/gradients").then((r) => r.json()).then((d) => { e.innerHTML += d.gradients.map((g) => `<option value="${escAttr(g.stops.map((s) => s.color).join(","))}">${escAttr(g.name)}</option>`).join(""); }).catch(() => {}); e.onchange = () => { if (e.value.startsWith("#")) scene.palette = e.value.split(","); }; });
+    el(`<select id="gradSel" aria-label="Palette from gradient dataset"><option>gradient from dataset…</option></select>`, (e) => { fetch("../api/gradients").then((r) => r.json()).then((d) => { e.innerHTML += d.gradients.map((g) => `<option value="${escAttr(g.stops.map((s) => s.color).join(","))}">${escAttr(g.name)}</option>`).join(""); }).catch(() => {}); e.onchange = () => { if (e.value.startsWith("#")) scene.palette = e.value.split(","); }; });
     h3("Audio-reactive (optional)");
     btns([["Mic", () => startAudio().catch((e) => log("audio: " + e.message))]]);
-    el(`<input type=file accept="audio/*">`, (e) => (e.onchange = () => e.files[0] && (e.files[0].size > MAX_AUDIO ? Promise.reject(new Error(`file over ${MAX_AUDIO >> 20} MB`)) : startAudio(e.files[0])).catch((x) => log("audio: " + x.message))));
+    el(`<input type=file accept="audio/*" aria-label="Audio file for audio-reactive mode">`, (e) => (e.onchange = () => e.files[0] && (e.files[0].size > MAX_AUDIO ? Promise.reject(new Error(`file over ${MAX_AUDIO >> 20} MB`)) : startAudio(e.files[0])).catch((x) => log("audio: " + x.message))));
     h3("Export");
-    btns([["PNG", () => download("forkbomb-dots.png", canvasEl().toDataURL("image/png"))], ["Record WebM", (ev) => record(ev.target)], ["Copy embed", () => copy(Sc.snippet(scene, location.origin + "/dots/forkbomb-dots.js"))]]);
+    btns([["PNG", () => download("forkbomb-dots.png", canvasEl().toDataURL("image/png"))], ["Record WebM", (ev) => record(ev.target)], ["Copy embed", () => copy(Sc.snippet(scene, new URL("forkbomb-dots.js", location.href).href))]]);
     btns([["Save JSON", () => download("dots-scene.json", "data:application/json," + encodeURIComponent(Sc.toJSON(scene)))], ["Share link", () => { location.hash = Sc.toHash(scene); copy(location.href); }]]);
     el(`<label>Load JSON<input type=file accept="application/json,.json"></label>`, (e) => (e.querySelector("input").onchange = async (ev) => { const f = ev.target.files[0]; if (!f) return; if (f.size > Sc.MAX_JSON) return log(`scene rejected: over ${Sc.MAX_JSON >> 10} KB`); try { load(Sc.fromJSON(await f.text())); } catch (x) { log("scene rejected: " + x.message); } }));
   }
@@ -162,13 +162,14 @@
   function renderSteps() {
     stepsEl.innerHTML = "";
     scene.timeline.forEach((s, i) => {
-      const d = document.createElement("div"); d.className = "step" + (i === ST.idx ? " on" : "");
+      const d = document.createElement("div"); d.className = "step" + (i === ST.idx ? " on" : ""); d.setAttribute("role", "listitem"); d.setAttribute("aria-label", `Step ${i + 1}`);
       const valueInput = s.kind === "shape" ? `<select data-k="value">${Sh.NAMES.map((n) => `<option ${n === s.value ? "selected" : ""}>${n}</option>`).join("")}</select>` : `<input data-k="value" value="${escAttr(String(s.value).slice(0, 200))}">`;
       d.innerHTML = `<b>#${i + 1}</b><select data-k="kind">${Sc.STEP_KINDS.map((k) => `<option ${k === s.kind ? "selected" : ""}>${k}</option>`).join("")}</select>${valueInput}
         <select data-k="ease">${Object.keys(M.EASE).map((k) => `<option ${k === s.ease ? "selected" : ""}>${k}</option>`).join("")}</select>
         <label>dur<input data-k="duration" type=number step=0.1 value=${s.duration}></label><label>hold<input data-k="hold" type=number step=0.1 value=${s.hold}></label>
         <label>stag<input data-k="stagger" type=number step=0.05 min=0 max=0.95 value=${s.stagger}></label><select data-k="order">${["radial", "angle", "x", "y", "index", "random"].map((k) => `<option ${k === s.order ? "selected" : ""}>${k}</option>`).join("")}</select>
-        <span class="row"><button data-a="go">▸</button><button data-a="up">←</button><button data-a="down">→</button><button data-a="del">✕</button></span>`;
+        <span class="row"><button data-a="go" aria-label="Go to step ${i + 1}">▸</button><button data-a="up" aria-label="Move step ${i + 1} earlier">←</button><button data-a="down" aria-label="Move step ${i + 1} later">→</button><button data-a="del" aria-label="Delete step ${i + 1}">✕</button></span>`;
+      d.querySelectorAll("[data-k]").forEach((inp) => { if (!inp.closest("label")) inp.setAttribute("aria-label", `Step ${i + 1} ${inp.dataset.k}`); });
       d.querySelectorAll("[data-k]").forEach((inp) => (inp.onchange = () => { const k = inp.dataset.k; s[k] = inp.type === "number" ? +inp.value : inp.value; if (k === "kind") s.value = s.kind === "shape" ? "disc" : s.kind === "text" ? "HELLO" : s.value; scene = Sc.normalizeScene(scene); renderSteps(); goStep(i); }));
       d.querySelectorAll("[data-a]").forEach((b) => (b.onclick = () => { const a = b.dataset.a, tl = scene.timeline;
         if (a === "go") { ST.playing = false; ST.t = tl.slice(0, i).reduce((x, y) => x + y.duration + y.hold, 0); goStep(i); }
@@ -190,14 +191,29 @@
       const f = document.createElement("figure"), cv = document.createElement("canvas"); cv.width = cv.height = 120; const x = cv.getContext("2d"), p = Sh.shape(name, 600);
       x.fillStyle = "#0d0d16"; x.fillRect(0, 0, 120, 120);
       for (let i = 0; i < 600; i++) { const c = pal((p[2 * i + 1] + 1) / 2); x.fillStyle = `rgb(${c.map(Math.round)})`; x.fillRect(60 + p[2 * i] * 52 - 1, 60 + p[2 * i + 1] * 52 - 1, 2, 2); }
-      f.append(cv); f.insertAdjacentHTML("beforeend", `<figcaption>${name}</figcaption>`); f.onclick = () => { setView("studio"); ST.playing = false; morphTo(Sh.shape(name, sw.n)); }; g.append(f);
+      cv.setAttribute("aria-hidden", "true"); f.append(cv); f.insertAdjacentHTML("beforeend", `<figcaption>${name}</figcaption>`); f.tabIndex = 0; f.setAttribute("role", "button"); f.setAttribute("aria-label", `Morph to ${name}`);
+      f.onclick = () => { setView("studio"); ST.playing = false; morphTo(Sh.shape(name, sw.n)); }; f.onkeydown = (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); f.onclick(); } }; g.append(f);
     }
   }
   function setView(v) {
     ST.view = v; document.querySelectorAll("#views button").forEach((b) => b.classList.toggle("on", b.dataset.view === v));
     $("#gridView").style.display = v === "grid" ? "grid" : "none"; if (v === "grid") buildGrid();
     if (v === "ui") { ST.playing = false; ST.uiDyn = true; } else if (v === "studio") ST.uiDyn = false;
+    $("#uiA11y").classList.toggle("show", v === "ui"); syncA11y();
   }
+  // DOM equivalents of the canvas-drawn Dot UI widgets: same state, keyboard + screen-reader operable, changes announced.
+  function syncA11y(announce) {
+    $("#a-btn").setAttribute("aria-pressed", String(uiState.pressed)); $("#a-btn").textContent = uiState.pressed ? "Done ✓" : "Make something";
+    $("#a-slider").value = Math.round(uiState.slider * 100); $("#a-toggle").checked = uiState.toggle; $("#a-check").checked = uiState.check;
+    $("#a-drop").selectedIndex = uiState.dropdown; $("#a-prog").value = Math.round(uiState.progress * 100);
+    if (announce) $("#a-live").textContent = announce;
+  }
+  $("#a-btn").onclick = () => { uiState.pressed = !uiState.pressed; if (uiState.pressed) sw.explode(-0.45, -0.7, 0.6); syncA11y(uiState.pressed ? "button pressed" : "button released"); };
+  $("#a-slider").oninput = (e) => { uiState.slider = e.target.value / 100; syncA11y(`slider ${e.target.value}%`); };
+  $("#a-toggle").onchange = (e) => { uiState.toggle = e.target.checked; syncA11y(`toggle ${uiState.toggle ? "on" : "off"}`); };
+  $("#a-check").onchange = (e) => { uiState.check = e.target.checked; syncA11y(`checkbox ${uiState.check ? "checked" : "unchecked"}`); };
+  $("#a-drop").onchange = (e) => { uiState.dropdown = e.target.selectedIndex; syncA11y(`dropdown ${DROP[uiState.dropdown]}`); };
+  $("#a-prog").oninput = (e) => { uiState.progress = e.target.value / 100; syncA11y(`progress ${e.target.value}%`); };
   document.querySelectorAll("#views button").forEach((b) => (b.onclick = () => setView(b.dataset.view)));
 
   // ---------- boot ----------
