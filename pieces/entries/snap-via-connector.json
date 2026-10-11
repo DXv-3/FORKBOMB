@@ -1,0 +1,31 @@
+{
+  "id": "snap-via-connector",
+  "name": "Snap via connector",
+  "category": "infra",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/DXv-3/FORKBOMB",
+    "path": "toolkit/process/playbooks/3-snap.md"
+  },
+  "seams": {
+    "inputs": [
+      "piece-ids",
+      "connector-id"
+    ],
+    "outputs": [
+      "composed-build",
+      "pack.json"
+    ],
+    "events": [
+      "stage.snap.done",
+      "pack.updated"
+    ]
+  },
+  "summary": "Compose pieces through a named connector (http-json, cli-stdin, gh-action, event-bus, process-stage) instead of one-off glue.",
+  "snap": "Pick the connector whose seams match, wire pieces, and record the composition in packs/<name>/pack.json.",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}

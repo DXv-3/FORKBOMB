@@ -1,0 +1,31 @@
+{
+  "id": "ship-edge",
+  "name": "Ship edge",
+  "category": "ci",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/DXv-3/FORKBOMB",
+    "path": "toolkit/process/playbooks/4-ship.md"
+  },
+  "seams": {
+    "inputs": [
+      "composed-build",
+      "pack.json"
+    ],
+    "outputs": [
+      "release",
+      "hosted-endpoint"
+    ],
+    "events": [
+      "stage.ship.done",
+      "release.published"
+    ]
+  },
+  "summary": "Publish the composed edge: tag a release, host a runtime, or publish a pack.",
+  "snap": "Merge to main with green process-cycle checks, tag a release, and link it from the pack.",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}

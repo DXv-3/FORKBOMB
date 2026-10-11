@@ -1,0 +1,30 @@
+{
+  "id": "tag-piece",
+  "name": "Tag piece",
+  "category": "data",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/DXv-3/FORKBOMB",
+    "path": "toolkit/process/playbooks/2-tag.md"
+  },
+  "seams": {
+    "inputs": [
+      "candidate-list"
+    ],
+    "outputs": [
+      "pieces/entries/<id>.json",
+      "catalog-row"
+    ],
+    "events": [
+      "stage.tag.done",
+      "piece.added"
+    ]
+  },
+  "summary": "Turn a candidate into a schema-valid catalog entry with license, provenance, seams, and snap notes.",
+  "snap": "Write pieces/entries/<id>.json, add a CATALOG.md row, run node toolkit/process/cycle.js validate.",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}

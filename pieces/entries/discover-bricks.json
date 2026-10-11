@@ -1,0 +1,29 @@
+{
+  "id": "discover-bricks",
+  "name": "Discover bricks",
+  "category": "agent",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/DXv-3/FORKBOMB",
+    "path": "toolkit/process/playbooks/1-discover.md"
+  },
+  "seams": {
+    "inputs": [
+      "wanted-board",
+      "search-queries"
+    ],
+    "outputs": [
+      "candidate-list"
+    ],
+    "events": [
+      "stage.discover.done"
+    ]
+  },
+  "summary": "Harvest candidate bricks from GitHub using code search, topics, and the wanted-bricks board.",
+  "snap": "Run the discover playbook; emit a candidate list on the process-stage connector.",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}
