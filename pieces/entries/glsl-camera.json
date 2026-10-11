@@ -1,0 +1,11 @@
+{
+  "id": "glsl-camera",
+  "name": "Camera helpers (GLSL)",
+  "category": "ui",
+  "license": "MIT",
+  "source": { "url": "https://github.com/DXv-3/FORKBOMB", "path": "apps/shaders/lib/camera.glsl" },
+  "seams": { "inputs": ["fragCoord", "ray origin", "target", "iMouse"], "outputs": ["screen uv", "view basis", "ray dir", "orbit position"], "events": [] },
+  "summary": "screenUV(), lookAt() with roll, camRay(), mouse-aware orbitCam() for raymarched scenes.",
+  "snap": "#include \"camera.glsl\" then rd = camRay(orbitCam(r, h, speed), target, screenUV(fragCoord), fov).",
+  "trust": { "tests": true, "maintained": true, "security_reviewed": false }
+}

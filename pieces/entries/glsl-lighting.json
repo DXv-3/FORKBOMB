@@ -1,0 +1,11 @@
+{
+  "id": "glsl-lighting",
+  "name": "PBR-ish lighting + environment (GLSL)",
+  "category": "ui",
+  "license": "MIT",
+  "source": { "url": "https://github.com/DXv-3/FORKBOMB", "path": "apps/shaders/lib/lighting.glsl" },
+  "seams": { "inputs": ["normal", "view dir", "light dir", "film thickness"], "outputs": ["fresnel", "specular", "env radiance", "iridescence rgb"], "events": [] },
+  "summary": "fresnelSchlick(), specBlinn(), envSky()/envStudio() procedural environments, thinFilm() interference.",
+  "snap": "#include \"lighting.glsl\" and use envStudio(reflect(rd, n)) * fresnelSchlick(dot(n, -rd), f0).",
+  "trust": { "tests": true, "maintained": true, "security_reviewed": false }
+}
