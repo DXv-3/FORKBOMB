@@ -1,0 +1,20 @@
+# Render blueprint (not deployed by this repo). New > Blueprint, point at this repo.
+services:
+  - type: web
+    name: forkbomb
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: starter            # persistent disks need a paid plan
+    healthCheckPath: /readyz
+    numInstances: 1          # paste data lives on one disk
+    envVars:
+      - key: LOG_LEVEL
+        value: info
+      - key: TRUST_PROXY
+        value: "1"
+      - key: DATA_DIR
+        value: /data
+    disk:
+      name: forkbomb-data
+      mountPath: /data
+      sizeGB: 1

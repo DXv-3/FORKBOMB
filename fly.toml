@@ -1,0 +1,32 @@
+# Fly.io config (not deployed by this repo). First run: fly launch --no-deploy --copy-config; fly volumes create forkbomb_data --size 1; fly deploy
+app = "forkbomb"
+primary_region = "iad"
+kill_signal = "SIGTERM"
+kill_timeout = 15
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  PORT = "8080"
+  LOG_LEVEL = "info"
+  TRUST_PROXY = "1"          # Fly's edge proxy sets X-Forwarded-For / X-Forwarded-Proto
+  DATA_DIR = "/data"
+
+[[mounts]]
+  source = "forkbomb_data"
+  destination = "/data"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 1   # paste data lives on one volume: run exactly one machine
+
+  [[http_service.checks]]
+    grace_period = "5s"
+    interval = "15s"
+    method = "GET"
+    path = "/readyz"
+    timeout = "3s"
