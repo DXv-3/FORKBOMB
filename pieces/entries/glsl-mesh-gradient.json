@@ -1,0 +1,28 @@
+{
+  "id": "glsl-mesh-gradient",
+  "name": "Mesh gradient, aurora, grain (GLSL)",
+  "category": "ui",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/DXv-3/FORKBOMB",
+    "path": "apps/shaders/lib/mesh.glsl"
+  },
+  "seams": {
+    "inputs": [
+      "uv",
+      "time",
+      "4 colours"
+    ],
+    "outputs": [
+      "vec3 colour"
+    ],
+    "events": []
+  },
+  "summary": "Original: animated 4-point IDW mesh gradient in OKLab over a warped domain, layered aurora curtains, film grain.",
+  "snap": "#include \"mesh.glsl\"",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}

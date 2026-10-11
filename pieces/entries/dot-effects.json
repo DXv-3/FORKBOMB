@@ -1,0 +1,28 @@
+{
+  "id": "dot-effects",
+  "name": "Dot grid / halftone / particle morph (canvas)",
+  "category": "ui",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/DXv-3/FORKBOMB",
+    "path": "apps/gradients/public/core.js"
+  },
+  "seams": {
+    "inputs": [
+      "gradient stops",
+      "pointer"
+    ],
+    "outputs": [
+      "canvas frames",
+      "dot-grid CSS"
+    ],
+    "events": []
+  },
+  "summary": "Clean-room dot effects inspired by dotsui.dev's look (no dotsui code or assets): wave dot grid with pointer ripple, gradient halftone, particles morphing between parametric shapes.",
+  "snap": "GradCore.halftoneRadius / shapePoints / dotGridCss; see apps/gradients/public/app.js drawDots",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "gradients-app",
+  "name": "FORKBOMB Gradients gallery",
+  "category": "ui",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/DXv-3/FORKBOMB",
+    "path": "apps/gradients/server.js"
+  },
+  "seams": {
+    "inputs": [
+      "HTTP GET"
+    ],
+    "outputs": [
+      "gallery HTML",
+      "/api/gradients JSON",
+      "/api/glsl JSON"
+    ],
+    "events": []
+  },
+  "summary": "Zero-dep Node server + gallery: 556 MIT gradients as CSS linear/radial/conic, WebGL2 mesh + aurora, grain overlay, dot effects; live controls, Copy CSS/GLSL, PNG export.",
+  "snap": "node apps/gradients/server.js  # http://localhost:3002",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}
