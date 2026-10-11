@@ -1,0 +1,7 @@
+.git
+.github
+**/node_modules
+apps/paste/data
+/data
+.forkbomb
+*.log

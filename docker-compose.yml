@@ -1,0 +1,25 @@
+# docker compose up -d   ->  http://localhost:8080
+services:
+  forkbomb:
+    build: .
+    image: forkbomb:1.0.0
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: "8080"
+      LOG_LEVEL: info
+      MAX_BYTES: "524288"
+      TRUST_PROXY: "0"        # set to 1 only behind a reverse proxy you control (enables X-Forwarded-For/Proto + auto HSTS)
+      FSYNC: "1"
+    volumes:
+      - forkbomb-data:/data
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    stop_grace_period: 15s
+volumes:
+  forkbomb-data:
