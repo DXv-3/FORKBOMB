@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FORKBOMB Dots Studio — original particle shapes, UI and sequences</title><link rel="stylesheet" href="/dots/studio.css"></head>
+<body>
+<header><a href="/?tab=dots" class="back">← Gradients</a><h1>FORKBOMB <b>Dots Studio</b></h1>
+<nav id="views"><button data-view="studio" class="on">Studio</button><button data-view="grid">Shape grid</button><button data-view="ui">Dot UI</button></nav>
+<span id="fps"></span></header>
+<main>
+  <aside id="panel"></aside>
+  <section id="stage"><canvas id="c2d"></canvas><canvas id="cgl"></canvas><div id="gridView"></div><div id="uiLabels"></div></section>
+</main>
+<section id="timeline"><div class="tlbar"><button id="play">▶ Play</button><input id="scrub" type="range" min="0" max="1000" value="0"><span id="tltime">0.0s</span><button id="addStep">+ step</button></div><div id="steps"></div></section>
+<footer>Original MIT code (standard math: parametric/polar curves, superformula, SDF fills, pixel-mask sampling). Feature set catalogued from public <a href="https://dotsui.dev">dotsui.dev</a> pages; no dots-swarm Pro code, artwork, shape data or Studio code used. <a href="/dots/example.html">Embed example</a></footer>
+<pre id="out"></pre>
+<script src="/dots/shapes.js"></script><script src="/dots/morph.js"></script><script src="/dots/physics.js"></script><script src="/dots/scene.js"></script><script src="/dots/ui.js"></script><script src="/dots/render.js"></script><script src="/dots/studio.js"></script>
+</body></html>
