@@ -1,13 +1,14 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>FORKBOMB Shaders</title><link rel="stylesheet" href="/style.css"></head>
+<title>FORKBOMB Shaders — WebGL2 live-coding playground</title>
+<meta name="description" content="Live-code WebGL2 fragment shaders with a composable GLSL library. Zero dependencies."><meta name="theme-color" content="#07070c"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"></head>
 <body>
-<header><b>FORKBOMB</b> Shaders <span id="fps"></span>
+<header><h1 class="brand"><b>FORKBOMB</b> Shaders</h1> <span id="fps" aria-hidden="true"></span>
   <nav><button id="run" title="Ctrl/Cmd+Enter">Run ▶</button><button id="pause">Pause</button><button id="shot">PNG</button><button id="share">Share</button><button id="full">Fullscreen</button></nav></header>
 <main>
-  <section id="left"><div id="gallery"></div><textarea id="src" spellcheck="false" wrap="off"></textarea><pre id="log"></pre>
+  <section id="left"><div id="gallery" role="group" aria-label="Preset shaders"></div><label for="src" class="sr">Shader source (GLSL fragment shader)</label><textarea id="src" spellcheck="false" wrap="off"></textarea><pre id="log" role="status" aria-live="polite"></pre>
     <details><summary>Library (<code>#include "name.glsl"</code>)</summary><ul id="libs"></ul></details></section>
-  <section id="stage"><canvas id="gl"></canvas></section>
+  <section id="stage"><canvas id="gl" role="img" aria-label="Live shader output"></canvas></section>
 </main>
-<script src="/include.js"></script><script src="/app.js"></script>
+<script defer src="include.js"></script><script defer src="app.js"></script>
 </body></html>

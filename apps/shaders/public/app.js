@@ -5,7 +5,7 @@
   const canvas = $("gl"), src = $("src"), log = $("log");
   const gl = canvas.getContext("webgl2", { preserveDrawingBuffer: true });
   if (!gl) { log.textContent = "WebGL2 is not available in this browser."; return; }
-  const { lib, presets } = await (await fetch("/api/library")).json();
+  const { lib, presets } = await (await fetch("api/library")).json();
   const VS = "#version 300 es\nin vec2 p;void main(){gl_Position=vec4(p,0.,1.);}";
   const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf);
   gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
@@ -66,7 +66,7 @@
     run();
   }
   for (const p of presets) { const b = document.createElement("button"); b.textContent = p.id; b.title = p.title; b.dataset.id = p.id; b.onclick = () => { history.replaceState(null, "", "#p=" + p.id); load(p.id); }; $("gallery").append(b); }
-  for (const name of Object.keys(lib)) if (name.endsWith(".glsl")) { const li = document.createElement("li"); li.innerHTML = `<a href="/lib/${name}" target="_blank">${name}</a>`; $("libs").append(li); }
+  for (const name of Object.keys(lib)) if (name.endsWith(".glsl")) { const li = document.createElement("li"); li.innerHTML = `<a href="lib/${name}" target="_blank">${name}</a>`; $("libs").append(li); }
 
   $("run").onclick = run;
   src.addEventListener("keydown", (e) => {
