@@ -22,6 +22,7 @@ FORKBOMB/
 ├── pieces/        # Catalog + schema for reusable bricks
 ├── connectors/    # Standard seams so bricks snap together
 ├── marketplace/   # How pieces, people, and value circulate
+├── packs/         # Pieces + connectors bundled for one job (incl. forkbomb-core)
 ├── toolkit/       # Curated starter bricks ready to fork
 └── docs/          # Vision and operating system for the ecosystem
 ```
@@ -34,9 +35,22 @@ FORKBOMB/
 4. **Ship value** — host it, support it, or productize the edge.
 5. **Feed the bin** — upstream fixes so the next builder gets a better brick.
 
+## FORKBOMB runs on FORKBOMB
+
+The loop above isn't advice — it ships as a product. Every step is a cataloged piece, every hand-off rides a shared connector, and the whole operating system is one pack: [`packs/forkbomb-core`](packs/forkbomb-core/pack.json).
+
+`discover-bricks → tag-piece → snap-via-connector → ship-edge → earn-loop → improve-upstream → (repeat)`, orchestrated by `run-cycle`.
+
+```bash
+node toolkit/process/cycle.js checklist
+```
+
+Read the full inverted process in [docs/PROCESS.md](docs/PROCESS.md).
+
 ## Start now
 
 - Read [docs/VISION.md](docs/VISION.md)
+- Run the loop with [docs/PROCESS.md](docs/PROCESS.md)
 - Browse [pieces/CATALOG.md](pieces/CATALOG.md)
 - Drop a brick into [toolkit/](toolkit/)
 - Shape the market in [marketplace/](marketplace/)

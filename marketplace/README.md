@@ -19,9 +19,11 @@ Pieces alone do not make a market. Circulation does.
 
 A **pack** is a set of pieces + connectors aimed at one job (agent tooling, checkout, CI, creative pipelines). Packs are how markets form inside the larger ecosystem.
 
+The market runs on a pack too: [`forkbomb-core`](../packs/forkbomb-core/pack.json) is FORKBOMB's own operating loop — discover, tag, snap, ship, earn, improve — shipped as pieces and connectors. Every revenue path above is the `earn-loop` piece; every feedback signal is `improve-upstream` refilling the wanted board. See [docs/PROCESS.md](../docs/PROCESS.md).
+
 ## Near-term moves
 
 - [ ] Publish the public piece index from `pieces/entries/`
-- [ ] Define pack format (`packs/<name>/pack.json`)
+- [x] Define pack format (`packs/<name>/pack.json`) — see [packs/](../packs/README.md)
 - [ ] Track provenance (source URL + commit) on every brick
 - [ ] Open a "wanted bricks" board so demand pulls supply
