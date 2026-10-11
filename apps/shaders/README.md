@@ -4,7 +4,7 @@ A WebGL2 shader playground plus a composable GLSL library, snapped together from
 
 ```bash
 node apps/shaders/server.js          # http://localhost:3001  (PORT=... to change)
-cd apps/shaders && node --test test/ # tests
+cd apps/shaders && npm test           # tests
 ```
 
 ## Playground

@@ -80,7 +80,7 @@
   $("full").onclick = () => $("stage").requestFullscreen && $("stage").requestFullscreen();
 
   const h = new URLSearchParams(location.hash.slice(1));
-  if (h.get("s")) { try { src.value = dec(h.get("s")); run(); } catch { load(); } } else load(h.get("p"));
+  if (h.get("s")) { try { if (h.get("s").length > 200000) throw new Error("share link too large"); src.value = dec(h.get("s")); run(); } catch { load(); } } else load(h.get("p"));
   window.__forkbombShaders = { run, load, presets };
   requestAnimationFrame(frame);
 })();

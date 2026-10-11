@@ -4,6 +4,6 @@
   "description": "FORKBOMB gradients: CSS/WebGL gradient gallery (556 MIT gradients, mesh, aurora, grain, dot-grid/halftone) with live controls, copy CSS/GLSL, PNG export.",
   "license": "MIT",
   "main": "server.js",
-  "scripts": { "start": "node server.js", "test": "node --test test/" },
+  "scripts": { "start": "node server.js", "test": "node --test test/*.test.js" },
   "engines": { "node": ">=18" }
 }
