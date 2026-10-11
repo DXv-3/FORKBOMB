@@ -1,0 +1,28 @@
+name: process-cycle
+
+on:
+  push:
+    paths:
+      - "pieces/**"
+      - "packs/**"
+      - "connectors/**"
+      - "toolkit/process/**"
+  pull_request:
+    paths:
+      - "pieces/**"
+      - "packs/**"
+      - "connectors/**"
+      - "toolkit/process/**"
+
+jobs:
+  cycle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate the system on itself
+        run: node toolkit/process/cycle.js validate
+      - name: Print the cycle checklist
+        run: node toolkit/process/cycle.js checklist >> "$GITHUB_STEP_SUMMARY"
