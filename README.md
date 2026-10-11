@@ -59,6 +59,16 @@ node apps/paste/server.js   # http://localhost:3000
 
 See [apps/paste](apps/paste/README.md) for the API and the full parts/provenance table.
 
+## Second product: FORKBOMB Shaders
+
+"Now build me shaders" — done, and it glows. The scanner pulled permissive GLSL bricks (Ashima/stegu simplex noise, Hoskins' hash-without-sine, SDF primitives, cosine palettes), FORKBOMB snapped them into an `#include`-able library and a WebGL2 live-coding playground with 7 demo shaders. Ships as pack [`packs/shaders`](packs/shaders/pack.json).
+
+```bash
+node apps/shaders/server.js   # http://localhost:3001
+```
+
+See [apps/shaders](apps/shaders/README.md) for the library, presets and the provenance/license table.
+
 ## Start now
 
 - Read [docs/VISION.md](docs/VISION.md)
