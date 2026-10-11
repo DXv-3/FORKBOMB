@@ -1,0 +1,26 @@
+{
+  "id": "webgradients-data",
+  "name": "WebGradients colour stops",
+  "category": "ui",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/itmeo/webgradients",
+    "commit": "0157829a0069756083abd3bfa81bef7117e14dfd"
+  },
+  "seams": {
+    "inputs": [
+      "gradients.json"
+    ],
+    "outputs": [
+      "{name, angle, stops[]}"
+    ],
+    "events": []
+  },
+  "summary": "174 angled multi-stop gradients (MIT, itmeo), normalised into apps/gradients/data/gradients.json; rgba/non-hex entries dropped.",
+  "snap": "GET /api/gradients or require apps/gradients/data/gradients.json",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}

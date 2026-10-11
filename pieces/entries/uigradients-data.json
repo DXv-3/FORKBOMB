@@ -1,0 +1,26 @@
+{
+  "id": "uigradients-data",
+  "name": "uiGradients colour stops",
+  "category": "ui",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/ghosh/uiGradients",
+    "commit": "afb018418e92c3fa4048daa88eb6525a78f5486e"
+  },
+  "seams": {
+    "inputs": [
+      "gradients.json"
+    ],
+    "outputs": [
+      "{name, stops[]}"
+    ],
+    "events": []
+  },
+  "summary": "382 named gradients (MIT, Indrashish Ghosh), normalised into apps/gradients/data/gradients.json with provenance.",
+  "snap": "GET /api/gradients or require apps/gradients/data/gradients.json",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "glsl-gradient",
+  "name": "Gradient helpers: OKLab ramps, linear/radial/conic, dither (GLSL)",
+  "category": "ui",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/DXv-3/FORKBOMB",
+    "path": "apps/shaders/lib/gradient.glsl"
+  },
+  "seams": {
+    "inputs": [
+      "t",
+      "uv",
+      "sRGB colours"
+    ],
+    "outputs": [
+      "vec3 colour"
+    ],
+    "events": []
+  },
+  "summary": "Original: sRGB<->OKLab, perceptual mix, 2-6 stop ramps, linear/radial/conic parameters, hexColor(int), anti-banding dither.",
+  "snap": "#include \"gradient.glsl\"",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}
