@@ -37,6 +37,8 @@ jobs:
       - name: gradients tests
         run: npm test
         working-directory: apps/gradients
+      - name: unified server (apps/forkbomb) tests
+        run: node --test apps/forkbomb/test/*.test.js
       - name: scanner tests
         run: node toolkit/scanner/test.js
       - name: cycle.js tests + self-validation

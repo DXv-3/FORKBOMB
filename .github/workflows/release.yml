@@ -1,0 +1,60 @@
+name: release
+
+# Run manually with a version (must equal package.json "version") to tag the current main commit,
+# or push a vX.Y.Z tag yourself. Builds artifacts and attaches them to a DRAFT GitHub release.
+# Nothing is pushed to any container or package registry.
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to tag, e.g. 1.0.0"
+        required: true
+  push:
+    tags: ["v*.*.*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+      - name: Resolve version
+        id: v
+        run: |
+          pkg=$(node -p 'require("./package.json").version')
+          v="${{ github.event.inputs.version }}"; [ -z "$v" ] && v="${GITHUB_REF_NAME#v}"
+          [ "$v" = "$pkg" ] || { echo "version $v != package.json $pkg"; exit 1; }
+          grep -q "## \[$v\]" CHANGELOG.md || { echo "CHANGELOG.md has no [$v] section"; exit 1; }
+          echo "version=$v" >> "$GITHUB_OUTPUT"
+      - name: Test
+        run: npm test
+      - name: Tag (manual runs only)
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git tag -a "v${{ steps.v.outputs.version }}" -m "FORKBOMB v${{ steps.v.outputs.version }}"
+          git push origin "v${{ steps.v.outputs.version }}"
+      - name: Build artifacts (source tarball + docker image tarball + checksums)
+        run: |
+          v=${{ steps.v.outputs.version }}; mkdir -p dist
+          git archive --format=tar.gz --prefix="forkbomb-$v/" -o "dist/forkbomb-$v.tar.gz" HEAD
+          docker build -t "forkbomb:$v" .
+          docker save "forkbomb:$v" | gzip > "dist/forkbomb-$v-docker-image.tar.gz"
+          (cd dist && sha256sum * > SHA256SUMS)
+      - uses: actions/upload-artifact@v7
+        with:
+          name: forkbomb-${{ steps.v.outputs.version }}
+          path: dist/
+      - name: Draft GitHub release with artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          v=${{ steps.v.outputs.version }}
+          gh release view "v$v" >/dev/null 2>&1 || gh release create "v$v" --draft --title "FORKBOMB v$v" --notes "See CHANGELOG.md" dist/*

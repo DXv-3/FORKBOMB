@@ -1,0 +1,66 @@
+name: production
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+      - name: Install browser test tools (CI only; the app itself has zero dependencies)
+        run: npm install --no-save --no-package-lock puppeteer-core@24 axe-core@4
+      - name: Start the unified server
+        run: |
+          mkdir -p "$RUNNER_TEMP/data"
+          PORT=8080 TRUST_PROXY=1 DATA_DIR="$RUNNER_TEMP/data" node apps/forkbomb/server.js > "$RUNNER_TEMP/server.log" 2>&1 &
+          for i in $(seq 1 50); do curl -fsS http://localhost:8080/readyz && break; sleep 0.2; done
+      - name: curl smoke + attack suite
+        run: BASE_URL=http://localhost:8080 bash scripts/smoke.sh
+      - name: Browser e2e (CSP, console, axe-core a11y, perf, screenshots)
+        run: |
+          mkdir -p "$RUNNER_TEMP/shots"
+          CHROME_PATH="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium)" \
+          BASE_URL=http://localhost:8080 SCREENSHOT_DIR="$RUNNER_TEMP/shots" REPORT="$RUNNER_TEMP/shots/e2e-report.json" node scripts/e2e.js
+      - name: Logs are valid JSON lines
+        if: always()
+        run: node -e 'require("fs").readFileSync(process.argv[1],"utf8").trim().split("\n").forEach((l)=>JSON.parse(l))' "$RUNNER_TEMP/server.log"
+      - name: Graceful shutdown drains and exits 0
+        run: |
+          pid=$(pgrep -f "node apps/forkbomb/server.js" | head -1); kill -TERM "$pid"
+          for i in $(seq 1 50); do kill -0 "$pid" 2>/dev/null || break; sleep 0.2; done
+          ! kill -0 "$pid" 2>/dev/null
+          grep -q '"msg":"stopped"' "$RUNNER_TEMP/server.log"
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: e2e-report
+          path: |
+            ${{ runner.temp }}/shots
+            ${{ runner.temp }}/server.log
+
+  docker:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - name: Build image (tests run inside the build stage)
+        run: docker build -t forkbomb:ci .
+      - name: Run container, wait for HEALTHCHECK, smoke test
+        run: |
+          docker run -d --name fb --read-only --tmpfs /tmp --cap-drop ALL --security-opt no-new-privileges -p 8080:8080 -e TRUST_PROXY=1 -v fbdata:/data forkbomb:ci
+          for i in $(seq 1 30); do s=$(docker inspect -f '{{.State.Health.Status}}' fb); [ "$s" = healthy ] && break; sleep 2; done
+          docker inspect -f '{{.State.Health.Status}} user={{.Config.User}}' fb
+          [ "$(docker inspect -f '{{.State.Health.Status}}' fb)" = healthy ]
+          [ "$(docker exec fb id -u)" != 0 ]
+          BASE_URL=http://localhost:8080 bash scripts/smoke.sh
+          docker stop fb && [ "$(docker inspect -f '{{.State.ExitCode}}' fb)" = 0 ]
+          docker image ls forkbomb:ci
