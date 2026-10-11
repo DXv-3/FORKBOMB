@@ -26,7 +26,7 @@
   const localT = (t, order, stagger) => clamp01((t - order * stagger) / Math.max(1e-6, 1 - stagger));
   // out = lerp(a, b, ease(localT)) per particle
   function interpolate(a, b, t, out, opt = {}) {
-    const n = a.length / 2, e = EASE[opt.ease] || EASE.inOutCubic, st = opt.stagger || 0, ord = opt.order;
+    const n = a.length / 2, e = (Object.prototype.hasOwnProperty.call(EASE, opt.ease) && EASE[opt.ease]) || EASE.inOutCubic, st = opt.stagger || 0, ord = opt.order;
     out = out || new Float32Array(a.length);
     for (let i = 0; i < n; i++) { const k = e(st && ord ? localT(t, ord[i], st) : clamp01(t)); out[2 * i] = a[2 * i] + (b[2 * i] - a[2 * i]) * k; out[2 * i + 1] = a[2 * i + 1] + (b[2 * i + 1] - a[2 * i + 1]) * k; }
     return out;

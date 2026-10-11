@@ -36,7 +36,7 @@
     blob: function (n) { return curve(polar(function (a) { return 1 + 0.18 * sin(3 * a) + 0.1 * cos(5 * a + 1); }), n); }
   };
   var EASE = { linear: function (t) { return t; }, inOutCubic: function (t) { return t < 0.5 ? 4 * t * t * t : 1 - pow(-2 * t + 2, 3) / 2; }, outExpo: function (t) { return t >= 1 ? 1 : 1 - pow(2, -10 * t); }, outBack: function (t) { return 1 + 2.70158 * pow(t - 1, 3) + 1.70158 * pow(t - 1, 2); } };
-  function points(name, n) { return (SH[name] || SH.disc)(n); }
+  function points(name, n) { return (Object.prototype.hasOwnProperty.call(SH, name) ? SH[name] : SH.disc)(Math.max(1, Math.min(20000, n | 0))); }
   function textPoints(str, n) {
     if (typeof document === "undefined") return points("disc", n);
     var c = document.createElement("canvas"), x = c.getContext("2d"), f = "900 140px system-ui,sans-serif"; x.font = f; c.width = Math.ceil(x.measureText(str).width) + 20; c.height = 170; x.font = f; x.textBaseline = "top"; x.fillText(str, 10, 10);
@@ -49,7 +49,7 @@
     var X = new Float32Array(n), Y = new Float32Array(n), VX = new Float32Array(n), VY = new Float32Array(n), TX = new Float32Array(n), TY = new Float32Array(n), FX = new Float32Array(n), FY = new Float32Array(n), DX = new Float32Array(n), DY = new Float32Array(n), ORD = new Float32Array(n);
     for (var i = 0; i < n; i++) { X[i] = Math.random() * 2 - 1; Y[i] = Math.random() * 2 - 1; ORD[i] = Math.random(); }
     var cols = (opts.colors || ["#22d3ee", "#f472b6"]).map(hex), mor = null, ptr = null, raf = 0, last = 0, seq = null, alive = true;
-    function setT(p, o) { o = o || {}; for (var i = 0; i < n; i++) { FX[i] = TX[i]; FY[i] = TY[i]; DX[i] = p[2 * i]; DY[i] = p[2 * i + 1]; } mor = { t0: performance.now(), d: (o.duration || 1.4) * 1000, e: EASE[o.ease] || EASE.inOutCubic, s: o.stagger == null ? 0.3 : o.stagger }; }
+    function setT(p, o) { o = o || {}; for (var i = 0; i < n; i++) { FX[i] = TX[i]; FY[i] = TY[i]; DX[i] = p[2 * i]; DY[i] = p[2 * i + 1]; } mor = { t0: performance.now(), d: (o.duration || 1.4) * 1000, e: (Object.prototype.hasOwnProperty.call(EASE, o.ease) && EASE[o.ease]) || EASE.inOutCubic, s: o.stagger == null ? 0.3 : o.stagger }; }
     function resolve(s) { return typeof s === "string" ? points(s, n) : s && s.text != null ? textPoints(String(s.text), n) : s && s.shape ? points(s.shape, n) : s; }
     if (opts.interactive !== false) { cv.addEventListener("pointermove", function (e) { var r = cv.getBoundingClientRect(), sc = Math.min(r.width, r.height) * 0.45; ptr = [(e.clientX - r.left - r.width / 2) / sc, (e.clientY - r.top - r.height / 2) / sc]; }); cv.addEventListener("pointerleave", function () { ptr = null; }); }
     function tick(now) {

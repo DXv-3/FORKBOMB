@@ -133,7 +133,7 @@
   add("dna", "icon", (n) => multi([0, Math.PI].map((ph) => (t) => [0.5 * sin(t * TAU * 2 + ph), t * 2 - 1]).concat([0, 1, 2, 3, 4, 5, 6, 7].map((k) => (t) => { const y = (k + 0.5) / 8, a = y * TAU * 2; return [0.5 * sin(a) * (1 - 2 * t), y * 2 - 1]; })), n));
 
   const NAMES = Object.keys(S);
-  function shape(name, n) { const s = S[name] || S.disc; return s.fn(Math.max(1, n | 0)); }
+  function shape(name, n) { const s = Object.prototype.hasOwnProperty.call(S, name) ? S[name] : S.disc; return s.fn(Math.max(1, Math.min(20000, n | 0))); }
   const categories = () => { const c = {}; for (const k of NAMES) (c[S[k].cat] = c[S[k].cat] || []).push(k); return c; };
 
   // ---- pixel-mask sampling (pure; used for text, SVG, images). mask: Uint8 alpha-ish values w*h.
@@ -153,9 +153,20 @@
     const c = makeCanvas(w, h), x = c.getContext("2d"); x.font = font; x.textBaseline = "top"; x.fillStyle = "#000"; lines.forEach((l, i) => x.fillText(l, 10, 10 + i * lh));
     return maskPoints(alphaOf(x, w, h), w, h, n).points;
   }
+  // SVG input is treated as untrusted text: it is never parsed as markup or inserted into the DOM. We only extract
+  // path data (d="...") and the viewBox numbers, and drop anything that is not pure path grammar.
+  const SVG_MAX = 20000, PATH_RE = /^[MmZzLlHhVvCcSsQqTtAa0-9eE.,+\-\s]*$/;
+  function svgPathData(svgOrPath) {
+    const t = String(svgOrPath == null ? "" : svgOrPath).slice(0, SVG_MAX);
+    const ds = /<svg|<path/i.test(t) ? [...t.matchAll(/\sd\s*=\s*(?:"([^"]*)"|'([^']*)')/g)].map((m) => m[1] ?? m[2]) : [t];
+    const vb = /viewBox\s*=\s*["']\s*(-?[\d.]+)[\s,]+(-?[\d.]+)[\s,]+([\d.]+)[\s,]+([\d.]+)\s*["']/.exec(t);
+    let vw = vb ? Number(vb[3]) : 24, vh = vb ? Number(vb[4]) : 24;
+    if (!(vw > 0 && vw < 1e6)) vw = 24; if (!(vh > 0 && vh < 1e6)) vh = 24;
+    return { paths: ds.map((d) => d.trim()).filter((d) => d && PATH_RE.test(d)).slice(0, 64), vw, vh };
+  }
   function svgPoints(svgOrPath, n, size = 256) {
-    const ds = /<svg|<path/i.test(svgOrPath) ? [...String(svgOrPath).matchAll(/\sd\s*=\s*"([^"]+)"/g)].map((m) => m[1]) : [svgOrPath];
-    const vb = /viewBox\s*=\s*"([\d.\s-]+)"/.exec(svgOrPath); const [, , vw = 24, vh = 24] = vb ? vb[1].trim().split(/\s+/).map(Number) : [];
+    const { paths: ds, vw, vh } = svgPathData(svgOrPath);
+    if (!ds.length) return shape("disc", n);
     const c = makeCanvas(size, size), x = c.getContext("2d"), s = size / Math.max(vw, vh); x.setTransform(s, 0, 0, s, 0, 0); x.lineWidth = Math.max(vw, vh) / 40; x.fillStyle = x.strokeStyle = "#000";
     for (const d of ds) { try { const p = new Path2D(d); x.fill(p); x.stroke(p); } catch (_) {} }
     return maskPoints(alphaOf(x, size, size), size, size, n).points;
@@ -167,6 +178,6 @@
     for (let k = 0; k < n; k++) { const i = src[k]; colors[3 * k] = d[4 * i]; colors[3 * k + 1] = d[4 * i + 1]; colors[3 * k + 2] = d[4 * i + 2]; }
     return { points, colors };
   }
-  const api = { shape, NAMES, categories, normalize, curve, fill, maskPoints, textPoints, svgPoints, imagePoints, rng };
+  const api = { shape, NAMES, categories, normalize, curve, fill, maskPoints, textPoints, svgPathData, svgPoints, imagePoints, rng };
   if (typeof module === "object" && module.exports) module.exports = api; else root.DotsShapes = api;
 })(this);
