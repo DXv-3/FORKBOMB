@@ -1,0 +1,27 @@
+{
+  "id": "glsl-simplex-noise",
+  "name": "Ashima/stegu simplex noise (GLSL)",
+  "category": "ui",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/ashima/webgl-noise",
+    "path": "apps/shaders/lib/noise.glsl",
+    "commit": "6abed1e77ed1e18b181627c35f688eb30c9fe75e"
+  },
+  "seams": {
+    "inputs": [
+      "vec2|vec3 position"
+    ],
+    "outputs": [
+      "float noise in [-1,1]"
+    ],
+    "events": []
+  },
+  "summary": "Textureless 2D/3D simplex noise, vendored verbatim from webgl-noise (noise2D + noise3D). Scanner rank 61, MIT, 3k stars.",
+  "snap": "#include \"noise.glsl\" then call snoise(vec2|vec3). Upstream LICENSE shipped as apps/shaders/lib/LICENSE-webgl-noise.",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}

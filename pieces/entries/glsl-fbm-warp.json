@@ -1,0 +1,27 @@
+{
+  "id": "glsl-fbm-warp",
+  "name": "fBm + domain warp (GLSL)",
+  "category": "ui",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/DXv-3/FORKBOMB",
+    "path": "apps/shaders/lib/fbm.glsl"
+  },
+  "seams": {
+    "inputs": [
+      "vec2|vec3 position",
+      "time"
+    ],
+    "outputs": [
+      "float"
+    ],
+    "events": []
+  },
+  "summary": "Fractal Brownian motion and 3-level domain warping layered on glsl-simplex-noise.",
+  "snap": "#include \"fbm.glsl\"; fbm(p), warp(p, t, q, r).",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}
