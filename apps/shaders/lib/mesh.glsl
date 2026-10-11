@@ -1,4 +1,4 @@
-// FORKBOMB shaders lib: animated mesh gradients, aurora curtains, film grain. Original MIT code for FORKBOMB.
+// FORKBOMB shaders lib: animated mesh gradients, aurora curtains, film grain (meshGrain). Original MIT code for FORKBOMB.
 // Mesh gradient = inverse-distance-weighted blend of drifting colour points over a softly warped domain.
 #include "gradient.glsl"
 vec2 meshWarp(vec2 uv, float t, float amt) {
@@ -32,4 +32,4 @@ vec3 aurora(vec2 uv, float t, vec3 colA, vec3 colB) {
   }
   return acc;
 }
-float grain(vec2 fragCoord, float t) { return fract(sin(dot(fragCoord + fract(t) * 91.7, vec2(12.9898, 78.233))) * 43758.5453) - 0.5; }
+float meshGrain(vec2 fragCoord, float t) { return fract(sin(dot(fragCoord + fract(t) * 91.7, vec2(12.9898, 78.233))) * 43758.5453) - 0.5; }
