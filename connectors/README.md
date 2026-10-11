@@ -17,5 +17,6 @@ Connectors are the studs on the Legos. Pieces stay free to invent; seams stay bo
 | `cli-stdin` | Unix-style stdin/stdout/stderr pipes |
 | `gh-action` | GitHub Actions inputs/outputs/secrets |
 | `event-bus` | Named events with JSON payloads |
+| `process-stage` | Stage-to-stage hand-off envelopes |
 
-Add a connector by dropping a folder here with `SPEC.md` and `schema.json`.
+Add a connector by dropping a folder here with a `SPEC.md` (required — `cycle.js` fails if a pack references a connector without one) and optionally a `schema.json`.
