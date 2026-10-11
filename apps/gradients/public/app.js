@@ -136,7 +136,8 @@ function controls() {
   if (S.tab === "css") { buttons(["linear", "radial", "conic"].map((t) => [t, () => { S.type = t; render(); }])); range("angle", "angle", 0, 360, 1); }
   if (S.tab === "mesh" || S.tab === "aurora") { range("speed", "speed", 0, 3, 0.05); range(S.tab === "mesh" ? "softness" : "intensity", "soft", 1, 6, 0.1); }
   if (S.tab === "dots") { buttons(["grid", "halftone", "morph"].map((m) => [m, () => { S.dotMode = m; render(); }])); range("spacing", "gap", 6, 40, 1); range("dot size", "dot", 0.5, 6, 0.1); range("angle", "angle", 0, 360, 1); range("speed", "speed", 0, 3, 0.05);
-    const s = document.createElement("small"); s.textContent = "grid: hover to ripple · morph: click to change shape, hover to scatter"; ctl.append(s); }
+    const s = document.createElement("small"); s.textContent = "grid: hover to ripple · morph: click to change shape, hover to scatter"; ctl.append(s);
+    const a = document.createElement("a"); a.href = "/dots"; a.textContent = "Open Dots Studio → 90 shapes, text, SVG, image, dot UI, physics, timeline"; a.style.cssText = "color:#9aa0ff;display:block;margin:6px 0"; ctl.append(a); }
   range("grain", "grain", 0, 0.5, 0.01);
   const copyBtns = [["Copy CSS", () => copy(S.tab === "dots" ? C.dotGridCss({ color: S.g.stops[0].color, gap: S.gap, size: S.dot }) : `background: ${S.tab === "css" ? cssString() : C.toCss(S.g)};${S.grain ? "\n" + grainCss() : ""}`)]];
   if (S.tab === "mesh" || S.tab === "aurora") copyBtns.push(["Copy GLSL", () => copy(glslFor(S.tab))]);

@@ -31,12 +31,30 @@ API: `GET /api/gradients[?q=name]` (dataset + provenance), `GET /api/glsl` (shad
 | 174 gradients | [itmeo/webgradients](https://github.com/itmeo/webgradients) @0157829 | MIT © 2017 itmeo | data normalised (rgba/non-hex entries dropped); `data/LICENSE-webgradients` |
 | `gradient.glsl`, `mesh.glsl` | original FORKBOMB code; OKLab constants from [Björn Ottosson](https://bottosson.github.io/posts/oklab/) | MIT | fresh code |
 | Dot effects | original, clean-room; look inspired by [dotsui.dev](https://dotsui.dev) | MIT | no dotsui code, assets or shape data copied |
+| Dots Studio + `forkbomb-dots.js` | original FORKBOMB code; features catalogued from public dotsui.dev pages ([map](../../docs/dotsui-feature-map.md)) | MIT | no dots-swarm/Pro code, artwork or shape data |
 | `#include` resolver | `apps/shaders/public/include.js` | MIT | reused |
 
 ### dotsui.dev: what we did and why
 
 dotsui.dev ("Dots — shapes in motion") is a React particle library (`dots-swarm` on npm): 171 morphing particle shapes, dot-built UI primitives (button, slider, switch…), particle text, physics, plus a paid **Pro** tier ($149, private registry, Pro artwork) and Studio. The free `dots-swarm` package is MIT (© 2026 hamza-al), but its source repo isn't public, it's a React/TS runtime (this app is zero-dep vanilla), and Pro/Studio/artwork are proprietary. So we **recreated, not reused**: studied the visible behaviour only and wrote original canvas code (phyllotaxis/heart/ring/spiral/wave shapes from textbook parametric formulas, spring-to-target particles with pointer repulsion, luminance halftone).
 
+## Dots Studio (`/dots`)
+
+Open `http://localhost:3002/dots` (or the "Open Dots Studio" link in the Dots tab). Modules in `public/dots/` (UMD: `require()`-able in Node for tests, `window.Dots*` in the browser):
+
+| File | What |
+| --- | --- |
+| `shapes.js` | 90 procedural shapes (`DotsShapes.shape(name, n)` → `Float32Array`), categories; `textPoints`, `svgPoints`, `imagePoints`, pure `maskPoints` |
+| `morph.js` | 9 easings, stagger orders (radial/angle/x/y/index/random), `interpolate`, `match` (short-path assignment) |
+| `physics.js` | `Swarm` on typed arrays: spring, damping, gravity rain + floor bounce, pointer repel/attract, collisions-lite grid, explode/reform |
+| `scene.js` | scene schema + sanitising, JSON save/load, `#scene=` share links, `evalTimeline`, embed snippet |
+| `ui.js` | button, slider, toggle, checkbox, dropdown, progress, spinner, loader drawn in dots + hit-testing |
+| `render.js` | Canvas2D (colour-bucketed batches) and WebGL2 `GL_POINTS` renderers (10k dots), colour modes |
+| `studio.js/html/css` | the Studio: shape picker, text/SVG/image → dots, physics, colours (palettes + any dataset gradient), audio (mic/file), PNG / WebM / embed / JSON / share, timeline editor; views: Studio, Shape grid, Dot UI |
+| `forkbomb-dots.js` | standalone MIT zero-dep lib — API in its header; demo `example.html` (`/dots/example.html`) |
+
+URL params: `?shape=heart`, `?text=HI`, `?view=grid|ui`, `?renderer=webgl&count=10000`, `?settle` (pre-converge, for screenshots). Feature comparison with dotsui.dev free/Pro: [docs/dotsui-feature-map.md](../../docs/dotsui-feature-map.md).
+
 ### Excluded
 
-Shadertoy shaders under the default CC BY-NC-SA 3.0; GPL/AGPL/unlicensed gradient generators; dotsui Pro/Studio assets.
+Shadertoy shaders under the default CC BY-NC-SA 3.0; GPL/AGPL/unlicensed gradient generators; dotsui Pro/Studio assets, `@dots-swarm/pro` (118 shapes, avatars, multi-track/event graphs, Pro physics, Studio) — never downloaded or copied.

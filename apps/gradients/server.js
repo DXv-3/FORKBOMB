@@ -3,6 +3,7 @@
 // GET /                    gallery (public/index.html)
 // GET /api/gradients       dataset (data/gradients.json, with provenance)   ?q=name filter
 // GET /api/glsl            { lib: {name: src} } reused from apps/shaders/lib (gradient.glsl, mesh.glsl, ...)
+// GET /dots             Dots Studio (public/dots/studio.html); /dots/*.js|css|html modules + forkbomb-dots.js
 // GET /include.js          #include resolver shared with apps/shaders
 "use strict";
 const http = require("http"), fs = require("fs"), path = require("path");
@@ -30,7 +31,8 @@ function createApp() {
     let file = null;
     if (url.pathname === "/") file = path.join(ROOT, "public", "index.html");
     else if (url.pathname === "/include.js") file = path.join(SHADERS, "public", "include.js");
-    else { const m = url.pathname.match(/^\/([a-z0-9-]+\.(?:js|css|html))$/); if (m) file = path.join(ROOT, "public", m[1]); }
+    else if (url.pathname === "/dots" || url.pathname === "/dots/") file = path.join(ROOT, "public", "dots", "studio.html");
+    else { const m = url.pathname.match(/^\/((?:dots\/)?[a-z0-9-]+\.(?:js|css|html))$/); if (m) file = path.join(ROOT, "public", m[1]); }
     if (!file) return send(404, "text/plain", "not found\n");
     fs.readFile(file, (err, buf) => err ? send(404, "text/plain", "not found\n") : send(200, TYPES[path.extname(file)] || "application/octet-stream", buf));
   });
