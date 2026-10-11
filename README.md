@@ -69,6 +69,16 @@ node apps/shaders/server.js   # http://localhost:3001
 
 See [apps/shaders](apps/shaders/README.md) for the library, presets and the provenance/license table.
 
+## Third product: FORKBOMB Gradients
+
+"All gradients." 556 MIT gradients (uiGradients + WebGradients) as CSS linear/radial/conic, WebGL2 mesh gradients and aurora, film grain, and clean-room dot-grid/halftone/particle-morph effects (dotsui.dev-inspired, original code). Live controls, Copy CSS/GLSL, PNG export. New `gradient.glsl` + `mesh.glsl` land in the shader library too. Ships as pack [`packs/gradients`](packs/gradients/pack.json).
+
+```bash
+node apps/gradients/server.js   # http://localhost:3002
+```
+
+See [apps/gradients](apps/gradients/README.md) for the license table and the dotsui.dev decision.
+
 ## Start now
 
 - Read [docs/VISION.md](docs/VISION.md)

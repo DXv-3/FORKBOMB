@@ -1,0 +1,74 @@
+{
+  "id": "gradients",
+  "name": "FORKBOMB Gradients",
+  "version": "0.1.0",
+  "license": "MIT",
+  "summary": "Every gradient, live: 556 MIT-licensed CSS gradients plus WebGL mesh, aurora, grain and dot effects.",
+  "job": "Browse, tweak and ship gradients: copy CSS or GLSL, export PNG, #include gradient/mesh helpers in shaders.",
+  "app": "apps/gradients",
+  "run": "node apps/gradients/server.js",
+  "pieces": [
+    "uigradients-data",
+    "webgradients-data",
+    "glsl-gradient",
+    "glsl-mesh-gradient",
+    "dot-effects",
+    "glsl-include-resolver",
+    "gradients-app"
+  ],
+  "connectors": [
+    "http-json"
+  ],
+  "provenance": [
+    {
+      "piece": "uigradients-data",
+      "url": "https://github.com/ghosh/uiGradients",
+      "license": "MIT",
+      "found_by": "GitHub API repo license check (spdx MIT)",
+      "use": "data vendored + normalised @afb0184; LICENSE shipped at apps/gradients/data/LICENSE-uigradients"
+    },
+    {
+      "piece": "webgradients-data",
+      "url": "https://github.com/itmeo/webgradients",
+      "license": "MIT",
+      "found_by": "GitHub API repo license check (spdx MIT)",
+      "use": "data vendored + normalised @0157829; LICENSE shipped at apps/gradients/data/LICENSE-webgradients"
+    },
+    {
+      "piece": "dot-effects",
+      "url": "https://dotsui.dev",
+      "license": "inspiration only (dots-swarm core is MIT, Pro is paid/proprietary)",
+      "found_by": "user ask",
+      "use": "clean-room: visible behaviour studied, no code/assets/shapes copied"
+    },
+    {
+      "piece": "glsl-gradient",
+      "url": "https://bottosson.github.io/posts/oklab/",
+      "license": "OKLab matrices public domain / MIT",
+      "found_by": "known technique",
+      "use": "published OKLab conversion constants, fresh code"
+    }
+  ],
+  "rejected": [
+    {
+      "what": "dotsui.dev Pro artwork, Studio, @dots-swarm/pro",
+      "why": "paid/proprietary license"
+    },
+    {
+      "what": "vendoring dots-swarm (MIT) source",
+      "why": "React + TypeScript runtime; incompatible with zero-dep vanilla app, so recreated instead of reused"
+    },
+    {
+      "what": "Shadertoy aurora/mesh shaders under default CC BY-NC-SA 3.0",
+      "why": "non-commercial/share-alike"
+    },
+    {
+      "what": "WebGradients entries using rgba()/non-hex stops",
+      "why": "normalisation scope (not a license issue)"
+    },
+    {
+      "what": "GPL/AGPL/unlicensed gradient generators",
+      "why": "not permissive"
+    }
+  ]
+}
