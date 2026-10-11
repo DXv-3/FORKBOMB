@@ -29,12 +29,13 @@ function createApp() {
     let file = null;
     if (url.pathname === "/") file = path.join(ROOT, "public", "index.html");
     else if (url.pathname === "/include.js") file = path.join(SHADERS, "public", "include.js");
-    else if (url.pathname === "/dots" || url.pathname === "/dots/") file = path.join(ROOT, "public", "dots", "studio.html");
+    else if (url.pathname === "/dots") return H.redirect(res, "dots/");
+    else if (url.pathname === "/dots/") file = path.join(ROOT, "public", "dots", "studio.html");
     else { const m = url.pathname.match(/^\/((?:dots\/)?[a-z0-9-]+\.(?:js|css|html))$/); if (m) file = path.join(ROOT, "public", m[1]); }
     if (!file) return H.notFound(res);
     return H.sendFile(res, file, ROOTS);
   })));
-  return { server };
+  return { server, handler: server.listeners("request")[0] };
 }
 
 if (require.main === module) {

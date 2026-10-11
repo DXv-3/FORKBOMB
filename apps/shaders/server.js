@@ -32,7 +32,7 @@ function createApp() {
     if (!rel) return H.notFound(res);
     return H.sendFile(res, path.join(ROOT, rel), ROOTS);
   })));
-  return { server };
+  return { server, handler: server.listeners("request")[0] };
 }
 
 if (require.main === module) {
