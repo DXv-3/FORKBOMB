@@ -1,0 +1,45 @@
+name: test
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: ["18", "20", "22"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Syntax check every JS file (node --check)
+        run: |
+          set -e
+          n=0
+          for f in $(git ls-files '*.js' '*.mjs' '*.cjs'); do node --check "$f"; n=$((n+1)); done
+          echo "node --check OK on $n files"
+      - name: JSON files parse
+        run: |
+          for f in $(git ls-files '*.json'); do node -e 'JSON.parse(require("fs").readFileSync(process.argv[1], "utf8"))' "$f" || { echo "bad JSON: $f"; exit 1; }; done
+      - name: paste tests
+        run: npm test
+        working-directory: apps/paste
+      - name: shaders tests
+        run: npm test
+        working-directory: apps/shaders
+      - name: gradients tests
+        run: npm test
+        working-directory: apps/gradients
+      - name: scanner tests
+        run: node toolkit/scanner/test.js
+      - name: cycle.js tests + self-validation
+        run: |
+          node toolkit/process/test.js
+          node toolkit/process/cycle.js validate

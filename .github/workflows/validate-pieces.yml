@@ -8,6 +8,9 @@ on:
     paths:
       - "pieces/**"
 
+permissions:
+  contents: read
+
 jobs:
   validate:
     runs-on: ubuntu-latest
