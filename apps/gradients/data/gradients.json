@@ -1,0 +1,9431 @@
+{
+ "generated": "2026-10-11",
+ "sources": {
+  "uigradients": {
+   "url": "https://github.com/ghosh/uiGradients",
+   "license": "MIT",
+   "copyright": "Copyright (c) 2017 Indrashish Ghosh",
+   "commit": "afb018418e92c3fa4048daa88eb6525a78f5486e",
+   "file": "gradients.json",
+   "use": "names + colour stops normalised (evenly spaced, 90deg)"
+  },
+  "webgradients": {
+   "url": "https://github.com/itmeo/webgradients",
+   "license": "MIT",
+   "copyright": "Copyright (c) 2017 itmeo",
+   "commit": "0157829a0069756083abd3bfa81bef7117e14dfd",
+   "file": "gradients.json",
+   "use": "names, angles, stops normalised (duplicate trailing stops merged; non-hex/rgba entries dropped)"
+  }
+ },
+ "gradients": [
+  {
+   "id": "omolon",
+   "name": "Omolon",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#091e3a",
+     "pos": 0
+    },
+    {
+     "color": "#2f80ed",
+     "pos": 50
+    },
+    {
+     "color": "#2d9ee0",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "farhan",
+   "name": "Farhan",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#9400d3",
+     "pos": 0
+    },
+    {
+     "color": "#4b0082",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "purple",
+   "name": "Purple",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#c84e89",
+     "pos": 0
+    },
+    {
+     "color": "#f15f79",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "ibtesam",
+   "name": "Ibtesam",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#00f5a0",
+     "pos": 0
+    },
+    {
+     "color": "#00d9f5",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "radioactive-heat",
+   "name": "Radioactive Heat",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#f7941e",
+     "pos": 0
+    },
+    {
+     "color": "#72c6ef",
+     "pos": 50
+    },
+    {
+     "color": "#00a651",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "the-sky-and-the-sea",
+   "name": "The Sky And The Sea",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#f7941e",
+     "pos": 0
+    },
+    {
+     "color": "#004e8f",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "from-ice-to-fire",
+   "name": "From Ice To Fire",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#72c6ef",
+     "pos": 0
+    },
+    {
+     "color": "#004e8f",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "blue-orange",
+   "name": "Blue & Orange",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#fd8112",
+     "pos": 0
+    },
+    {
+     "color": "#0085ca",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "purple-dream",
+   "name": "Purple Dream",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#bf5ae0",
+     "pos": 0
+    },
+    {
+     "color": "#a811da",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "blu",
+   "name": "Blu",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#00416a",
+     "pos": 0
+    },
+    {
+     "color": "#e4e5e6",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "summer-breeze",
+   "name": "Summer Breeze",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#fbed96",
+     "pos": 0
+    },
+    {
+     "color": "#abecd6",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "ver",
+   "name": "Ver",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ffe000",
+     "pos": 0
+    },
+    {
+     "color": "#799f0c",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "ver-black",
+   "name": "Ver Black",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#f7f8f8",
+     "pos": 0
+    },
+    {
+     "color": "#acbb78",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "combi",
+   "name": "Combi",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#00416a",
+     "pos": 0
+    },
+    {
+     "color": "#799f0c",
+     "pos": 50
+    },
+    {
+     "color": "#ffe000",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "anwar",
+   "name": "Anwar",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#334d50",
+     "pos": 0
+    },
+    {
+     "color": "#cbcaa5",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "bluelagoo",
+   "name": "Bluelagoo",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#0052d4",
+     "pos": 0
+    },
+    {
+     "color": "#4364f7",
+     "pos": 50
+    },
+    {
+     "color": "#6fb1fc",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "lunada",
+   "name": "Lunada",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#5433ff",
+     "pos": 0
+    },
+    {
+     "color": "#20bdff",
+     "pos": 50
+    },
+    {
+     "color": "#a5fecb",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "reaqua",
+   "name": "Reaqua",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#799f0c",
+     "pos": 0
+    },
+    {
+     "color": "#acbb78",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "mango",
+   "name": "Mango",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ffe259",
+     "pos": 0
+    },
+    {
+     "color": "#ffa751",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "bupe",
+   "name": "Bupe",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#00416a",
+     "pos": 0
+    },
+    {
+     "color": "#e4e5e6",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "rea",
+   "name": "Rea",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ffe000",
+     "pos": 0
+    },
+    {
+     "color": "#799f0c",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "windy",
+   "name": "Windy",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#acb6e5",
+     "pos": 0
+    },
+    {
+     "color": "#86fde8",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "royal-blue",
+   "name": "Royal Blue",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#536976",
+     "pos": 0
+    },
+    {
+     "color": "#292e49",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "royal-blue-petrol",
+   "name": "Royal Blue + Petrol",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#bbd2c5",
+     "pos": 0
+    },
+    {
+     "color": "#536976",
+     "pos": 50
+    },
+    {
+     "color": "#292e49",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "copper",
+   "name": "Copper",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#b79891",
+     "pos": 0
+    },
+    {
+     "color": "#94716b",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "anamnisar",
+   "name": "Anamnisar",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#9796f0",
+     "pos": 0
+    },
+    {
+     "color": "#fbc7d4",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "petrol",
+   "name": "Petrol",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#bbd2c5",
+     "pos": 0
+    },
+    {
+     "color": "#536976",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "sel",
+   "name": "Sel",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#00467f",
+     "pos": 0
+    },
+    {
+     "color": "#a5cc82",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "afternoon",
+   "name": "Afternoon",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#000c40",
+     "pos": 0
+    },
+    {
+     "color": "#607d8b",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "skyline",
+   "name": "Skyline",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#1488cc",
+     "pos": 0
+    },
+    {
+     "color": "#2b32b2",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "dimigo",
+   "name": "DIMIGO",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ec008c",
+     "pos": 0
+    },
+    {
+     "color": "#fc6767",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "purple-love",
+   "name": "Purple Love",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#cc2b5e",
+     "pos": 0
+    },
+    {
+     "color": "#753a88",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "sexy-blue",
+   "name": "Sexy Blue",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#2193b0",
+     "pos": 0
+    },
+    {
+     "color": "#6dd5ed",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "blooker20",
+   "name": "Blooker20",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#e65c00",
+     "pos": 0
+    },
+    {
+     "color": "#f9d423",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "sea-blue",
+   "name": "Sea Blue",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#2b5876",
+     "pos": 0
+    },
+    {
+     "color": "#4e4376",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "nimvelo",
+   "name": "Nimvelo",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#314755",
+     "pos": 0
+    },
+    {
+     "color": "#26a0da",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "hazel",
+   "name": "Hazel",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#77a1d3",
+     "pos": 0
+    },
+    {
+     "color": "#79cbca",
+     "pos": 50
+    },
+    {
+     "color": "#e684ae",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "noon-to-dusk",
+   "name": "Noon to Dusk",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ff6e7f",
+     "pos": 0
+    },
+    {
+     "color": "#bfe9ff",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "youtube",
+   "name": "YouTube",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#e52d27",
+     "pos": 0
+    },
+    {
+     "color": "#b31217",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "cool-brown",
+   "name": "Cool Brown",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#603813",
+     "pos": 0
+    },
+    {
+     "color": "#b29f94",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "harmonic-energy",
+   "name": "Harmonic Energy",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#16a085",
+     "pos": 0
+    },
+    {
+     "color": "#f4d03f",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "playing-with-reds",
+   "name": "Playing with Reds",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#d31027",
+     "pos": 0
+    },
+    {
+     "color": "#ea384d",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "sunny-days",
+   "name": "Sunny Days",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ede574",
+     "pos": 0
+    },
+    {
+     "color": "#e1f5c4",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "green-beach",
+   "name": "Green Beach",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#02aab0",
+     "pos": 0
+    },
+    {
+     "color": "#00cdac",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "intuitive-purple",
+   "name": "Intuitive Purple",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#da22ff",
+     "pos": 0
+    },
+    {
+     "color": "#9733ee",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "emerald-water",
+   "name": "Emerald Water",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#348f50",
+     "pos": 0
+    },
+    {
+     "color": "#56b4d3",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "lemon-twist",
+   "name": "Lemon Twist",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#3ca55c",
+     "pos": 0
+    },
+    {
+     "color": "#b5ac49",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "monte-carlo",
+   "name": "Monte Carlo",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#cc95c0",
+     "pos": 0
+    },
+    {
+     "color": "#dbd4b4",
+     "pos": 50
+    },
+    {
+     "color": "#7aa1d2",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "horizon",
+   "name": "Horizon",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#003973",
+     "pos": 0
+    },
+    {
+     "color": "#e5e5be",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "rose-water",
+   "name": "Rose Water",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#e55d87",
+     "pos": 0
+    },
+    {
+     "color": "#5fc3e4",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "frozen",
+   "name": "Frozen",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#403b4a",
+     "pos": 0
+    },
+    {
+     "color": "#e7e9bb",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "mango-pulp",
+   "name": "Mango Pulp",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#f09819",
+     "pos": 0
+    },
+    {
+     "color": "#edde5d",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "bloody-mary",
+   "name": "Bloody Mary",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ff512f",
+     "pos": 0
+    },
+    {
+     "color": "#dd2476",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "aubergine",
+   "name": "Aubergine",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#aa076b",
+     "pos": 0
+    },
+    {
+     "color": "#61045f",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "aqua-marine",
+   "name": "Aqua Marine",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#1a2980",
+     "pos": 0
+    },
+    {
+     "color": "#26d0ce",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "sunrise",
+   "name": "Sunrise",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ff512f",
+     "pos": 0
+    },
+    {
+     "color": "#f09819",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "purple-paradise",
+   "name": "Purple Paradise",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#1d2b64",
+     "pos": 0
+    },
+    {
+     "color": "#f8cdda",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "stripe",
+   "name": "Stripe",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#1fa2ff",
+     "pos": 0
+    },
+    {
+     "color": "#12d8fa",
+     "pos": 50
+    },
+    {
+     "color": "#a6ffcb",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "sea-weed",
+   "name": "Sea Weed",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#4cb8c4",
+     "pos": 0
+    },
+    {
+     "color": "#3cd3ad",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "pinky",
+   "name": "Pinky",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#dd5e89",
+     "pos": 0
+    },
+    {
+     "color": "#f7bb97",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "cherry",
+   "name": "Cherry",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#eb3349",
+     "pos": 0
+    },
+    {
+     "color": "#f45c43",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "mojito",
+   "name": "Mojito",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#1d976c",
+     "pos": 0
+    },
+    {
+     "color": "#93f9b9",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "juicy-orange",
+   "name": "Juicy Orange",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ff8008",
+     "pos": 0
+    },
+    {
+     "color": "#ffc837",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "mirage",
+   "name": "Mirage",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#16222a",
+     "pos": 0
+    },
+    {
+     "color": "#3a6073",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "steel-gray",
+   "name": "Steel Gray",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#1f1c2c",
+     "pos": 0
+    },
+    {
+     "color": "#928dab",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "kashmir",
+   "name": "Kashmir",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#614385",
+     "pos": 0
+    },
+    {
+     "color": "#516395",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "electric-violet",
+   "name": "Electric Violet",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#4776e6",
+     "pos": 0
+    },
+    {
+     "color": "#8e54e9",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "venice-blue",
+   "name": "Venice Blue",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#085078",
+     "pos": 0
+    },
+    {
+     "color": "#85d8ce",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "bora-bora",
+   "name": "Bora Bora",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#2bc0e4",
+     "pos": 0
+    },
+    {
+     "color": "#eaecc6",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "moss",
+   "name": "Moss",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#134e5e",
+     "pos": 0
+    },
+    {
+     "color": "#71b280",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "shroom-haze",
+   "name": "Shroom Haze",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#5c258d",
+     "pos": 0
+    },
+    {
+     "color": "#4389a2",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "mystic",
+   "name": "Mystic",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#757f9a",
+     "pos": 0
+    },
+    {
+     "color": "#d7dde8",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "midnight-city",
+   "name": "Midnight City",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#232526",
+     "pos": 0
+    },
+    {
+     "color": "#414345",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "sea-blizz",
+   "name": "Sea Blizz",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#1cd8d2",
+     "pos": 0
+    },
+    {
+     "color": "#93edc7",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "opa",
+   "name": "Opa",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#3d7eaa",
+     "pos": 0
+    },
+    {
+     "color": "#ffe47a",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "titanium",
+   "name": "Titanium",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#283048",
+     "pos": 0
+    },
+    {
+     "color": "#859398",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "mantle",
+   "name": "Mantle",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#24c6dc",
+     "pos": 0
+    },
+    {
+     "color": "#514a9d",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "dracula",
+   "name": "Dracula",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#dc2424",
+     "pos": 0
+    },
+    {
+     "color": "#4a569d",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "peach",
+   "name": "Peach",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ed4264",
+     "pos": 0
+    },
+    {
+     "color": "#ffedbc",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "moonrise",
+   "name": "Moonrise",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#dae2f8",
+     "pos": 0
+    },
+    {
+     "color": "#d6a4a4",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "clouds",
+   "name": "Clouds",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ece9e6",
+     "pos": 0
+    },
+    {
+     "color": "#ffffff",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "stellar",
+   "name": "Stellar",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#7474bf",
+     "pos": 0
+    },
+    {
+     "color": "#348ac7",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "bourbon",
+   "name": "Bourbon",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ec6f66",
+     "pos": 0
+    },
+    {
+     "color": "#f3a183",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "calm-darya",
+   "name": "Calm Darya",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#5f2c82",
+     "pos": 0
+    },
+    {
+     "color": "#49a09d",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "influenza",
+   "name": "Influenza",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#c04848",
+     "pos": 0
+    },
+    {
+     "color": "#480048",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "shrimpy",
+   "name": "Shrimpy",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#e43a15",
+     "pos": 0
+    },
+    {
+     "color": "#e65245",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "army",
+   "name": "Army",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#414d0b",
+     "pos": 0
+    },
+    {
+     "color": "#727a17",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "miaka",
+   "name": "Miaka",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#fc354c",
+     "pos": 0
+    },
+    {
+     "color": "#0abfbc",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "pinot-noir",
+   "name": "Pinot Noir",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#4b6cb7",
+     "pos": 0
+    },
+    {
+     "color": "#182848",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "day-tripper",
+   "name": "Day Tripper",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#f857a6",
+     "pos": 0
+    },
+    {
+     "color": "#ff5858",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "namn",
+   "name": "Namn",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#a73737",
+     "pos": 0
+    },
+    {
+     "color": "#7a2828",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "blurry-beach",
+   "name": "Blurry Beach",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#d53369",
+     "pos": 0
+    },
+    {
+     "color": "#cbad6d",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "vasily",
+   "name": "Vasily",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#e9d362",
+     "pos": 0
+    },
+    {
+     "color": "#333333",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "a-lost-memory",
+   "name": "A Lost Memory",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#de6262",
+     "pos": 0
+    },
+    {
+     "color": "#ffb88c",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "petrichor",
+   "name": "Petrichor",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#666600",
+     "pos": 0
+    },
+    {
+     "color": "#999966",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "jonquil",
+   "name": "Jonquil",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ffeeee",
+     "pos": 0
+    },
+    {
+     "color": "#ddefbb",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "sirius-tamed",
+   "name": "Sirius Tamed",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#efefbb",
+     "pos": 0
+    },
+    {
+     "color": "#d4d3dd",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "kyoto",
+   "name": "Kyoto",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#c21500",
+     "pos": 0
+    },
+    {
+     "color": "#ffc500",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "misty-meadow",
+   "name": "Misty Meadow",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#215f00",
+     "pos": 0
+    },
+    {
+     "color": "#e4e4d9",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "aqualicious",
+   "name": "Aqualicious",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#50c9c3",
+     "pos": 0
+    },
+    {
+     "color": "#96deda",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "moor",
+   "name": "Moor",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#616161",
+     "pos": 0
+    },
+    {
+     "color": "#9bc5c3",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "almost",
+   "name": "Almost",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ddd6f3",
+     "pos": 0
+    },
+    {
+     "color": "#faaca8",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "forever-lost",
+   "name": "Forever Lost",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#5d4157",
+     "pos": 0
+    },
+    {
+     "color": "#a8caba",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "winter",
+   "name": "Winter",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#e6dada",
+     "pos": 0
+    },
+    {
+     "color": "#274046",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "nelson",
+   "name": "Nelson",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#f2709c",
+     "pos": 0
+    },
+    {
+     "color": "#ff9472",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "autumn",
+   "name": "Autumn",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#dad299",
+     "pos": 0
+    },
+    {
+     "color": "#b0dab9",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "candy",
+   "name": "Candy",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#d3959b",
+     "pos": 0
+    },
+    {
+     "color": "#bfe6ba",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "reef",
+   "name": "Reef",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#00d2ff",
+     "pos": 0
+    },
+    {
+     "color": "#3a7bd5",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "the-strain",
+   "name": "The Strain",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#870000",
+     "pos": 0
+    },
+    {
+     "color": "#190a05",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "dirty-fog",
+   "name": "Dirty Fog",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#b993d6",
+     "pos": 0
+    },
+    {
+     "color": "#8ca6db",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "earthly",
+   "name": "Earthly",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#649173",
+     "pos": 0
+    },
+    {
+     "color": "#dbd5a4",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "virgin",
+   "name": "Virgin",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#c9ffbf",
+     "pos": 0
+    },
+    {
+     "color": "#ffafbd",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "ash",
+   "name": "Ash",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#606c88",
+     "pos": 0
+    },
+    {
+     "color": "#3f4c6b",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "cherryblossoms",
+   "name": "Cherryblossoms",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#fbd3e9",
+     "pos": 0
+    },
+    {
+     "color": "#bb377d",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "parklife",
+   "name": "Parklife",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#add100",
+     "pos": 0
+    },
+    {
+     "color": "#7b920a",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "dance-to-forget",
+   "name": "Dance To Forget",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ff4e50",
+     "pos": 0
+    },
+    {
+     "color": "#f9d423",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "starfall",
+   "name": "Starfall",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#f0c27b",
+     "pos": 0
+    },
+    {
+     "color": "#4b1248",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "red-mist",
+   "name": "Red Mist",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#000000",
+     "pos": 0
+    },
+    {
+     "color": "#e74c3c",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "teal-love",
+   "name": "Teal Love",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#aaffa9",
+     "pos": 0
+    },
+    {
+     "color": "#11ffbd",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "neon-life",
+   "name": "Neon Life",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#b3ffab",
+     "pos": 0
+    },
+    {
+     "color": "#12fff7",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "man-of-steel",
+   "name": "Man of Steel",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#780206",
+     "pos": 0
+    },
+    {
+     "color": "#061161",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "amethyst",
+   "name": "Amethyst",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#9d50bb",
+     "pos": 0
+    },
+    {
+     "color": "#6e48aa",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "cheer-up-emo-kid",
+   "name": "Cheer Up Emo Kid",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#556270",
+     "pos": 0
+    },
+    {
+     "color": "#ff6b6b",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "shore",
+   "name": "Shore",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#70e1f5",
+     "pos": 0
+    },
+    {
+     "color": "#ffd194",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "facebook-messenger",
+   "name": "Facebook Messenger",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#00c6ff",
+     "pos": 0
+    },
+    {
+     "color": "#0072ff",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "soundcloud",
+   "name": "SoundCloud",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#fe8c00",
+     "pos": 0
+    },
+    {
+     "color": "#f83600",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "behongo",
+   "name": "Behongo",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#52c234",
+     "pos": 0
+    },
+    {
+     "color": "#061700",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "servquick",
+   "name": "ServQuick",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#485563",
+     "pos": 0
+    },
+    {
+     "color": "#29323c",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "friday",
+   "name": "Friday",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#83a4d4",
+     "pos": 0
+    },
+    {
+     "color": "#b6fbff",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "martini",
+   "name": "Martini",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#fdfc47",
+     "pos": 0
+    },
+    {
+     "color": "#24fe41",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "metallic-toad",
+   "name": "Metallic Toad",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#abbaab",
+     "pos": 0
+    },
+    {
+     "color": "#ffffff",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "between-the-clouds",
+   "name": "Between The Clouds",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#73c8a9",
+     "pos": 0
+    },
+    {
+     "color": "#373b44",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "crazy-orange-i",
+   "name": "Crazy Orange I",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#d38312",
+     "pos": 0
+    },
+    {
+     "color": "#a83279",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "hersheys",
+   "name": "Hersheys",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#1e130c",
+     "pos": 0
+    },
+    {
+     "color": "#9a8478",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "talking-to-mice-elf",
+   "name": "Talking To Mice Elf",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#948e99",
+     "pos": 0
+    },
+    {
+     "color": "#2e1437",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "purple-bliss",
+   "name": "Purple Bliss",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#360033",
+     "pos": 0
+    },
+    {
+     "color": "#0b8793",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "predawn",
+   "name": "Predawn",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ffa17f",
+     "pos": 0
+    },
+    {
+     "color": "#00223e",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "endless-river",
+   "name": "Endless River",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#43cea2",
+     "pos": 0
+    },
+    {
+     "color": "#185a9d",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "pastel-orange-at-the-sun",
+   "name": "Pastel Orange at the Sun",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ffb347",
+     "pos": 0
+    },
+    {
+     "color": "#ffcc33",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "twitch",
+   "name": "Twitch",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#6441a5",
+     "pos": 0
+    },
+    {
+     "color": "#2a0845",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "atlas",
+   "name": "Atlas",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#feac5e",
+     "pos": 0
+    },
+    {
+     "color": "#c779d0",
+     "pos": 50
+    },
+    {
+     "color": "#4bc0c8",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "instagram",
+   "name": "Instagram",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#833ab4",
+     "pos": 0
+    },
+    {
+     "color": "#fd1d1d",
+     "pos": 50
+    },
+    {
+     "color": "#fcb045",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "flickr",
+   "name": "Flickr",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ff0084",
+     "pos": 0
+    },
+    {
+     "color": "#33001b",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "vine",
+   "name": "Vine",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#00bf8f",
+     "pos": 0
+    },
+    {
+     "color": "#001510",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "turquoise-flow",
+   "name": "Turquoise flow",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#136a8a",
+     "pos": 0
+    },
+    {
+     "color": "#267871",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "portrait",
+   "name": "Portrait",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#8e9eab",
+     "pos": 0
+    },
+    {
+     "color": "#eef2f3",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "virgin-america",
+   "name": "Virgin America",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#7b4397",
+     "pos": 0
+    },
+    {
+     "color": "#dc2430",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "koko-caramel",
+   "name": "Koko Caramel",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#d1913c",
+     "pos": 0
+    },
+    {
+     "color": "#ffd194",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "fresh-turboscent",
+   "name": "Fresh Turboscent",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#f1f2b5",
+     "pos": 0
+    },
+    {
+     "color": "#135058",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "green-to-dark",
+   "name": "Green to dark",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#6a9113",
+     "pos": 0
+    },
+    {
+     "color": "#141517",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "ukraine",
+   "name": "Ukraine",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#004ff9",
+     "pos": 0
+    },
+    {
+     "color": "#fff94c",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "curiosity-blue",
+   "name": "Curiosity blue",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#525252",
+     "pos": 0
+    },
+    {
+     "color": "#3d72b4",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "dark-knight",
+   "name": "Dark Knight",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ba8b02",
+     "pos": 0
+    },
+    {
+     "color": "#181818",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "piglet",
+   "name": "Piglet",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ee9ca7",
+     "pos": 0
+    },
+    {
+     "color": "#ffdde1",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "lizard",
+   "name": "Lizard",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#304352",
+     "pos": 0
+    },
+    {
+     "color": "#d7d2cc",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "sage-persuasion",
+   "name": "Sage Persuasion",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ccccb2",
+     "pos": 0
+    },
+    {
+     "color": "#757519",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "between-night-and-day",
+   "name": "Between Night and Day",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#2c3e50",
+     "pos": 0
+    },
+    {
+     "color": "#3498db",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "timber",
+   "name": "Timber",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#fc00ff",
+     "pos": 0
+    },
+    {
+     "color": "#00dbde",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "passion",
+   "name": "Passion",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#e53935",
+     "pos": 0
+    },
+    {
+     "color": "#e35d5b",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "clear-sky",
+   "name": "Clear Sky",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#005c97",
+     "pos": 0
+    },
+    {
+     "color": "#363795",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "master-card",
+   "name": "Master Card",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#f46b45",
+     "pos": 0
+    },
+    {
+     "color": "#eea849",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "back-to-earth",
+   "name": "Back To Earth",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#00c9ff",
+     "pos": 0
+    },
+    {
+     "color": "#92fe9d",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "deep-purple",
+   "name": "Deep Purple",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#673ab7",
+     "pos": 0
+    },
+    {
+     "color": "#512da8",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "little-leaf",
+   "name": "Little Leaf",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#76b852",
+     "pos": 0
+    },
+    {
+     "color": "#8dc26f",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "netflix",
+   "name": "Netflix",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#8e0e00",
+     "pos": 0
+    },
+    {
+     "color": "#1f1c18",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "light-orange",
+   "name": "Light Orange",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ffb75e",
+     "pos": 0
+    },
+    {
+     "color": "#ed8f03",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "green-and-blue",
+   "name": "Green and Blue",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#c2e59c",
+     "pos": 0
+    },
+    {
+     "color": "#64b3f4",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "poncho",
+   "name": "Poncho",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#403a3e",
+     "pos": 0
+    },
+    {
+     "color": "#be5869",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "back-to-the-future",
+   "name": "Back to the Future",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#c02425",
+     "pos": 0
+    },
+    {
+     "color": "#f0cb35",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "blush",
+   "name": "Blush",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#b24592",
+     "pos": 0
+    },
+    {
+     "color": "#f15f79",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "inbox",
+   "name": "Inbox",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#457fca",
+     "pos": 0
+    },
+    {
+     "color": "#5691c8",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "purplin",
+   "name": "Purplin",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#6a3093",
+     "pos": 0
+    },
+    {
+     "color": "#a044ff",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "pale-wood",
+   "name": "Pale Wood",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#eacda3",
+     "pos": 0
+    },
+    {
+     "color": "#d6ae7b",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "haikus",
+   "name": "Haikus",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#fd746c",
+     "pos": 0
+    },
+    {
+     "color": "#ff9068",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "pizelex",
+   "name": "Pizelex",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#114357",
+     "pos": 0
+    },
+    {
+     "color": "#f29492",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "joomla",
+   "name": "Joomla",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#1e3c72",
+     "pos": 0
+    },
+    {
+     "color": "#2a5298",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "christmas",
+   "name": "Christmas",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#2f7336",
+     "pos": 0
+    },
+    {
+     "color": "#aa3a38",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "minnesota-vikings",
+   "name": "Minnesota Vikings",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#5614b0",
+     "pos": 0
+    },
+    {
+     "color": "#dbd65c",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "miami-dolphins",
+   "name": "Miami Dolphins",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#4da0b0",
+     "pos": 0
+    },
+    {
+     "color": "#d39d38",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "forest",
+   "name": "Forest",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#5a3f37",
+     "pos": 0
+    },
+    {
+     "color": "#2c7744",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "nighthawk",
+   "name": "Nighthawk",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#2980b9",
+     "pos": 0
+    },
+    {
+     "color": "#2c3e50",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "superman",
+   "name": "Superman",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#0099f7",
+     "pos": 0
+    },
+    {
+     "color": "#f11712",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "suzy",
+   "name": "Suzy",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#834d9b",
+     "pos": 0
+    },
+    {
+     "color": "#d04ed6",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "dark-skies",
+   "name": "Dark Skies",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#4b79a1",
+     "pos": 0
+    },
+    {
+     "color": "#283e51",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "deep-space",
+   "name": "Deep Space",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#000000",
+     "pos": 0
+    },
+    {
+     "color": "#434343",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "decent",
+   "name": "Decent",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#4ca1af",
+     "pos": 0
+    },
+    {
+     "color": "#c4e0e5",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "colors-of-sky",
+   "name": "Colors Of Sky",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#e0eafc",
+     "pos": 0
+    },
+    {
+     "color": "#cfdef3",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "purple-white",
+   "name": "Purple White",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ba5370",
+     "pos": 0
+    },
+    {
+     "color": "#f4e2d8",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "ali",
+   "name": "Ali",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ff4b1f",
+     "pos": 0
+    },
+    {
+     "color": "#1fddff",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "alihossein",
+   "name": "Alihossein",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#f7ff00",
+     "pos": 0
+    },
+    {
+     "color": "#db36a4",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "shahabi",
+   "name": "Shahabi",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#a80077",
+     "pos": 0
+    },
+    {
+     "color": "#66ff00",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "red-ocean",
+   "name": "Red Ocean",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#1d4350",
+     "pos": 0
+    },
+    {
+     "color": "#a43931",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "tranquil",
+   "name": "Tranquil",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#eecda3",
+     "pos": 0
+    },
+    {
+     "color": "#ef629f",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "transfile",
+   "name": "Transfile",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#16bffd",
+     "pos": 0
+    },
+    {
+     "color": "#cb3066",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "sylvia",
+   "name": "Sylvia",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ff4b1f",
+     "pos": 0
+    },
+    {
+     "color": "#ff9068",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "sweet-morning",
+   "name": "Sweet Morning",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ff5f6d",
+     "pos": 0
+    },
+    {
+     "color": "#ffc371",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "politics",
+   "name": "Politics",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#2196f3",
+     "pos": 0
+    },
+    {
+     "color": "#f44336",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "bright-vault",
+   "name": "Bright Vault",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#00d2ff",
+     "pos": 0
+    },
+    {
+     "color": "#928dab",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "solid-vault",
+   "name": "Solid Vault",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#3a7bd5",
+     "pos": 0
+    },
+    {
+     "color": "#3a6073",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "sunset",
+   "name": "Sunset",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#0b486b",
+     "pos": 0
+    },
+    {
+     "color": "#f56217",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "grapefruit-sunset",
+   "name": "Grapefruit Sunset",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#e96443",
+     "pos": 0
+    },
+    {
+     "color": "#904e95",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "deep-sea-space",
+   "name": "Deep Sea Space",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#2c3e50",
+     "pos": 0
+    },
+    {
+     "color": "#4ca1af",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "dusk",
+   "name": "Dusk",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#2c3e50",
+     "pos": 0
+    },
+    {
+     "color": "#fd746c",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "minimal-red",
+   "name": "Minimal Red",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#f00000",
+     "pos": 0
+    },
+    {
+     "color": "#dc281e",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "royal",
+   "name": "Royal",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#141e30",
+     "pos": 0
+    },
+    {
+     "color": "#243b55",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "mauve",
+   "name": "Mauve",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#42275a",
+     "pos": 0
+    },
+    {
+     "color": "#734b6d",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "frost",
+   "name": "Frost",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#000428",
+     "pos": 0
+    },
+    {
+     "color": "#004e92",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "lush",
+   "name": "Lush",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#56ab2f",
+     "pos": 0
+    },
+    {
+     "color": "#a8e063",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "firewatch",
+   "name": "Firewatch",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#cb2d3e",
+     "pos": 0
+    },
+    {
+     "color": "#ef473a",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "sherbert",
+   "name": "Sherbert",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#f79d00",
+     "pos": 0
+    },
+    {
+     "color": "#64f38c",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "blood-red",
+   "name": "Blood Red",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#f85032",
+     "pos": 0
+    },
+    {
+     "color": "#e73827",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "sun-on-the-horizon",
+   "name": "Sun on the Horizon",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#fceabb",
+     "pos": 0
+    },
+    {
+     "color": "#f8b500",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "iiit-delhi",
+   "name": "IIIT Delhi",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#808080",
+     "pos": 0
+    },
+    {
+     "color": "#3fada8",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "jupiter",
+   "name": "Jupiter",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ffd89b",
+     "pos": 0
+    },
+    {
+     "color": "#19547b",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "50-shades-of-grey",
+   "name": "50 Shades of Grey",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#bdc3c7",
+     "pos": 0
+    },
+    {
+     "color": "#2c3e50",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "dania",
+   "name": "Dania",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#be93c5",
+     "pos": 0
+    },
+    {
+     "color": "#7bc6cc",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "limeade",
+   "name": "Limeade",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#a1ffce",
+     "pos": 0
+    },
+    {
+     "color": "#faffd1",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "disco",
+   "name": "Disco",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#4ecdc4",
+     "pos": 0
+    },
+    {
+     "color": "#556270",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "love-couple",
+   "name": "Love Couple",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#3a6186",
+     "pos": 0
+    },
+    {
+     "color": "#89253e",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "azure-pop",
+   "name": "Azure Pop",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ef32d9",
+     "pos": 0
+    },
+    {
+     "color": "#89fffd",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "nepal",
+   "name": "Nepal",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#de6161",
+     "pos": 0
+    },
+    {
+     "color": "#2657eb",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "cosmic-fusion",
+   "name": "Cosmic Fusion",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ff00cc",
+     "pos": 0
+    },
+    {
+     "color": "#333399",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "snapchat",
+   "name": "Snapchat",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#fffc00",
+     "pos": 0
+    },
+    {
+     "color": "#ffffff",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "ed-s-sunset-gradient",
+   "name": "Ed's Sunset Gradient",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ff7e5f",
+     "pos": 0
+    },
+    {
+     "color": "#feb47b",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "brady-brady-fun-fun",
+   "name": "Brady Brady Fun Fun",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#00c3ff",
+     "pos": 0
+    },
+    {
+     "color": "#ffff1c",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "black-ros",
+   "name": "Black Ros\u00e9",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#f4c4f3",
+     "pos": 0
+    },
+    {
+     "color": "#fc67fa",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "80-s-purple",
+   "name": "80's Purple",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#41295a",
+     "pos": 0
+    },
+    {
+     "color": "#2f0743",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "radar",
+   "name": "Radar",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#a770ef",
+     "pos": 0
+    },
+    {
+     "color": "#cf8bf3",
+     "pos": 50
+    },
+    {
+     "color": "#fdb99b",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "ibiza-sunset",
+   "name": "Ibiza Sunset",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ee0979",
+     "pos": 0
+    },
+    {
+     "color": "#ff6a00",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "dawn",
+   "name": "Dawn",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#f3904f",
+     "pos": 0
+    },
+    {
+     "color": "#3b4371",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "mild",
+   "name": "Mild",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#67b26f",
+     "pos": 0
+    },
+    {
+     "color": "#4ca2cd",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "vice-city",
+   "name": "Vice City",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#3494e6",
+     "pos": 0
+    },
+    {
+     "color": "#ec6ead",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "jaipur",
+   "name": "Jaipur",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#dbe6f6",
+     "pos": 0
+    },
+    {
+     "color": "#c5796d",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "jodhpur",
+   "name": "Jodhpur",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#9cecfb",
+     "pos": 0
+    },
+    {
+     "color": "#65c7f7",
+     "pos": 50
+    },
+    {
+     "color": "#0052d4",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "cocoaa-ice",
+   "name": "Cocoaa Ice",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#c0c0aa",
+     "pos": 0
+    },
+    {
+     "color": "#1cefff",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "easymed",
+   "name": "EasyMed",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#dce35b",
+     "pos": 0
+    },
+    {
+     "color": "#45b649",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "rose-colored-lenses",
+   "name": "Rose Colored Lenses",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#e8cbc0",
+     "pos": 0
+    },
+    {
+     "color": "#636fa4",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "what-lies-beyond",
+   "name": "What lies Beyond",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#f0f2f0",
+     "pos": 0
+    },
+    {
+     "color": "#000c40",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "roseanna",
+   "name": "Roseanna",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ffafbd",
+     "pos": 0
+    },
+    {
+     "color": "#ffc3a0",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "honey-dew",
+   "name": "Honey Dew",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#43c6ac",
+     "pos": 0
+    },
+    {
+     "color": "#f8ffae",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "under-the-lake",
+   "name": "Under the Lake",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#093028",
+     "pos": 0
+    },
+    {
+     "color": "#237a57",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "the-blue-lagoon",
+   "name": "The Blue Lagoon",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#43c6ac",
+     "pos": 0
+    },
+    {
+     "color": "#191654",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "can-you-feel-the-love-tonight",
+   "name": "Can You Feel The Love Tonight",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#4568dc",
+     "pos": 0
+    },
+    {
+     "color": "#b06ab3",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "very-blue",
+   "name": "Very Blue",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#0575e6",
+     "pos": 0
+    },
+    {
+     "color": "#021b79",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "love-and-liberty",
+   "name": "Love and Liberty",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#200122",
+     "pos": 0
+    },
+    {
+     "color": "#6f0000",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "orca",
+   "name": "Orca",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#44a08d",
+     "pos": 0
+    },
+    {
+     "color": "#093637",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "venice",
+   "name": "Venice",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#6190e8",
+     "pos": 0
+    },
+    {
+     "color": "#a7bfe8",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "pacific-dream",
+   "name": "Pacific Dream",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#34e89e",
+     "pos": 0
+    },
+    {
+     "color": "#0f3443",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "learning-and-leading",
+   "name": "Learning and Leading",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#f7971e",
+     "pos": 0
+    },
+    {
+     "color": "#ffd200",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "celestial",
+   "name": "Celestial",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#c33764",
+     "pos": 0
+    },
+    {
+     "color": "#1d2671",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "purplepine",
+   "name": "Purplepine",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#20002c",
+     "pos": 0
+    },
+    {
+     "color": "#cbb4d4",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "sha-la-la",
+   "name": "Sha la la",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#d66d75",
+     "pos": 0
+    },
+    {
+     "color": "#e29587",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "mini",
+   "name": "Mini",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#30e8bf",
+     "pos": 0
+    },
+    {
+     "color": "#ff8235",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "maldives",
+   "name": "Maldives",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#b2fefa",
+     "pos": 0
+    },
+    {
+     "color": "#0ed2f7",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "cinnamint",
+   "name": "Cinnamint",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#4ac29a",
+     "pos": 0
+    },
+    {
+     "color": "#bdfff3",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "html",
+   "name": "Html",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#e44d26",
+     "pos": 0
+    },
+    {
+     "color": "#f16529",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "coal",
+   "name": "Coal",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#eb5757",
+     "pos": 0
+    },
+    {
+     "color": "#000000",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "sunkist",
+   "name": "Sunkist",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#f2994a",
+     "pos": 0
+    },
+    {
+     "color": "#f2c94c",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "blue-skies",
+   "name": "Blue Skies",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#56ccf2",
+     "pos": 0
+    },
+    {
+     "color": "#2f80ed",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "chitty-chitty-bang-bang",
+   "name": "Chitty Chitty Bang Bang",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#007991",
+     "pos": 0
+    },
+    {
+     "color": "#78ffd6",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "visions-of-grandeur",
+   "name": "Visions of Grandeur",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#000046",
+     "pos": 0
+    },
+    {
+     "color": "#1cb5e0",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "crystal-clear",
+   "name": "Crystal Clear",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#159957",
+     "pos": 0
+    },
+    {
+     "color": "#155799",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "mello",
+   "name": "Mello",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#c0392b",
+     "pos": 0
+    },
+    {
+     "color": "#8e44ad",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "compare-now",
+   "name": "Compare Now",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ef3b36",
+     "pos": 0
+    },
+    {
+     "color": "#ffffff",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "meridian",
+   "name": "Meridian",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#283c86",
+     "pos": 0
+    },
+    {
+     "color": "#45a247",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "relay",
+   "name": "Relay",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#3a1c71",
+     "pos": 0
+    },
+    {
+     "color": "#d76d77",
+     "pos": 50
+    },
+    {
+     "color": "#ffaf7b",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "alive",
+   "name": "Alive",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#cb356b",
+     "pos": 0
+    },
+    {
+     "color": "#bd3f32",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "scooter",
+   "name": "Scooter",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#36d1dc",
+     "pos": 0
+    },
+    {
+     "color": "#5b86e5",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "terminal",
+   "name": "Terminal",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#000000",
+     "pos": 0
+    },
+    {
+     "color": "#0f9b0f",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "telegram",
+   "name": "Telegram",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#1c92d2",
+     "pos": 0
+    },
+    {
+     "color": "#f2fcfe",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "crimson-tide",
+   "name": "Crimson Tide",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#642b73",
+     "pos": 0
+    },
+    {
+     "color": "#c6426e",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "socialive",
+   "name": "Socialive",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#06beb6",
+     "pos": 0
+    },
+    {
+     "color": "#48b1bf",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "subu",
+   "name": "Subu",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#0cebeb",
+     "pos": 0
+    },
+    {
+     "color": "#20e3b2",
+     "pos": 50
+    },
+    {
+     "color": "#29ffc6",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "broken-hearts",
+   "name": "Broken Hearts",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#d9a7c7",
+     "pos": 0
+    },
+    {
+     "color": "#fffcdc",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "kimoby-is-the-new-blue",
+   "name": "Kimoby Is The New Blue",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#396afc",
+     "pos": 0
+    },
+    {
+     "color": "#2948ff",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "dull",
+   "name": "Dull",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#c9d6ff",
+     "pos": 0
+    },
+    {
+     "color": "#e2e2e2",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "purpink",
+   "name": "Purpink",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#7f00ff",
+     "pos": 0
+    },
+    {
+     "color": "#e100ff",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "orange-coral",
+   "name": "Orange Coral",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ff9966",
+     "pos": 0
+    },
+    {
+     "color": "#ff5e62",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "summer",
+   "name": "Summer",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#22c1c3",
+     "pos": 0
+    },
+    {
+     "color": "#fdbb2d",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "king-yna",
+   "name": "King Yna",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#1a2a6c",
+     "pos": 0
+    },
+    {
+     "color": "#b21f1f",
+     "pos": 50
+    },
+    {
+     "color": "#fdbb2d",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "velvet-sun",
+   "name": "Velvet Sun",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#e1eec3",
+     "pos": 0
+    },
+    {
+     "color": "#f05053",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "zinc",
+   "name": "Zinc",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ada996",
+     "pos": 0
+    },
+    {
+     "color": "#f2f2f2",
+     "pos": 33
+    },
+    {
+     "color": "#dbdbdb",
+     "pos": 67
+    },
+    {
+     "color": "#eaeaea",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "hydrogen",
+   "name": "Hydrogen",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#667db6",
+     "pos": 0
+    },
+    {
+     "color": "#0082c8",
+     "pos": 33
+    },
+    {
+     "color": "#0082c8",
+     "pos": 67
+    },
+    {
+     "color": "#667db6",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "argon",
+   "name": "Argon",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#03001e",
+     "pos": 0
+    },
+    {
+     "color": "#7303c0",
+     "pos": 33
+    },
+    {
+     "color": "#ec38bc",
+     "pos": 67
+    },
+    {
+     "color": "#fdeff9",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "lithium",
+   "name": "Lithium",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#6d6027",
+     "pos": 0
+    },
+    {
+     "color": "#d3cbb8",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "digital-water",
+   "name": "Digital Water",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#74ebd5",
+     "pos": 0
+    },
+    {
+     "color": "#acb6e5",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "orange-fun",
+   "name": "Orange Fun",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#fc4a1a",
+     "pos": 0
+    },
+    {
+     "color": "#f7b733",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "rainbow-blue",
+   "name": "Rainbow Blue",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#00f260",
+     "pos": 0
+    },
+    {
+     "color": "#0575e6",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "pink-flavour",
+   "name": "Pink Flavour",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#800080",
+     "pos": 0
+    },
+    {
+     "color": "#ffc0cb",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "sulphur",
+   "name": "Sulphur",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#cac531",
+     "pos": 0
+    },
+    {
+     "color": "#f3f9a7",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "selenium",
+   "name": "Selenium",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#3c3b3f",
+     "pos": 0
+    },
+    {
+     "color": "#605c3c",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "delicate",
+   "name": "Delicate",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#d3cce3",
+     "pos": 0
+    },
+    {
+     "color": "#e9e4f0",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "ohhappiness",
+   "name": "Ohhappiness",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#00b09b",
+     "pos": 0
+    },
+    {
+     "color": "#96c93d",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "lawrencium",
+   "name": "Lawrencium",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#0f0c29",
+     "pos": 0
+    },
+    {
+     "color": "#302b63",
+     "pos": 50
+    },
+    {
+     "color": "#24243e",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "relaxing-red",
+   "name": "Relaxing red",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#fffbd5",
+     "pos": 0
+    },
+    {
+     "color": "#b20a2c",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "taran-tado",
+   "name": "Taran Tado",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#23074d",
+     "pos": 0
+    },
+    {
+     "color": "#cc5333",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "bighead",
+   "name": "Bighead",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#c94b4b",
+     "pos": 0
+    },
+    {
+     "color": "#4b134f",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "sublime-vivid",
+   "name": "Sublime Vivid",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#fc466b",
+     "pos": 0
+    },
+    {
+     "color": "#3f5efb",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "sublime-light",
+   "name": "Sublime Light",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#fc5c7d",
+     "pos": 0
+    },
+    {
+     "color": "#6a82fb",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "pun-yeta",
+   "name": "Pun Yeta",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#108dc7",
+     "pos": 0
+    },
+    {
+     "color": "#ef8e38",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "quepal",
+   "name": "Quepal",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#11998e",
+     "pos": 0
+    },
+    {
+     "color": "#38ef7d",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "sand-to-blue",
+   "name": "Sand to Blue",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#3e5151",
+     "pos": 0
+    },
+    {
+     "color": "#decba4",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "wedding-day-blues",
+   "name": "Wedding Day Blues",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#40e0d0",
+     "pos": 0
+    },
+    {
+     "color": "#ff8c00",
+     "pos": 50
+    },
+    {
+     "color": "#ff0080",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "shifter",
+   "name": "Shifter",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#bc4e9c",
+     "pos": 0
+    },
+    {
+     "color": "#f80759",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "red-sunset",
+   "name": "Red Sunset",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#355c7d",
+     "pos": 0
+    },
+    {
+     "color": "#6c5b7b",
+     "pos": 50
+    },
+    {
+     "color": "#c06c84",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "moon-purple",
+   "name": "Moon Purple",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#4e54c8",
+     "pos": 0
+    },
+    {
+     "color": "#8f94fb",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "pure-lust",
+   "name": "Pure Lust",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#333333",
+     "pos": 0
+    },
+    {
+     "color": "#dd1818",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "slight-ocean-view",
+   "name": "Slight Ocean View",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#a8c0ff",
+     "pos": 0
+    },
+    {
+     "color": "#3f2b96",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "expresso",
+   "name": "eXpresso",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ad5389",
+     "pos": 0
+    },
+    {
+     "color": "#3c1053",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "shifty",
+   "name": "Shifty",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#636363",
+     "pos": 0
+    },
+    {
+     "color": "#a2ab58",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "vanusa",
+   "name": "Vanusa",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#da4453",
+     "pos": 0
+    },
+    {
+     "color": "#89216b",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "evening-night",
+   "name": "Evening Night",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#005aa7",
+     "pos": 0
+    },
+    {
+     "color": "#fffde4",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "magic",
+   "name": "Magic",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#59c173",
+     "pos": 0
+    },
+    {
+     "color": "#a17fe0",
+     "pos": 50
+    },
+    {
+     "color": "#5d26c1",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "margo",
+   "name": "Margo",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ffefba",
+     "pos": 0
+    },
+    {
+     "color": "#ffffff",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "blue-raspberry",
+   "name": "Blue Raspberry",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#00b4db",
+     "pos": 0
+    },
+    {
+     "color": "#0083b0",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "citrus-peel",
+   "name": "Citrus Peel",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#fdc830",
+     "pos": 0
+    },
+    {
+     "color": "#f37335",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "sin-city-red",
+   "name": "Sin City Red",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ed213a",
+     "pos": 0
+    },
+    {
+     "color": "#93291e",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "rastafari",
+   "name": "Rastafari",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#1e9600",
+     "pos": 0
+    },
+    {
+     "color": "#fff200",
+     "pos": 50
+    },
+    {
+     "color": "#ff0000",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "summer-dog",
+   "name": "Summer Dog",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#a8ff78",
+     "pos": 0
+    },
+    {
+     "color": "#78ffd6",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "wiretap",
+   "name": "Wiretap",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#8a2387",
+     "pos": 0
+    },
+    {
+     "color": "#e94057",
+     "pos": 50
+    },
+    {
+     "color": "#f27121",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "burning-orange",
+   "name": "Burning Orange",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ff416c",
+     "pos": 0
+    },
+    {
+     "color": "#ff4b2b",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "ultra-voilet",
+   "name": "Ultra Voilet",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#654ea3",
+     "pos": 0
+    },
+    {
+     "color": "#eaafc8",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "by-design",
+   "name": "By Design",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#009fff",
+     "pos": 0
+    },
+    {
+     "color": "#ec2f4b",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "kyoo-tah",
+   "name": "Kyoo Tah",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#544a7d",
+     "pos": 0
+    },
+    {
+     "color": "#ffd452",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "kye-meh",
+   "name": "Kye Meh",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#8360c3",
+     "pos": 0
+    },
+    {
+     "color": "#2ebf91",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "kyoo-pal",
+   "name": "Kyoo Pal",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#dd3e54",
+     "pos": 0
+    },
+    {
+     "color": "#6be585",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "metapolis",
+   "name": "Metapolis",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#659999",
+     "pos": 0
+    },
+    {
+     "color": "#f4791f",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "flare",
+   "name": "Flare",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#f12711",
+     "pos": 0
+    },
+    {
+     "color": "#f5af19",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "witching-hour",
+   "name": "Witching Hour",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#c31432",
+     "pos": 0
+    },
+    {
+     "color": "#240b36",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "azur-lane",
+   "name": "Azur Lane",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#7f7fd5",
+     "pos": 0
+    },
+    {
+     "color": "#86a8e7",
+     "pos": 50
+    },
+    {
+     "color": "#91eae4",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "neuromancer",
+   "name": "Neuromancer",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#f953c6",
+     "pos": 0
+    },
+    {
+     "color": "#b91d73",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "harvey",
+   "name": "Harvey",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#1f4037",
+     "pos": 0
+    },
+    {
+     "color": "#99f2c8",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "amin",
+   "name": "Amin",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#8e2de2",
+     "pos": 0
+    },
+    {
+     "color": "#4a00e0",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "memariani",
+   "name": "Memariani",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#aa4b6b",
+     "pos": 0
+    },
+    {
+     "color": "#6b6b83",
+     "pos": 50
+    },
+    {
+     "color": "#3b8d99",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "yoda",
+   "name": "Yoda",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ff0099",
+     "pos": 0
+    },
+    {
+     "color": "#493240",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "cool-sky",
+   "name": "Cool Sky",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#2980b9",
+     "pos": 0
+    },
+    {
+     "color": "#6dd5fa",
+     "pos": 50
+    },
+    {
+     "color": "#ffffff",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "dark-ocean",
+   "name": "Dark Ocean",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#373b44",
+     "pos": 0
+    },
+    {
+     "color": "#4286f4",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "evening-sunshine",
+   "name": "Evening Sunshine",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#b92b27",
+     "pos": 0
+    },
+    {
+     "color": "#1565c0",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "jshine",
+   "name": "JShine",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#12c2e9",
+     "pos": 0
+    },
+    {
+     "color": "#c471ed",
+     "pos": 50
+    },
+    {
+     "color": "#f64f59",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "moonlit-asteroid",
+   "name": "Moonlit Asteroid",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#0f2027",
+     "pos": 0
+    },
+    {
+     "color": "#203a43",
+     "pos": 50
+    },
+    {
+     "color": "#2c5364",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "megatron",
+   "name": "MegaTron",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#c6ffdd",
+     "pos": 0
+    },
+    {
+     "color": "#fbd786",
+     "pos": 50
+    },
+    {
+     "color": "#f7797d",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "cool-blues",
+   "name": "Cool Blues",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#2193b0",
+     "pos": 0
+    },
+    {
+     "color": "#6dd5ed",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "piggy-pink",
+   "name": "Piggy Pink",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ee9ca7",
+     "pos": 0
+    },
+    {
+     "color": "#ffdde1",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "grade-grey",
+   "name": "Grade Grey",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#bdc3c7",
+     "pos": 0
+    },
+    {
+     "color": "#2c3e50",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "telko",
+   "name": "Telko",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#f36222",
+     "pos": 0
+    },
+    {
+     "color": "#5cb644",
+     "pos": 50
+    },
+    {
+     "color": "#007fc3",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "zenta",
+   "name": "Zenta",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#2a2d3e",
+     "pos": 0
+    },
+    {
+     "color": "#fecb6e",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "electric-peacock",
+   "name": "Electric Peacock",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#8a2be2",
+     "pos": 0
+    },
+    {
+     "color": "#0000cd",
+     "pos": 33
+    },
+    {
+     "color": "#228b22",
+     "pos": 67
+    },
+    {
+     "color": "#ccff00",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "under-blue-green",
+   "name": "Under Blue Green",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#051937",
+     "pos": 0
+    },
+    {
+     "color": "#004d7a",
+     "pos": 25
+    },
+    {
+     "color": "#008793",
+     "pos": 50
+    },
+    {
+     "color": "#00bf72",
+     "pos": 75
+    },
+    {
+     "color": "#a8eb12",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "lensod",
+   "name": "Lensod",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#6025f5",
+     "pos": 0
+    },
+    {
+     "color": "#ff5555",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "newspaper",
+   "name": "Newspaper",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#8a2be2",
+     "pos": 0
+    },
+    {
+     "color": "#ffa500",
+     "pos": 50
+    },
+    {
+     "color": "#f8f8ff",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "dark-blue-gradient",
+   "name": "Dark Blue Gradient",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#2774ae",
+     "pos": 0
+    },
+    {
+     "color": "#002e5d",
+     "pos": 50
+    },
+    {
+     "color": "#002e5d",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "dark-blu-two",
+   "name": "Dark Blu Two",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#004680",
+     "pos": 0
+    },
+    {
+     "color": "#4484ba",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "lemon-lime",
+   "name": "Lemon Lime",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#7ec6bc",
+     "pos": 0
+    },
+    {
+     "color": "#ebe717",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "beleko",
+   "name": "Beleko",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ff1e56",
+     "pos": 0
+    },
+    {
+     "color": "#f9c942",
+     "pos": 50
+    },
+    {
+     "color": "#1e90ff",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "mango-papaya",
+   "name": "Mango Papaya",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#de8a41",
+     "pos": 0
+    },
+    {
+     "color": "#2ada53",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "unicorn-rainbow",
+   "name": "Unicorn Rainbow",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#f7f0ac",
+     "pos": 0
+    },
+    {
+     "color": "#acf7f0",
+     "pos": 50
+    },
+    {
+     "color": "#f0acf7",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "flame",
+   "name": "Flame",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ff0000",
+     "pos": 0
+    },
+    {
+     "color": "#fdcf58",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "blue-red",
+   "name": "Blue Red",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#36b1c7",
+     "pos": 0
+    },
+    {
+     "color": "#960b33",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "twitter",
+   "name": "Twitter",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#1da1f2",
+     "pos": 0
+    },
+    {
+     "color": "#009ffc",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "blooze",
+   "name": "Blooze",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#6da6be",
+     "pos": 0
+    },
+    {
+     "color": "#4b859e",
+     "pos": 50
+    },
+    {
+     "color": "#6da6be",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "blue-slate",
+   "name": "Blue Slate",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#b5b9ff",
+     "pos": 0
+    },
+    {
+     "color": "#2b2c49",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "space-light-green",
+   "name": "Space Light Green",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#9fa0a8",
+     "pos": 0
+    },
+    {
+     "color": "#5c7852",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "flower",
+   "name": "Flower",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#dcffbd",
+     "pos": 0
+    },
+    {
+     "color": "#cc86d1",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "elate-the-euge",
+   "name": "Elate The Euge",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#8bdeda",
+     "pos": 0
+    },
+    {
+     "color": "#43add0",
+     "pos": 25
+    },
+    {
+     "color": "#998ee0",
+     "pos": 50
+    },
+    {
+     "color": "#e17dc2",
+     "pos": 75
+    },
+    {
+     "color": "#ef9393",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "peach-sea",
+   "name": "Peach Sea",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#e6ae8c",
+     "pos": 0
+    },
+    {
+     "color": "#a8cecf",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "abbas",
+   "name": "Abbas",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#00fff0",
+     "pos": 0
+    },
+    {
+     "color": "#0083fe",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "winter-woods",
+   "name": "Winter Woods",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#333333",
+     "pos": 0
+    },
+    {
+     "color": "#a2ab58",
+     "pos": 50
+    },
+    {
+     "color": "#a43931",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "ameena",
+   "name": "Ameena",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#0c0c6d",
+     "pos": 0
+    },
+    {
+     "color": "#de512b",
+     "pos": 25
+    },
+    {
+     "color": "#98d0c1",
+     "pos": 50
+    },
+    {
+     "color": "#5bb226",
+     "pos": 75
+    },
+    {
+     "color": "#023c0d",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "emerald-sea",
+   "name": "Emerald Sea",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#05386b",
+     "pos": 0
+    },
+    {
+     "color": "#5cdb95",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "bleem",
+   "name": "Bleem",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#4284db",
+     "pos": 0
+    },
+    {
+     "color": "#29eac4",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "coffee-gold",
+   "name": "Coffee Gold",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#554023",
+     "pos": 0
+    },
+    {
+     "color": "#c99846",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "compass",
+   "name": "Compass",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#516b8b",
+     "pos": 0
+    },
+    {
+     "color": "#056b3b",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "andreuzza-s",
+   "name": "Andreuzza's",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#d70652",
+     "pos": 0
+    },
+    {
+     "color": "#ff025e",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "moonwalker",
+   "name": "Moonwalker",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#152331",
+     "pos": 0
+    },
+    {
+     "color": "#000000",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "whinehouse",
+   "name": "Whinehouse",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#f7f7f7",
+     "pos": 0
+    },
+    {
+     "color": "#b9a0a0",
+     "pos": 25
+    },
+    {
+     "color": "#794747",
+     "pos": 50
+    },
+    {
+     "color": "#4e2020",
+     "pos": 75
+    },
+    {
+     "color": "#111111",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "hyper-blue",
+   "name": "Hyper Blue",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#59cde9",
+     "pos": 0
+    },
+    {
+     "color": "#0a2a88",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "racker",
+   "name": "Racker",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#eb0000",
+     "pos": 0
+    },
+    {
+     "color": "#95008a",
+     "pos": 50
+    },
+    {
+     "color": "#3300fc",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "after-the-rain",
+   "name": "After the Rain",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ff75c3",
+     "pos": 0
+    },
+    {
+     "color": "#ffa647",
+     "pos": 20
+    },
+    {
+     "color": "#ffe83f",
+     "pos": 40
+    },
+    {
+     "color": "#9fff5b",
+     "pos": 60
+    },
+    {
+     "color": "#70e2ff",
+     "pos": 80
+    },
+    {
+     "color": "#cd93ff",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "neon-green",
+   "name": "Neon Green",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#81ff8a",
+     "pos": 0
+    },
+    {
+     "color": "#64965e",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "dusty-grass",
+   "name": "Dusty Grass",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#d4fc79",
+     "pos": 0
+    },
+    {
+     "color": "#96e6a1",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "visual-blue",
+   "name": "Visual Blue",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#003d4d",
+     "pos": 0
+    },
+    {
+     "color": "#00c996",
+     "pos": 100
+    }
+   ],
+   "source": "uigradients"
+  },
+  {
+   "id": "warm-flame",
+   "name": "Warm Flame",
+   "angle": 45,
+   "stops": [
+    {
+     "color": "#ff9a9e",
+     "pos": 0
+    },
+    {
+     "color": "#fad0c4",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "night-fade",
+   "name": "Night Fade",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#a18cd1",
+     "pos": 0
+    },
+    {
+     "color": "#fbc2eb",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "spring-warmth",
+   "name": "Spring Warmth",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#fad0c4",
+     "pos": 1
+    },
+    {
+     "color": "#ffd1ff",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "juicy-peach",
+   "name": "Juicy Peach",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ffecd2",
+     "pos": 0
+    },
+    {
+     "color": "#fcb69f",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "young-passion",
+   "name": "Young Passion",
+   "angle": 90,
+   "stops": [
+    {
+     "color": "#ff8177",
+     "pos": 0
+    },
+    {
+     "color": "#ff867a",
+     "pos": 0
+    },
+    {
+     "color": "#ff8c7f",
+     "pos": 21
+    },
+    {
+     "color": "#f99185",
+     "pos": 52
+    },
+    {
+     "color": "#cf556c",
+     "pos": 78
+    },
+    {
+     "color": "#b12a5b",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "lady-lips",
+   "name": "Lady Lips",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#ff9a9e",
+     "pos": 0
+    },
+    {
+     "color": "#fecfef",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "sunny-morning",
+   "name": "Sunny Morning",
+   "angle": 120,
+   "stops": [
+    {
+     "color": "#f6d365",
+     "pos": 0
+    },
+    {
+     "color": "#fda085",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "rainy-ashville",
+   "name": "Rainy Ashville",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#fbc2eb",
+     "pos": 0
+    },
+    {
+     "color": "#a6c1ee",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "frozen-dreams",
+   "name": "Frozen Dreams",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#fdcbf1",
+     "pos": 1
+    },
+    {
+     "color": "#e6dee9",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "winter-neva",
+   "name": "Winter Neva",
+   "angle": 120,
+   "stops": [
+    {
+     "color": "#a1c4fd",
+     "pos": 0
+    },
+    {
+     "color": "#c2e9fb",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "dusty-grass-wg",
+   "name": "Dusty Grass",
+   "angle": 120,
+   "stops": [
+    {
+     "color": "#d4fc79",
+     "pos": 0
+    },
+    {
+     "color": "#96e6a1",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "tempting-azure",
+   "name": "Tempting Azure",
+   "angle": 120,
+   "stops": [
+    {
+     "color": "#84fab0",
+     "pos": 0
+    },
+    {
+     "color": "#8fd3f4",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "heavy-rain",
+   "name": "Heavy Rain",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#cfd9df",
+     "pos": 0
+    },
+    {
+     "color": "#e2ebf0",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "amy-crisp",
+   "name": "Amy Crisp",
+   "angle": 120,
+   "stops": [
+    {
+     "color": "#a6c0fe",
+     "pos": 0
+    },
+    {
+     "color": "#f68084",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "mean-fruit",
+   "name": "Mean Fruit",
+   "angle": 120,
+   "stops": [
+    {
+     "color": "#fccb90",
+     "pos": 0
+    },
+    {
+     "color": "#d57eeb",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "lilac-sky",
+   "name": "Lilac Sky",
+   "angle": 120,
+   "stops": [
+    {
+     "color": "#e0c3fc",
+     "pos": 0
+    },
+    {
+     "color": "#8ec5fc",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "ripe-malinka",
+   "name": "Ripe Malinka",
+   "angle": 120,
+   "stops": [
+    {
+     "color": "#f093fb",
+     "pos": 0
+    },
+    {
+     "color": "#f5576c",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "cloudy-knoxville",
+   "name": "Cloudy Knoxville",
+   "angle": 120,
+   "stops": [
+    {
+     "color": "#fdfbfb",
+     "pos": 0
+    },
+    {
+     "color": "#ebedee",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "malibu-beach",
+   "name": "Malibu Beach",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#4facfe",
+     "pos": 0
+    },
+    {
+     "color": "#00f2fe",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "new-life",
+   "name": "New Life",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#43e97b",
+     "pos": 0
+    },
+    {
+     "color": "#38f9d7",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "true-sunset",
+   "name": "True Sunset",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#fa709a",
+     "pos": 0
+    },
+    {
+     "color": "#fee140",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "morpheus-den",
+   "name": "Morpheus Den",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#30cfd0",
+     "pos": 0
+    },
+    {
+     "color": "#330867",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "rare-wind",
+   "name": "Rare Wind",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#a8edea",
+     "pos": 0
+    },
+    {
+     "color": "#fed6e3",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "near-moon",
+   "name": "Near Moon",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#5ee7df",
+     "pos": 0
+    },
+    {
+     "color": "#b490ca",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "wild-apple",
+   "name": "Wild Apple",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#d299c2",
+     "pos": 0
+    },
+    {
+     "color": "#fef9d7",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "saint-petersburg",
+   "name": "Saint Petersburg",
+   "angle": 135,
+   "stops": [
+    {
+     "color": "#f5f7fa",
+     "pos": 0
+    },
+    {
+     "color": "#c3cfe2",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "arielle-s-smile",
+   "name": "Arielle's Smile",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#16d9e3",
+     "pos": 0
+    },
+    {
+     "color": "#30c7ec",
+     "pos": 47
+    },
+    {
+     "color": "#46aef7",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "plum-plate",
+   "name": "Plum Plate",
+   "angle": 135,
+   "stops": [
+    {
+     "color": "#667eea",
+     "pos": 0
+    },
+    {
+     "color": "#764ba2",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "everlasting-sky",
+   "name": "Everlasting Sky",
+   "angle": 135,
+   "stops": [
+    {
+     "color": "#fdfcfb",
+     "pos": 0
+    },
+    {
+     "color": "#e2d1c3",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "happy-fisher",
+   "name": "Happy Fisher",
+   "angle": 120,
+   "stops": [
+    {
+     "color": "#89f7fe",
+     "pos": 0
+    },
+    {
+     "color": "#66a6ff",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "blessing",
+   "name": "Blessing",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#fddb92",
+     "pos": 0
+    },
+    {
+     "color": "#d1fdff",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "sharpeye-eagle",
+   "name": "Sharpeye Eagle",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#9890e3",
+     "pos": 0
+    },
+    {
+     "color": "#b1f4cf",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "ladoga-bottom",
+   "name": "Ladoga Bottom",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#ebc0fd",
+     "pos": 0
+    },
+    {
+     "color": "#d9ded8",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "lemon-gate",
+   "name": "Lemon Gate",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#96fbc4",
+     "pos": 0
+    },
+    {
+     "color": "#f9f586",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "itmeo-branding",
+   "name": "Itmeo Branding",
+   "angle": 180,
+   "stops": [
+    {
+     "color": "#2af598",
+     "pos": 0
+    },
+    {
+     "color": "#009efd",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "zeus-miracle",
+   "name": "Zeus Miracle",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#cd9cf2",
+     "pos": 0
+    },
+    {
+     "color": "#f6f3ff",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "old-hat",
+   "name": "Old Hat",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#e4afcb",
+     "pos": 0
+    },
+    {
+     "color": "#b8cbb8",
+     "pos": 0
+    },
+    {
+     "color": "#e2c58b",
+     "pos": 30
+    },
+    {
+     "color": "#c2ce9c",
+     "pos": 64
+    },
+    {
+     "color": "#7edbdc",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "star-wine",
+   "name": "Star Wine",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#b8cbb8",
+     "pos": 0
+    },
+    {
+     "color": "#b465da",
+     "pos": 0
+    },
+    {
+     "color": "#cf6cc9",
+     "pos": 33
+    },
+    {
+     "color": "#ee609c",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "deep-blue",
+   "name": "Deep Blue",
+   "angle": 120,
+   "stops": [
+    {
+     "color": "#e0c3fc",
+     "pos": 0
+    },
+    {
+     "color": "#8ec5fc",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "happy-acid",
+   "name": "Happy Acid",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#37ecba",
+     "pos": 0
+    },
+    {
+     "color": "#72afd3",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "awesome-pine",
+   "name": "Awesome Pine",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#ebbba7",
+     "pos": 0
+    },
+    {
+     "color": "#cfc7f8",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "new-york",
+   "name": "New York",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#fff1eb",
+     "pos": 0
+    },
+    {
+     "color": "#ace0f9",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "shy-rainbow",
+   "name": "Shy Rainbow",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#eea2a2",
+     "pos": 0
+    },
+    {
+     "color": "#bbc1bf",
+     "pos": 19
+    },
+    {
+     "color": "#57c6e1",
+     "pos": 42
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "mixed-hopes",
+   "name": "Mixed Hopes",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#c471f5",
+     "pos": 0
+    },
+    {
+     "color": "#fa71cd",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "fly-high",
+   "name": "Fly High",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#48c6ef",
+     "pos": 0
+    },
+    {
+     "color": "#6f86d6",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "strong-bliss",
+   "name": "Strong Bliss",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#f78ca0",
+     "pos": 0
+    },
+    {
+     "color": "#f9748f",
+     "pos": 19
+    },
+    {
+     "color": "#fd868c",
+     "pos": 60
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "fresh-milk",
+   "name": "Fresh Milk",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#feada6",
+     "pos": 0
+    },
+    {
+     "color": "#f5efef",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "snow-again",
+   "name": "Snow Again",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#e6e9f0",
+     "pos": 0
+    },
+    {
+     "color": "#eef1f5",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "february-ink",
+   "name": "February Ink",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#accbee",
+     "pos": 0
+    },
+    {
+     "color": "#e7f0fd",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "kind-steel",
+   "name": "Kind Steel",
+   "angle": -20,
+   "stops": [
+    {
+     "color": "#e9defa",
+     "pos": 0
+    },
+    {
+     "color": "#fbfcdb",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "soft-grass",
+   "name": "Soft Grass",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#c1dfc4",
+     "pos": 0
+    },
+    {
+     "color": "#deecdd",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "grown-early",
+   "name": "Grown Early",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#0ba360",
+     "pos": 0
+    },
+    {
+     "color": "#3cba92",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "sharp-blues",
+   "name": "Sharp Blues",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#00c6fb",
+     "pos": 0
+    },
+    {
+     "color": "#005bea",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "shady-water",
+   "name": "Shady Water",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#74ebd5",
+     "pos": 0
+    },
+    {
+     "color": "#9face6",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "dirty-beauty",
+   "name": "Dirty Beauty",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#6a85b6",
+     "pos": 0
+    },
+    {
+     "color": "#bac8e0",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "great-whale",
+   "name": "Great Whale",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#a3bded",
+     "pos": 0
+    },
+    {
+     "color": "#6991c7",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "teen-notebook",
+   "name": "Teen Notebook",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#9795f0",
+     "pos": 0
+    },
+    {
+     "color": "#fbc8d4",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "polite-rumors",
+   "name": "Polite Rumors",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#a7a6cb",
+     "pos": 0
+    },
+    {
+     "color": "#8989ba",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "sweet-period",
+   "name": "Sweet Period",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#3f51b1",
+     "pos": 0
+    },
+    {
+     "color": "#5a55ae",
+     "pos": 13
+    },
+    {
+     "color": "#7b5fac",
+     "pos": 25
+    },
+    {
+     "color": "#8f6aae",
+     "pos": 38
+    },
+    {
+     "color": "#a86aa4",
+     "pos": 50
+    },
+    {
+     "color": "#cc6b8e",
+     "pos": 62
+    },
+    {
+     "color": "#f18271",
+     "pos": 75
+    },
+    {
+     "color": "#f3a469",
+     "pos": 87
+    },
+    {
+     "color": "#f7c978",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "wide-matrix",
+   "name": "Wide Matrix",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#fcc5e4",
+     "pos": 0
+    },
+    {
+     "color": "#fda34b",
+     "pos": 15
+    },
+    {
+     "color": "#ff7882",
+     "pos": 35
+    },
+    {
+     "color": "#c8699e",
+     "pos": 52
+    },
+    {
+     "color": "#7046aa",
+     "pos": 71
+    },
+    {
+     "color": "#0c1db8",
+     "pos": 87
+    },
+    {
+     "color": "#020f75",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "soft-cherish",
+   "name": "Soft Cherish",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#dbdcd7",
+     "pos": 0
+    },
+    {
+     "color": "#dddcd7",
+     "pos": 24
+    },
+    {
+     "color": "#e2c9cc",
+     "pos": 30
+    },
+    {
+     "color": "#e7627d",
+     "pos": 46
+    },
+    {
+     "color": "#b8235a",
+     "pos": 59
+    },
+    {
+     "color": "#801357",
+     "pos": 71
+    },
+    {
+     "color": "#3d1635",
+     "pos": 84
+    },
+    {
+     "color": "#1c1a27",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "red-salvation",
+   "name": "Red Salvation",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#f43b47",
+     "pos": 0
+    },
+    {
+     "color": "#453a94",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "burning-spring",
+   "name": "Burning Spring",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#4fb576",
+     "pos": 0
+    },
+    {
+     "color": "#44c489",
+     "pos": 30
+    },
+    {
+     "color": "#28a9ae",
+     "pos": 46
+    },
+    {
+     "color": "#28a2b7",
+     "pos": 59
+    },
+    {
+     "color": "#4c7788",
+     "pos": 71
+    },
+    {
+     "color": "#6c4f63",
+     "pos": 80
+    },
+    {
+     "color": "#432c39",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "night-party",
+   "name": "Night Party",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#0250c5",
+     "pos": 0
+    },
+    {
+     "color": "#d43f8d",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "sky-glider",
+   "name": "Sky Glider",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#88d3ce",
+     "pos": 0
+    },
+    {
+     "color": "#6e45e2",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "heaven-peach",
+   "name": "Heaven Peach",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#d9afd9",
+     "pos": 0
+    },
+    {
+     "color": "#97d9e1",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "purple-division",
+   "name": "Purple Division",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#7028e4",
+     "pos": 0
+    },
+    {
+     "color": "#e5b2ca",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "aqua-splash",
+   "name": "Aqua Splash",
+   "angle": 15,
+   "stops": [
+    {
+     "color": "#13547a",
+     "pos": 0
+    },
+    {
+     "color": "#80d0c7",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "above-clouds",
+   "name": "Above Clouds",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#bdbbbe",
+     "pos": 0
+    },
+    {
+     "color": "#9d9ea3",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "spiky-naga",
+   "name": "Spiky Naga",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#505285",
+     "pos": 0
+    },
+    {
+     "color": "#585e92",
+     "pos": 12
+    },
+    {
+     "color": "#65689f",
+     "pos": 25
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "love-kiss",
+   "name": "Love Kiss",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#ff0844",
+     "pos": 0
+    },
+    {
+     "color": "#ffb199",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "clean-mirror",
+   "name": "Clean Mirror",
+   "angle": 45,
+   "stops": [
+    {
+     "color": "#93a5cf",
+     "pos": 0
+    },
+    {
+     "color": "#e4efe9",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "premium-dark",
+   "name": "Premium Dark",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#434343",
+     "pos": 0
+    },
+    {
+     "color": "#000000",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "cold-evening",
+   "name": "Cold Evening",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#0c3483",
+     "pos": 0
+    },
+    {
+     "color": "#a2b6df",
+     "pos": 100
+    },
+    {
+     "color": "#6b8cce",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "cochiti-lake",
+   "name": "Cochiti Lake",
+   "angle": 45,
+   "stops": [
+    {
+     "color": "#93a5cf",
+     "pos": 0
+    },
+    {
+     "color": "#e4efe9",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "summer-games",
+   "name": "Summer Games",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#92fe9d",
+     "pos": 0
+    },
+    {
+     "color": "#00c9ff",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "passionate-bed",
+   "name": "Passionate Bed",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#ff758c",
+     "pos": 0
+    },
+    {
+     "color": "#ff7eb3",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "mountain-rock",
+   "name": "Mountain Rock",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#868f96",
+     "pos": 0
+    },
+    {
+     "color": "#596164",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "desert-hump",
+   "name": "Desert Hump",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#c79081",
+     "pos": 0
+    },
+    {
+     "color": "#dfa579",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "jungle-day",
+   "name": "Jungle Day",
+   "angle": 45,
+   "stops": [
+    {
+     "color": "#8baaaa",
+     "pos": 0
+    },
+    {
+     "color": "#ae8b9c",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "phoenix-start",
+   "name": "Phoenix Start",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#f83600",
+     "pos": 0
+    },
+    {
+     "color": "#f9d423",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "october-silence",
+   "name": "October Silence",
+   "angle": -20,
+   "stops": [
+    {
+     "color": "#b721ff",
+     "pos": 0
+    },
+    {
+     "color": "#21d4fd",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "faraway-river",
+   "name": "Faraway River",
+   "angle": -20,
+   "stops": [
+    {
+     "color": "#6e45e2",
+     "pos": 0
+    },
+    {
+     "color": "#88d3ce",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "alchemist-lab",
+   "name": "Alchemist Lab",
+   "angle": -20,
+   "stops": [
+    {
+     "color": "#d558c8",
+     "pos": 0
+    },
+    {
+     "color": "#24d292",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "over-sun",
+   "name": "Over Sun",
+   "angle": 60,
+   "stops": [
+    {
+     "color": "#abecd6",
+     "pos": 0
+    },
+    {
+     "color": "#fbed96",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "premium-white",
+   "name": "Premium White",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#d5d4d0",
+     "pos": 1
+    },
+    {
+     "color": "#eeeeec",
+     "pos": 31
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "mars-party",
+   "name": "Mars Party",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#5f72bd",
+     "pos": 0
+    },
+    {
+     "color": "#9b23ea",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "eternal-constance",
+   "name": "Eternal Constance",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#09203f",
+     "pos": 0
+    },
+    {
+     "color": "#537895",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "japan-blush",
+   "name": "Japan Blush",
+   "angle": -20,
+   "stops": [
+    {
+     "color": "#ddd6f3",
+     "pos": 0
+    },
+    {
+     "color": "#faaca8",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "smiling-rain",
+   "name": "Smiling Rain",
+   "angle": -20,
+   "stops": [
+    {
+     "color": "#dcb0ed",
+     "pos": 0
+    },
+    {
+     "color": "#99c99c",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "cloudy-apple",
+   "name": "Cloudy Apple",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#f3e7e9",
+     "pos": 0
+    },
+    {
+     "color": "#e3eeff",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "big-mango",
+   "name": "Big Mango",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#c71d6f",
+     "pos": 0
+    },
+    {
+     "color": "#d09693",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "healthy-water",
+   "name": "Healthy Water",
+   "angle": 60,
+   "stops": [
+    {
+     "color": "#96deda",
+     "pos": 0
+    },
+    {
+     "color": "#50c9c3",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "amour-amour",
+   "name": "Amour Amour",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#f77062",
+     "pos": 0
+    },
+    {
+     "color": "#fe5196",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "risky-concrete",
+   "name": "Risky Concrete",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#c4c5c7",
+     "pos": 0
+    },
+    {
+     "color": "#dcdddf",
+     "pos": 52
+    },
+    {
+     "color": "#ebebeb",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "strong-stick",
+   "name": "Strong Stick",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#a8caba",
+     "pos": 0
+    },
+    {
+     "color": "#5d4157",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "vicious-stance",
+   "name": "Vicious Stance",
+   "angle": 60,
+   "stops": [
+    {
+     "color": "#29323c",
+     "pos": 0
+    },
+    {
+     "color": "#485563",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "palo-alto",
+   "name": "Palo Alto",
+   "angle": -60,
+   "stops": [
+    {
+     "color": "#16a085",
+     "pos": 0
+    },
+    {
+     "color": "#f4d03f",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "happy-memories",
+   "name": "Happy Memories",
+   "angle": -60,
+   "stops": [
+    {
+     "color": "#ff5858",
+     "pos": 0
+    },
+    {
+     "color": "#f09819",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "midnight-bloom",
+   "name": "Midnight Bloom",
+   "angle": -20,
+   "stops": [
+    {
+     "color": "#2b5876",
+     "pos": 0
+    },
+    {
+     "color": "#4e4376",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "crystalline",
+   "name": "Crystalline",
+   "angle": -20,
+   "stops": [
+    {
+     "color": "#00cdac",
+     "pos": 0
+    },
+    {
+     "color": "#8ddad5",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "raccoon-back",
+   "name": "Raccoon Back",
+   "angle": -180,
+   "stops": [
+    {
+     "color": "#bcc5ce",
+     "pos": 0
+    },
+    {
+     "color": "#929ead",
+     "pos": 98
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "party-bliss",
+   "name": "Party Bliss",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#4481eb",
+     "pos": 0
+    },
+    {
+     "color": "#04befe",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "confident-cloud",
+   "name": "Confident Cloud",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#dad4ec",
+     "pos": 1
+    },
+    {
+     "color": "#f3e7e9",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "le-cocktail",
+   "name": "Le Cocktail",
+   "angle": 45,
+   "stops": [
+    {
+     "color": "#874da2",
+     "pos": 0
+    },
+    {
+     "color": "#c43a30",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "river-city",
+   "name": "River City",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#4481eb",
+     "pos": 0
+    },
+    {
+     "color": "#04befe",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "frozen-berry",
+   "name": "Frozen Berry",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#e8198b",
+     "pos": 0
+    },
+    {
+     "color": "#c7eafd",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "elegance",
+   "name": "Elegance",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#eadfdf",
+     "pos": 59
+    },
+    {
+     "color": "#ece2df",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "child-care",
+   "name": "Child Care",
+   "angle": -20,
+   "stops": [
+    {
+     "color": "#f794a4",
+     "pos": 0
+    },
+    {
+     "color": "#fdd6bd",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "flying-lemon",
+   "name": "Flying Lemon",
+   "angle": 60,
+   "stops": [
+    {
+     "color": "#64b3f4",
+     "pos": 0
+    },
+    {
+     "color": "#c2e59c",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "new-retrowave",
+   "name": "New Retrowave",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#3b41c5",
+     "pos": 0
+    },
+    {
+     "color": "#a981bb",
+     "pos": 49
+    },
+    {
+     "color": "#ffc8a9",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "hidden-jaguar",
+   "name": "Hidden Jaguar",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#0fd850",
+     "pos": 0
+    },
+    {
+     "color": "#f9f047",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "above-the-sky",
+   "name": "Above The Sky",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#d3d3d3",
+     "pos": 1
+    },
+    {
+     "color": "#e0e0e0",
+     "pos": 26
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "nega",
+   "name": "Nega",
+   "angle": 45,
+   "stops": [
+    {
+     "color": "#ee9ca7",
+     "pos": 0
+    },
+    {
+     "color": "#ffdde1",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "dense-water",
+   "name": "Dense Water",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#3ab5b0",
+     "pos": 0
+    },
+    {
+     "color": "#3d99be",
+     "pos": 31
+    },
+    {
+     "color": "#56317a",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "seashore",
+   "name": "Seashore",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#209cff",
+     "pos": 0
+    },
+    {
+     "color": "#68e0cf",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "marble-wall",
+   "name": "Marble Wall",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#bdc2e8",
+     "pos": 1
+    },
+    {
+     "color": "#e6dee9",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "cheerful-caramel",
+   "name": "Cheerful Caramel",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#e6b980",
+     "pos": 0
+    },
+    {
+     "color": "#eacda3",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "night-sky",
+   "name": "Night Sky",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#1e3c72",
+     "pos": 1
+    },
+    {
+     "color": "#2a5298",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "magic-lake",
+   "name": "Magic Lake",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#d5dee7",
+     "pos": 0
+    },
+    {
+     "color": "#ffafbd",
+     "pos": 0
+    },
+    {
+     "color": "#c9ffbf",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "young-grass",
+   "name": "Young Grass",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#9be15d",
+     "pos": 0
+    },
+    {
+     "color": "#00e3ae",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "colorful-peach",
+   "name": "Colorful Peach",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#ed6ea0",
+     "pos": 0
+    },
+    {
+     "color": "#ec8c69",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "gentle-care",
+   "name": "Gentle Care",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#ffc3a0",
+     "pos": 0
+    },
+    {
+     "color": "#ffafbd",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "plum-bath",
+   "name": "Plum Bath",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#cc208e",
+     "pos": 0
+    },
+    {
+     "color": "#6713d2",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "happy-unicorn",
+   "name": "Happy Unicorn",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#b3ffab",
+     "pos": 0
+    },
+    {
+     "color": "#12fff7",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "full-metal",
+   "name": "Full Metal",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#d5dee7",
+     "pos": 0
+    },
+    {
+     "color": "#e8ebf2",
+     "pos": 50
+    },
+    {
+     "color": "#e2e7ed",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "african-field",
+   "name": "African Field",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#65bd60",
+     "pos": 0
+    },
+    {
+     "color": "#5ac1a8",
+     "pos": 25
+    },
+    {
+     "color": "#3ec6ed",
+     "pos": 50
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "solid-stone",
+   "name": "Solid Stone",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#243949",
+     "pos": 0
+    },
+    {
+     "color": "#517fa4",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "orange-juice",
+   "name": "Orange Juice",
+   "angle": -20,
+   "stops": [
+    {
+     "color": "#fc6076",
+     "pos": 0
+    },
+    {
+     "color": "#ff9a44",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "glass-water",
+   "name": "Glass Water",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#dfe9f3",
+     "pos": 0
+    },
+    {
+     "color": "#ffffff",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "slick-carbon",
+   "name": "Slick Carbon",
+   "angle": 180,
+   "stops": [
+    {
+     "color": "#323232",
+     "pos": 0
+    },
+    {
+     "color": "#3f3f3f",
+     "pos": 40
+    },
+    {
+     "color": "#1c1c1c",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "north-miracle",
+   "name": "North Miracle",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#00dbde",
+     "pos": 0
+    },
+    {
+     "color": "#fc00ff",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "fruit-blend",
+   "name": "Fruit Blend",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#f9d423",
+     "pos": 0
+    },
+    {
+     "color": "#ff4e50",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "millennium-pine",
+   "name": "Millennium Pine",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#50cc7f",
+     "pos": 0
+    },
+    {
+     "color": "#f5d100",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "high-flight",
+   "name": "High Flight",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#0acffe",
+     "pos": 0
+    },
+    {
+     "color": "#495aff",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "mole-hall",
+   "name": "Mole Hall",
+   "angle": -20,
+   "stops": [
+    {
+     "color": "#616161",
+     "pos": 0
+    },
+    {
+     "color": "#9bc5c3",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "space-shift",
+   "name": "Space Shift",
+   "angle": 60,
+   "stops": [
+    {
+     "color": "#3d3393",
+     "pos": 0
+    },
+    {
+     "color": "#2b76b9",
+     "pos": 37
+    },
+    {
+     "color": "#2cacd1",
+     "pos": 65
+    },
+    {
+     "color": "#35eb93",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "forest-inei",
+   "name": "Forest Inei",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#df89b5",
+     "pos": 0
+    },
+    {
+     "color": "#bfd9fe",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "royal-garden",
+   "name": "Royal Garden",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#ed6ea0",
+     "pos": 0
+    },
+    {
+     "color": "#ec8c69",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "rich-metal",
+   "name": "Rich Metal",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#d7d2cc",
+     "pos": 0
+    },
+    {
+     "color": "#304352",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "juicy-cake",
+   "name": "Juicy Cake",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#e14fad",
+     "pos": 0
+    },
+    {
+     "color": "#f9d423",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "smart-indigo",
+   "name": "Smart Indigo",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#b224ef",
+     "pos": 0
+    },
+    {
+     "color": "#7579ff",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "sand-strike",
+   "name": "Sand Strike",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#c1c161",
+     "pos": 0
+    },
+    {
+     "color": "#d4d4b1",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "norse-beauty",
+   "name": "Norse Beauty",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#ec77ab",
+     "pos": 0
+    },
+    {
+     "color": "#7873f5",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "aqua-guidance",
+   "name": "Aqua Guidance",
+   "angle": 0,
+   "stops": [
+    {
+     "color": "#007adf",
+     "pos": 0
+    },
+    {
+     "color": "#00ecbc",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "sun-veggie",
+   "name": "Sun Veggie",
+   "angle": -225,
+   "stops": [
+    {
+     "color": "#20e2d7",
+     "pos": 0
+    },
+    {
+     "color": "#f9fea5",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "sea-lord",
+   "name": "Sea Lord",
+   "angle": -225,
+   "stops": [
+    {
+     "color": "#2cd8d5",
+     "pos": 0
+    },
+    {
+     "color": "#c5c1ff",
+     "pos": 56
+    },
+    {
+     "color": "#ffbac3",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "black-sea",
+   "name": "Black Sea",
+   "angle": -225,
+   "stops": [
+    {
+     "color": "#2cd8d5",
+     "pos": 0
+    },
+    {
+     "color": "#6b8dd6",
+     "pos": 48
+    },
+    {
+     "color": "#8e37d7",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "grass-shampoo",
+   "name": "Grass Shampoo",
+   "angle": -225,
+   "stops": [
+    {
+     "color": "#dfffcd",
+     "pos": 0
+    },
+    {
+     "color": "#90f9c4",
+     "pos": 48
+    },
+    {
+     "color": "#39f3bb",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "landing-aircraft",
+   "name": "Landing Aircraft",
+   "angle": -225,
+   "stops": [
+    {
+     "color": "#5d9fff",
+     "pos": 0
+    },
+    {
+     "color": "#b8dcff",
+     "pos": 48
+    },
+    {
+     "color": "#6bbbff",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "witch-dance",
+   "name": "Witch Dance",
+   "angle": -225,
+   "stops": [
+    {
+     "color": "#a8bfff",
+     "pos": 0
+    },
+    {
+     "color": "#884d80",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "sleepless-night",
+   "name": "Sleepless Night",
+   "angle": -225,
+   "stops": [
+    {
+     "color": "#5271c4",
+     "pos": 0
+    },
+    {
+     "color": "#b19fff",
+     "pos": 48
+    },
+    {
+     "color": "#eca1fe",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "angel-care",
+   "name": "Angel Care",
+   "angle": -225,
+   "stops": [
+    {
+     "color": "#ffe29f",
+     "pos": 0
+    },
+    {
+     "color": "#ffa99f",
+     "pos": 48
+    },
+    {
+     "color": "#ff719a",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "crystal-river",
+   "name": "Crystal River",
+   "angle": -225,
+   "stops": [
+    {
+     "color": "#22e1ff",
+     "pos": 0
+    },
+    {
+     "color": "#1d8fe1",
+     "pos": 48
+    },
+    {
+     "color": "#625eb1",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "soft-lipstick",
+   "name": "Soft Lipstick",
+   "angle": -225,
+   "stops": [
+    {
+     "color": "#b6cee8",
+     "pos": 0
+    },
+    {
+     "color": "#f578dc",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "salt-mountain",
+   "name": "Salt Mountain",
+   "angle": -225,
+   "stops": [
+    {
+     "color": "#fffeff",
+     "pos": 0
+    },
+    {
+     "color": "#d7fffe",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "perfect-white",
+   "name": "Perfect White",
+   "angle": -225,
+   "stops": [
+    {
+     "color": "#e3fdf5",
+     "pos": 0
+    },
+    {
+     "color": "#ffe6fa",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "fresh-oasis",
+   "name": "Fresh Oasis",
+   "angle": -225,
+   "stops": [
+    {
+     "color": "#7de2fc",
+     "pos": 0
+    },
+    {
+     "color": "#b9b6e5",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "strict-november",
+   "name": "Strict November",
+   "angle": -225,
+   "stops": [
+    {
+     "color": "#cbbacc",
+     "pos": 0
+    },
+    {
+     "color": "#2580b3",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "morning-salad",
+   "name": "Morning Salad",
+   "angle": -225,
+   "stops": [
+    {
+     "color": "#b7f8db",
+     "pos": 0
+    },
+    {
+     "color": "#50a7c2",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "deep-relief",
+   "name": "Deep Relief",
+   "angle": -225,
+   "stops": [
+    {
+     "color": "#7085b6",
+     "pos": 0
+    },
+    {
+     "color": "#87a7d9",
+     "pos": 50
+    },
+    {
+     "color": "#def3f8",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "sea-strike",
+   "name": "Sea Strike",
+   "angle": -225,
+   "stops": [
+    {
+     "color": "#77ffd2",
+     "pos": 0
+    },
+    {
+     "color": "#6297db",
+     "pos": 48
+    },
+    {
+     "color": "#1eecff",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "night-call",
+   "name": "Night Call",
+   "angle": -225,
+   "stops": [
+    {
+     "color": "#ac32e4",
+     "pos": 0
+    },
+    {
+     "color": "#7918f2",
+     "pos": 48
+    },
+    {
+     "color": "#4801ff",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "supreme-sky",
+   "name": "Supreme Sky",
+   "angle": -225,
+   "stops": [
+    {
+     "color": "#d4ffec",
+     "pos": 0
+    },
+    {
+     "color": "#57f2cc",
+     "pos": 48
+    },
+    {
+     "color": "#4596fb",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "light-blue",
+   "name": "Light Blue",
+   "angle": -225,
+   "stops": [
+    {
+     "color": "#9efbd3",
+     "pos": 0
+    },
+    {
+     "color": "#57e9f2",
+     "pos": 48
+    },
+    {
+     "color": "#45d4fb",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "mind-crawl",
+   "name": "Mind Crawl",
+   "angle": -225,
+   "stops": [
+    {
+     "color": "#473b7b",
+     "pos": 0
+    },
+    {
+     "color": "#3584a7",
+     "pos": 51
+    },
+    {
+     "color": "#30d2be",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "lily-meadow",
+   "name": "Lily Meadow",
+   "angle": -225,
+   "stops": [
+    {
+     "color": "#65379b",
+     "pos": 0
+    },
+    {
+     "color": "#886aea",
+     "pos": 53
+    },
+    {
+     "color": "#6457c6",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "sugar-lollipop",
+   "name": "Sugar Lollipop",
+   "angle": -225,
+   "stops": [
+    {
+     "color": "#a445b2",
+     "pos": 0
+    },
+    {
+     "color": "#d41872",
+     "pos": 52
+    },
+    {
+     "color": "#ff0066",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "sweet-dessert",
+   "name": "Sweet Dessert",
+   "angle": -225,
+   "stops": [
+    {
+     "color": "#7742b2",
+     "pos": 0
+    },
+    {
+     "color": "#f180ff",
+     "pos": 52
+    },
+    {
+     "color": "#fd8bd9",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "magic-ray",
+   "name": "Magic Ray",
+   "angle": -225,
+   "stops": [
+    {
+     "color": "#ff3cac",
+     "pos": 0
+    },
+    {
+     "color": "#562b7c",
+     "pos": 52
+    },
+    {
+     "color": "#2b86c5",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "teen-party",
+   "name": "Teen Party",
+   "angle": -225,
+   "stops": [
+    {
+     "color": "#ff057c",
+     "pos": 0
+    },
+    {
+     "color": "#8d0b93",
+     "pos": 50
+    },
+    {
+     "color": "#321575",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "frozen-heat",
+   "name": "Frozen Heat",
+   "angle": -225,
+   "stops": [
+    {
+     "color": "#ff057c",
+     "pos": 0
+    },
+    {
+     "color": "#7c64d5",
+     "pos": 48
+    },
+    {
+     "color": "#4cc3ff",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "gagarin-view",
+   "name": "Gagarin View",
+   "angle": -225,
+   "stops": [
+    {
+     "color": "#69eacb",
+     "pos": 0
+    },
+    {
+     "color": "#eaccf8",
+     "pos": 48
+    },
+    {
+     "color": "#6654f1",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "fabled-sunset",
+   "name": "Fabled Sunset",
+   "angle": -225,
+   "stops": [
+    {
+     "color": "#231557",
+     "pos": 0
+    },
+    {
+     "color": "#44107a",
+     "pos": 29
+    },
+    {
+     "color": "#ff1361",
+     "pos": 67
+    }
+   ],
+   "source": "webgradients"
+  },
+  {
+   "id": "perfect-blue",
+   "name": "Perfect Blue",
+   "angle": -225,
+   "stops": [
+    {
+     "color": "#3d4e81",
+     "pos": 0
+    },
+    {
+     "color": "#5753c9",
+     "pos": 48
+    },
+    {
+     "color": "#6e7ff3",
+     "pos": 100
+    }
+   ],
+   "source": "webgradients"
+  }
+ ]
+}
