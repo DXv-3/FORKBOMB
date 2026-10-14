@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fbswap"
+version = "0.1.0"
+description = "FORKBOMB modular face-swap pipeline: permissive parts, swappable stages, safeguards on by default."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24",
+  "opencv-python-headless>=4.8",
+  "onnxruntime>=1.16",
+  "pillow>=11",
+]
+
+[project.optional-dependencies]
+gpu = ["onnxruntime-gpu>=1.16"]
+research = ["onnx>=1.14"]
+dev = ["pytest>=7", "ruff>=0.5"]
+
+[project.scripts]
+fbswap = "fbswap.cli:main"
+
+[tool.setuptools]
+packages = ["fbswap"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["fbswap", "conftest"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
