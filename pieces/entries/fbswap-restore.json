@@ -1,0 +1,27 @@
+{
+  "id": "fbswap-restore",
+  "name": "Restorer stage: none / unsharp (weight-free)",
+  "category": "other",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/DXv-3/FORKBOMB",
+    "path": "apps/faceswap/fbswap/restore.py"
+  },
+  "seams": {
+    "inputs": [
+      "image",
+      "Face"
+    ],
+    "outputs": [
+      "image"
+    ],
+    "events": []
+  },
+  "summary": "Restorer interface. GFPGAN/CodeFormer/GPEN documented as alternatives, not bundled.",
+  "snap": "from fbswap.restore import UnsharpRestorer",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}

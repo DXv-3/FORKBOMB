@@ -1,0 +1,28 @@
+{
+  "id": "fbswap-app",
+  "name": "fbswap: modular face-swap pipeline (CLI + local web UI)",
+  "category": "other",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/DXv-3/FORKBOMB",
+    "path": "apps/faceswap"
+  },
+  "seams": {
+    "inputs": [
+      "source image",
+      "target image/video",
+      "consent attestation"
+    ],
+    "outputs": [
+      "watermarked, metadata-tagged synthetic image/video"
+    ],
+    "events": []
+  },
+  "summary": "Pipeline package wiring detect, align, embed, swap, mask, blend, restore and safeguards behind Protocol interfaces.",
+  "snap": "pip install -e apps/faceswap && fbswap models fetch && fbswap image --source a.jpg --target b.jpg -o out.png --i-have-consent",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}

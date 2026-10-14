@@ -1,0 +1,27 @@
+{
+  "id": "fbswap-models",
+  "name": "Model registry + license-gated runtime fetcher",
+  "category": "infra",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/DXv-3/FORKBOMB",
+    "path": "apps/faceswap/fbswap/models.py"
+  },
+  "seams": {
+    "inputs": [
+      "model name",
+      "--accept-license"
+    ],
+    "outputs": [
+      "verified weight path"
+    ],
+    "events": []
+  },
+  "summary": "Downloads weights from official sources with sha256 pins. Prints licences. Non-commercial models need --accept-license. Nothing vendored.",
+  "snap": "fbswap models list | fetch [name] [--accept-license name]",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}

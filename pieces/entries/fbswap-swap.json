@@ -1,0 +1,28 @@
+{
+  "id": "fbswap-swap",
+  "name": "Swapper stage: classic warp (default) + gated research-only inswapper adapter",
+  "category": "other",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/DXv-3/FORKBOMB",
+    "path": "apps/faceswap/fbswap/swap.py"
+  },
+  "seams": {
+    "inputs": [
+      "source image+Face",
+      "target image+Face"
+    ],
+    "outputs": [
+      "swapped image in target frame",
+      "coverage mask"
+    ],
+    "events": []
+  },
+  "summary": "Original code. Classic swap needs no weights. The inswapper adapter refuses to construct unless the InsightFace NC licence is accepted.",
+  "snap": "from fbswap.swap import ClassicWarpSwapper",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}

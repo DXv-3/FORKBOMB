@@ -1,0 +1,27 @@
+{
+  "id": "fbswap-embed-sface",
+  "name": "Identity embedding: SFace via cv2.FaceRecognizerSF",
+  "category": "other",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/opencv/opencv_zoo/tree/main/models/face_recognition_sface",
+    "path": "apps/faceswap/fbswap/embed.py"
+  },
+  "seams": {
+    "inputs": [
+      "image",
+      "Face"
+    ],
+    "outputs": [
+      "L2-normalised 128-d embedding"
+    ],
+    "events": []
+  },
+  "summary": "SFace (model Apache-2.0, fetched at runtime) for face selection and identity-similarity checks.",
+  "snap": "from fbswap.embed import SFaceEmbedder",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}

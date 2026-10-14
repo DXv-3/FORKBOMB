@@ -1,0 +1,29 @@
+{
+  "id": "fbswap-align",
+  "name": "5-point similarity alignment + EMA temporal smoothing",
+  "category": "other",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/DXv-3/FORKBOMB",
+    "path": "apps/faceswap/fbswap/align.py"
+  },
+  "seams": {
+    "inputs": [
+      "image",
+      "5 kps"
+    ],
+    "outputs": [
+      "aligned crop",
+      "2x3 matrix",
+      "smoothed kps"
+    ],
+    "events": []
+  },
+  "summary": "Original geometry code: ArcFace 112 template alignment, landmark EMA with scene-cut reset.",
+  "snap": "from fbswap.align import align_crop, EMASmoother",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}

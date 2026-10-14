@@ -64,5 +64,16 @@ FORKBOMB's first product: a pastebin assembled from GitHub parts. See [apps/past
 | `gradients-app` | FORKBOMB Gradients gallery | ui | MIT | product |
 | `dots-studio` | Dots Studio: 90 shapes, text/SVG/image, dot UI, physics, timeline | ui | MIT | product |
 | `forkbomb-dots-lib` | forkbomb-dots.js embeddable particle lib (zero deps) | ui | MIT | product |
+| `fbswap-app` | fbswap: modular face-swap pipeline (CLI + local web UI) | other | MIT | product |
+| `fbswap-detect-yunet` | Face detection: YuNet via cv2.FaceDetectorYN | other | MIT | product |
+| `fbswap-align` | 5-point similarity alignment + EMA temporal smoothing | other | MIT | product |
+| `fbswap-embed-sface` | Identity embedding: SFace via cv2.FaceRecognizerSF | other | MIT | product |
+| `fbswap-swap` | Swapper stage: classic warp (default) + gated research-only inswapper adapter | other | MIT | product |
+| `fbswap-mask` | Feathered landmark-ellipse face mask | other | MIT | product |
+| `fbswap-blend` | Reinhard LAB colour transfer + feather / Poisson blending | other | MIT | product |
+| `fbswap-restore` | Restorer stage: none / unsharp (weight-free) | other | MIT | product |
+| `fbswap-safeguards` | Consent gate, visible AI-GENERATED watermark, EXIF/XMP/C2PA-style synthetic marks | reliability | MIT | product |
+| `fbswap-models` | Model registry + license-gated runtime fetcher | infra | MIT | product |
+| `fbswap-video` | Video frame pipeline + live webcam path | other | MIT | product |
 
 Add new rows when you drop a brick into `toolkit/` or `pieces/entries/`. `node toolkit/process/cycle.js` checks every entry has a row.

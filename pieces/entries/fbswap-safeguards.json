@@ -1,0 +1,28 @@
+{
+  "id": "fbswap-safeguards",
+  "name": "Consent gate, visible AI-GENERATED watermark, EXIF/XMP/C2PA-style synthetic marks",
+  "category": "reliability",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/DXv-3/FORKBOMB",
+    "path": "apps/faceswap/fbswap/safeguards.py"
+  },
+  "seams": {
+    "inputs": [
+      "image",
+      "consent flag"
+    ],
+    "outputs": [
+      "watermarked image bytes",
+      "sidecar manifest"
+    ],
+    "events": []
+  },
+  "summary": "Consent required, local-only inputs, IPTC trainedAlgorithmicMedia XMP, EXIF description, unsigned C2PA-style sidecar with sha256.",
+  "snap": "from fbswap import safeguards",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}

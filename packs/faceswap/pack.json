@@ -1,0 +1,126 @@
+{
+  "id": "faceswap",
+  "name": "FORKBOMB Face Swap (fbswap)",
+  "version": "0.1.0",
+  "license": "MIT",
+  "summary": "Modular face-swap pipeline built from the most permissive parts available, with consent, watermark and synthetic-media metadata on by default.",
+  "job": "Swap a consenting person's face into an image/video locally; every output is visibly and machine-readably marked AI-GENERATED.",
+  "app": "apps/faceswap",
+  "run": "pip install -e apps/faceswap && fbswap models fetch && fbswap web",
+  "pieces": [
+    "fbswap-app",
+    "fbswap-detect-yunet",
+    "fbswap-align",
+    "fbswap-embed-sface",
+    "fbswap-swap",
+    "fbswap-mask",
+    "fbswap-blend",
+    "fbswap-restore",
+    "fbswap-safeguards",
+    "fbswap-models",
+    "fbswap-video"
+  ],
+  "connectors": [
+    "cli-stdin",
+    "http-json"
+  ],
+  "landscape": "docs/faceswap-landscape.md",
+  "provenance": [
+    {
+      "piece": "fbswap-detect-yunet",
+      "url": "https://github.com/opencv/opencv_zoo/tree/main/models/face_detection_yunet",
+      "license": "MIT (model)",
+      "found_by": "GitHub survey; scanner 'face swap' + opencv_zoo",
+      "use": "model fetched at runtime (sha256 8f2383e4...), not vendored"
+    },
+    {
+      "piece": "fbswap-embed-sface",
+      "url": "https://github.com/opencv/opencv_zoo/tree/main/models/face_recognition_sface",
+      "license": "Apache-2.0 (model)",
+      "found_by": "GitHub survey",
+      "use": "model fetched at runtime (sha256 0ba9fbfa...), not vendored"
+    },
+    {
+      "piece": "fbswap-align",
+      "url": "https://github.com/deepinsight/insightface",
+      "license": "MIT (code)",
+      "found_by": "survey",
+      "use": "standard published 5-point template coordinates only; fresh code"
+    },
+    {
+      "piece": "fbswap-swap",
+      "url": "https://github.com/deepinsight/insightface",
+      "license": "MIT code / NC weights",
+      "found_by": "survey",
+      "use": "clean adapter for the inswapper ONNX I/O contract; weights never fetched or vendored, gated by --accept-license"
+    },
+    {
+      "piece": "fbswap-blend",
+      "url": "https://doi.org/10.1109/38.946629",
+      "license": "algorithm (implementation MIT)",
+      "found_by": "known technique (Reinhard colour transfer, Poisson editing)",
+      "use": "formula only, fresh code"
+    },
+    {
+      "piece": "fbswap-safeguards",
+      "url": "https://cv.iptc.org/newscodes/digitalsourcetype/",
+      "license": "IPTC vocabulary (CC BY 4.0) referenced by URI",
+      "found_by": "standards",
+      "use": "DigitalSourceType URI in XMP; C2PA-style (unsigned) JSON shape"
+    }
+  ],
+  "exclusions": [
+    {
+      "what": "s0md3v/roop, roop-unleashed, hacksider/Deep-Live-Cam",
+      "why": "AGPL-3.0 code"
+    },
+    {
+      "what": "iperov/DeepFaceLab, iperov/DeepFaceLive, deepfakes/faceswap, Gourieff/ComfyUI-ReActor, VisoMaster-Fusion",
+      "why": "GPL-3.0 code"
+    },
+    {
+      "what": "facefusion/facefusion",
+      "why": "OpenRAIL-AS: use-restricted, not an OSI-permissive licence"
+    },
+    {
+      "what": "neuralchen/SimSwap",
+      "why": "CC BY-NC 4.0 code and weights"
+    },
+    {
+      "what": "felixrosberg/FaceDancer",
+      "why": "CC BY-NC-SA 4.0"
+    },
+    {
+      "what": "mapooon/BlendFace",
+      "why": "non-commercial research licence"
+    },
+    {
+      "what": "sczhou/CodeFormer",
+      "why": "S-Lab License 1.0 (non-commercial)"
+    },
+    {
+      "what": "yangxy/GPEN, wl-zhao/DiffSwap, johannwyh/HifiFace",
+      "why": "no licence file"
+    },
+    {
+      "what": "InsightFace weights (inswapper_128, buffalo_l, antelopev2)",
+      "why": "non-commercial research only; offered only as opt-in research path behind --accept-license, never default, never vendored"
+    },
+    {
+      "what": "ai-forever/ghost weights, MobileFaceSwap weights",
+      "why": "Apache code but weights bundle/derive from InsightFace NC models and research-only datasets (VGGFace2)"
+    },
+    {
+      "what": "InstantID / IP-Adapter FaceID checkpoints",
+      "why": "research-only checkpoints + InsightFace embeddings"
+    },
+    {
+      "what": "BiSeNet face-parsing weights, GFPGAN weights",
+      "why": "code permissive, but trained on CelebAMask-HQ / FFHQ (non-commercial dataset terms); not default, documented alternative"
+    },
+    {
+      "what": "dlib 68-point shape predictor",
+      "why": "iBUG 300-W training data is non-commercial"
+    }
+  ]
+}

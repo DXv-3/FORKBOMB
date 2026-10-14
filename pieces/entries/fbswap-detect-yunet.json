@@ -1,0 +1,26 @@
+{
+  "id": "fbswap-detect-yunet",
+  "name": "Face detection: YuNet via cv2.FaceDetectorYN",
+  "category": "other",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/opencv/opencv_zoo/tree/main/models/face_detection_yunet",
+    "path": "apps/faceswap/fbswap/detect.py"
+  },
+  "seams": {
+    "inputs": [
+      "BGR image"
+    ],
+    "outputs": [
+      "Face(bbox, 5 kps, score)"
+    ],
+    "events": []
+  },
+  "summary": "YuNet detector (model MIT, fetched at runtime) with downscale for large images.",
+  "snap": "from fbswap.detect import YuNetDetector",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}

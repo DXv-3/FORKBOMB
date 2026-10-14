@@ -1,0 +1,28 @@
+{
+  "id": "fbswap-blend",
+  "name": "Reinhard LAB colour transfer + feather / Poisson blending",
+  "category": "other",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/DXv-3/FORKBOMB",
+    "path": "apps/faceswap/fbswap/blend.py"
+  },
+  "seams": {
+    "inputs": [
+      "target",
+      "swapped",
+      "mask"
+    ],
+    "outputs": [
+      "blended image"
+    ],
+    "events": []
+  },
+  "summary": "Original code over cv2.seamlessClone (Apache-2.0 OpenCV).",
+  "snap": "from fbswap.blend import FeatherBlender, PoissonBlender",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}

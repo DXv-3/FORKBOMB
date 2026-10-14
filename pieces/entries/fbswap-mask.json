@@ -1,0 +1,27 @@
+{
+  "id": "fbswap-mask",
+  "name": "Feathered landmark-ellipse face mask",
+  "category": "other",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/DXv-3/FORKBOMB",
+    "path": "apps/faceswap/fbswap/mask.py"
+  },
+  "seams": {
+    "inputs": [
+      "image",
+      "Face"
+    ],
+    "outputs": [
+      "float mask 0..1"
+    ],
+    "events": []
+  },
+  "summary": "Original weight-free masker. A BiSeNet parser can be plugged in through the Masker protocol.",
+  "snap": "from fbswap.mask import LandmarkEllipseMasker",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}

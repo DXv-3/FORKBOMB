@@ -1,0 +1,26 @@
+{
+  "id": "fbswap-video",
+  "name": "Video frame pipeline + live webcam path",
+  "category": "other",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/DXv-3/FORKBOMB",
+    "path": "apps/faceswap/fbswap/video.py"
+  },
+  "seams": {
+    "inputs": [
+      "video path / camera"
+    ],
+    "outputs": [
+      "watermarked mp4 + sidecar"
+    ],
+    "events": []
+  },
+  "summary": "Frame loop with EMA landmark smoothing, per-frame watermark, sidecar manifest.",
+  "snap": "fbswap video --source a.jpg --target in.mp4 -o out.mp4 --i-have-consent",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}
