@@ -1,0 +1,35 @@
+name: faceswap
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    defaults:
+      run:
+        working-directory: apps/faceswap
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install (CPU onnxruntime; no model weights are downloaded in CI)
+        run: python -m pip install -e ".[dev]"
+      - name: ruff
+        run: ruff check .
+      - name: pytest
+        run: python -m pytest -q
+      - name: CLI smoke (consent gate + licence gate)
+        run: |
+          fbswap models list
+          ! fbswap image --source a.jpg --target b.jpg -o o.png
+          ! fbswap models fetch inswapper_128
