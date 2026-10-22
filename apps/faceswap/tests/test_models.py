@@ -10,7 +10,7 @@ from fbswap.types import Face
 
 
 def test_default_set_is_permissive_only():
-    assert models.DEFAULT_SET == ["yunet", "sface"]
+    assert models.DEFAULT_SET == ["yunet", "sface", "mp_multiclass"]
     assert all(models.REGISTRY[n].commercial_ok for n in models.DEFAULT_SET)
     for n in ("inswapper_128", "buffalo_l"):
         assert not models.REGISTRY[n].commercial_ok and "RESEARCH-ONLY" in models.REGISTRY[n].label

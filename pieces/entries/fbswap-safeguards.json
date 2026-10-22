@@ -1,6 +1,6 @@
 {
   "id": "fbswap-safeguards",
-  "name": "Consent gate, visible AI-GENERATED watermark, EXIF/XMP/C2PA-style synthetic marks",
+  "name": "Consent gate, visible AI-GENERATED watermark, EXIF/XMP marks + signed C2PA",
   "category": "reliability",
   "license": "MIT",
   "source": {
@@ -14,11 +14,11 @@
     ],
     "outputs": [
       "watermarked image bytes",
-      "sidecar manifest"
+      "signed C2PA manifest"
     ],
     "events": []
   },
-  "summary": "Consent required, local-only inputs, IPTC trainedAlgorithmicMedia XMP, EXIF description, unsigned C2PA-style sidecar with sha256.",
+  "summary": "Consent required, local-only inputs, visible watermark, IPTC trainedAlgorithmicMedia XMP, EXIF description, embedded signed C2PA manifest (via fbswap-provenance).",
   "snap": "from fbswap import safeguards",
   "trust": {
     "tests": true,

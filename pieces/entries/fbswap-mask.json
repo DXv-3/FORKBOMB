@@ -1,6 +1,6 @@
 {
   "id": "fbswap-mask",
-  "name": "Feathered landmark-ellipse face mask",
+  "name": "Face mask: feathered landmark ellipse (default) + MediaPipe multiclass segmenter (optional)",
   "category": "other",
   "license": "MIT",
   "source": {
@@ -17,7 +17,7 @@
     ],
     "events": []
   },
-  "summary": "Original weight-free masker. A BiSeNet parser can be plugged in through the Masker protocol.",
+  "summary": "Original weight-free ellipse masker; optional SegmenterMasker uses MediaPipe's Apache-2.0 selfie-multiclass model (face-skin class) via LiteRT. BiSeNet excluded (CelebAMask-HQ NC weights).",
   "snap": "from fbswap.mask import LandmarkEllipseMasker",
   "trust": {
     "tests": true,

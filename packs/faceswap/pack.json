@@ -1,7 +1,7 @@
 {
   "id": "faceswap",
   "name": "FORKBOMB Face Swap (fbswap)",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "summary": "Modular face-swap pipeline built from the most permissive parts available, with consent, watermark and synthetic-media metadata on by default.",
   "job": "Swap a consenting person's face into an image/video locally; every output is visibly and machine-readably marked AI-GENERATED.",
@@ -18,7 +18,8 @@
     "fbswap-restore",
     "fbswap-safeguards",
     "fbswap-models",
-    "fbswap-video"
+    "fbswap-video",
+    "fbswap-provenance"
   ],
   "connectors": [
     "cli-stdin",
@@ -67,6 +68,20 @@
       "license": "IPTC vocabulary (CC BY 4.0) referenced by URI",
       "found_by": "standards",
       "use": "DigitalSourceType URI in XMP; C2PA-style (unsigned) JSON shape"
+    },
+    {
+      "piece": "fbswap-provenance",
+      "url": "https://github.com/contentauth/c2pa-python",
+      "license": "MIT OR Apache-2.0",
+      "found_by": "C2PA reference SDK; licence verified on PyPI metadata + repo LICENSE files 2026-10-22",
+      "use": "runtime dependency (pip), not vendored"
+    },
+    {
+      "piece": "fbswap-mask",
+      "url": "https://storage.googleapis.com/mediapipe-assets/Model%20Card%20Multiclass%20Segmentation.pdf",
+      "license": "Apache-2.0 (model card)",
+      "found_by": "permissive-parser search 2026-10-22",
+      "use": "optional model fetched at runtime (sha256 c6748b12...), run via ai-edge-litert (Apache-2.0)"
     }
   ],
   "exclusions": [
@@ -111,16 +126,28 @@
       "why": "Apache code but weights bundle/derive from InsightFace NC models and research-only datasets (VGGFace2)"
     },
     {
-      "what": "InstantID / IP-Adapter FaceID checkpoints",
-      "why": "research-only checkpoints + InsightFace embeddings"
-    },
-    {
       "what": "BiSeNet face-parsing weights, GFPGAN weights",
       "why": "code permissive, but trained on CelebAMask-HQ / FFHQ (non-commercial dataset terms); not default, documented alternative"
     },
     {
       "what": "dlib 68-point shape predictor",
       "why": "iBUG 300-W training data is non-commercial"
+    },
+    {
+      "what": "InstantID / IP-Adapter FaceID checkpoints, PhotoMaker V2",
+      "why": "research-only checkpoints and/or InsightFace embeddings (PhotoMaker V2's README_pmv2.md: relies on InsightFace, must comply with its licence)"
+    },
+    {
+      "what": "PhotoMaker V1 (Apache-2.0 weights)",
+      "why": "permissive, but an SDXL personalisation generator (OpenRAIL++-M base), not a frame swapper; out of scope for this pipeline"
+    },
+    {
+      "what": "LivePortrait bundled InsightFace det_10g / 2d106det",
+      "why": "non-commercial; LivePortrait's own LICENSE says to replace them for commercial use. Core MIT weights noted as a future reenactment adapter"
+    },
+    {
+      "what": "GFPGAN / CodeFormer / GPEN / RestoreFormer restorers",
+      "why": "no restorer with clearly permissive weights: CodeFormer S-Lab NC, GPEN unlicensed, GFPGAN/RestoreFormer weights trained on FFHQ (CC BY-NC-SA 4.0 dataset). Restorer stage stays weight-free (none/unsharp)"
     }
   ]
 }

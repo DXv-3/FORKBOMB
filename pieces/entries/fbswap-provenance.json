@@ -1,0 +1,28 @@
+{
+  "id": "fbswap-provenance",
+  "name": "Signed C2PA provenance (c2pa-python) + runtime dev cert",
+  "category": "reliability",
+  "license": "MIT",
+  "source": {
+    "url": "https://github.com/DXv-3/FORKBOMB",
+    "path": "apps/faceswap/fbswap/provenance.py"
+  },
+  "seams": {
+    "inputs": [
+      "image/video bytes",
+      "pipeline parts"
+    ],
+    "outputs": [
+      "bytes with embedded ES256-signed C2PA manifest",
+      "verification report"
+    ],
+    "events": []
+  },
+  "summary": "Embeds a signed C2PA manifest (c2pa.created, trainedAlgorithmicMedia, ai_generated assertion). Dev CA and signer are generated at runtime in $FBSWAP_HOME, key is mode 0600, and the CA key is discarded. Production certs come via env. verify() reports Trusted/Valid/Invalid/missing.",
+  "snap": "from fbswap import provenance; provenance.sign_file('out.png', parts); provenance.verify_file('out.png')",
+  "trust": {
+    "tests": true,
+    "maintained": true,
+    "security_reviewed": false
+  }
+}
