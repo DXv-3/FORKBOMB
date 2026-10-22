@@ -19,14 +19,17 @@ def test_video_roundtrip(tmp_path):
         run_video(pipe, synth_face_img(), str(src), str(tmp_path / "o.mp4"), consent=False)
     out = run_video(pipe, synth_face_img(), str(src), str(tmp_path / "o.mp4"), consent=True)
     cap = cv2.VideoCapture(str(out))
-    n, ok, frame = 0, True, None
+    n, marked, frame = 0, 0, None
     while True:
         ok, f = cap.read()
         if not ok:
             break
+        x0, y0, x1, y1 = safeguards.watermark_box(f.shape)
+        marked += bool((f[y0:y1, x0:x1] < 40).mean() > 0.3)
         n, frame = n + 1, f
-    assert n == 5
-    x0, y0, x1, y1 = safeguards.watermark_box(frame.shape)
-    assert (frame[y0:y1, x0:x1] < 40).mean() > 0.3
-    assert (tmp_path / "o.mp4.c2pa.json").exists()
+    assert n == 5 and marked == n  # watermark on every frame
+    from fbswap import provenance
+
+    v = provenance.verify_file(out)
+    assert v["signature_valid"] and v["ai_generated"] and v["state"] == "Trusted"
     assert np.asarray(frame).shape == (160, 160, 3)

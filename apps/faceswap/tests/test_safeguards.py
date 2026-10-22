@@ -62,11 +62,10 @@ def test_metadata_marks_output_as_synthetic(tmp_path, imgs, ext):
     assert marks["xmp_digital_source_type"] is True
     if ext == "png":
         assert marks["png_ai_generated"] == "true"
-    side = marks["sidecar"]
-    assert side["assertions"][1]["data"]["ai_generated"] is True
-    import hashlib
-
-    assert side["output_sha256"] == hashlib.sha256(p.read_bytes()).hexdigest()
+    c = marks["c2pa"]
+    assert c["signature_valid"] and c["trusted"] and c["state"] == "Trusted"
+    assert c["ai_generated"] is True and c["failures"] == []
+    assert not (tmp_path / f"o.{ext}.c2pa.json").exists()  # no unsigned sidecar any more
 
 
 def test_logs_never_contain_image_data(imgs, caplog):
@@ -124,6 +123,10 @@ def test_web_enforces_consent_and_marks_output(imgs):
     code, payload = _post(h, ctype, body)
     assert code == 200 and payload[:4] == b"\x89PNG"
     assert b"trainedAlgorithmicMedia" in payload and b"AI-Generated" in payload
+    from fbswap import provenance
+
+    v = provenance.verify_bytes(payload, "image/png")
+    assert v["signature_valid"] and v["ai_generated"]
 
 
 def test_web_rejects_non_multipart_and_garbage(imgs):
