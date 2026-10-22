@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import json
 import logging
 import time
 from pathlib import Path
@@ -38,7 +37,9 @@ def run_video(pipe, source_img, in_path: str, out_path: str, *, consent: bool, a
     finally:
         cap.release()
         writer.release()
-    Path(str(out_path) + ".c2pa.json").write_text(json.dumps(safeguards.manifest(pipe.parts()), indent=2))
+    from . import provenance
+
+    provenance.sign_file(out_path, {**pipe.parts(), "frames": n})
     log.info("video: %d frames in %.1fs", n, time.perf_counter() - t0)
     return Path(out_path)
 

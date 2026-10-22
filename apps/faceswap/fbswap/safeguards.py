@@ -3,7 +3,7 @@
 * consent attestation is required before any processing;
 * every output carries a visible "AI-GENERATED" watermark;
 * outputs carry machine-readable synthetic-media metadata (EXIF + XMP with IPTC
-  DigitalSourceType=trainedAlgorithmicMedia) plus an unsigned C2PA-style JSON sidecar;
+  DigitalSourceType=trainedAlgorithmicMedia) and an embedded, signed C2PA manifest (see provenance.py);
 * only local files are accepted (no URLs, no web scraping, no directory batch of scraped faces);
 * logs record timings/sizes only, never pixels or image bytes.
 
@@ -12,9 +12,6 @@ No watermark-removal feature is provided.
 
 from __future__ import annotations
 
-import datetime as _dt
-import hashlib
-import json
 import logging
 from pathlib import Path
 
@@ -81,21 +78,6 @@ def watermark_box(shape) -> tuple[int, int, int, int]:
     return max(0, x1 - tw - 2 * pad), max(0, y1 - th - base - 2 * pad), x1, y1
 
 
-def manifest(parts: dict, out_sha: str | None = None) -> dict:
-    return {
-        "claim_generator": f"fbswap/{__version__}",
-        "format": "c2pa-style unsigned assertion (not a signed C2PA manifest)",
-        "created": _dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds"),
-        "assertions": [
-            {"label": "c2pa.actions", "data": {"actions": [
-                {"action": "c2pa.edited", "digitalSourceType": DIGITAL_SOURCE_TYPE,
-                 "softwareAgent": f"fbswap/{__version__}", "parameters": parts}]}},
-            {"label": "fbswap.synthetic", "data": {"ai_generated": True, "consent_attested": True}},
-        ],
-        "output_sha256": out_sha,
-    }
-
-
 def xmp_packet(parts: dict) -> str:
     p = ", ".join(f"{k}={v}" for k, v in parts.items())
     return (
@@ -112,7 +94,7 @@ def xmp_packet(parts: dict) -> str:
 
 
 def encode_image(img_bgr: np.ndarray, parts: dict, fmt: str = "png") -> bytes:
-    """Encode with EXIF + XMP synthetic-media marks (in memory)."""
+    """Encode with EXIF + XMP synthetic-media marks, then embed a signed C2PA manifest (in memory)."""
     import io
 
     im = Image.fromarray(cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB))
@@ -132,30 +114,35 @@ def encode_image(img_bgr: np.ndarray, parts: dict, fmt: str = "png") -> bytes:
         im.save(buf, format="JPEG", quality=95, exif=exif, xmp=xmp.encode())
     else:
         raise ValueError("output must be .png or .jpg")
-    return buf.getvalue()
+    from . import provenance
+
+    mime = "image/png" if fmt == "png" else "image/jpeg"
+    return provenance.sign_bytes(buf.getvalue(), mime, parts)
 
 
 def save_image(path: str | Path, img_bgr: np.ndarray, parts: dict) -> Path:
-    """Save with marks plus a C2PA-style JSON sidecar carrying the output hash."""
+    """Save with EXIF/XMP marks and an embedded signed C2PA manifest."""
     path = Path(path)
-    data = encode_image(img_bgr, parts, path.suffix.lower().lstrip("."))
-    path.write_bytes(data)
-    sha = hashlib.sha256(data).hexdigest()
-    Path(str(path) + ".c2pa.json").write_text(json.dumps(manifest(parts, sha), indent=2))
+    path.write_bytes(encode_image(img_bgr, parts, path.suffix.lower().lstrip(".")))
     return path
 
 
 def read_marks(path: str | Path) -> dict:
-    """Return the synthetic-media marks found in a saved file (used by tests and `fbswap inspect`)."""
+    """Return the synthetic-media marks found in a saved file, including C2PA signature verification."""
+    from . import provenance
+
     path = Path(path)
-    im = Image.open(path)
-    exif = im.getexif()
-    raw = path.read_bytes()
-    side = Path(str(path) + ".c2pa.json")
-    return {
-        "exif_description": exif.get(0x010E),
-        "software": exif.get(0x0131),
-        "xmp_digital_source_type": DIGITAL_SOURCE_TYPE.encode() in raw,
-        "png_ai_generated": getattr(im, "text", {}).get("AI-Generated") if hasattr(im, "text") else None,
-        "sidecar": json.loads(side.read_text()) if side.exists() else None,
-    }
+    out: dict = {"c2pa": provenance.verify_file(path)}
+    if path.suffix.lower() in (".png", ".jpg", ".jpeg"):
+        try:
+            im = Image.open(path)
+            exif = im.getexif()
+            out.update({
+                "exif_description": exif.get(0x010E),
+                "software": exif.get(0x0131),
+                "xmp_digital_source_type": DIGITAL_SOURCE_TYPE.encode() in path.read_bytes(),
+                "png_ai_generated": getattr(im, "text", {}).get("AI-Generated"),
+            })
+        except OSError:  # corrupted / tampered file: report, never crash
+            out["image_error"] = "unreadable"
+    return out

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fbswap"
-version = "0.1.0"
+version = "0.2.0"
 description = "FORKBOMB modular face-swap pipeline: permissive parts, swappable stages, safeguards on by default."
 readme = "README.md"
 license = { text = "MIT" }
@@ -14,11 +14,14 @@ dependencies = [
   "opencv-python-headless>=4.8",
   "onnxruntime>=1.16",
   "pillow>=11",
+  "c2pa-python>=0.38,<0.39",
+  "cryptography>=42",
 ]
 
 [project.optional-dependencies]
 gpu = ["onnxruntime-gpu>=1.16"]
 research = ["onnx>=1.14"]
+parser = ["ai-edge-litert>=1.2"]
 dev = ["pytest>=7", "ruff>=0.5"]
 
 [project.scripts]

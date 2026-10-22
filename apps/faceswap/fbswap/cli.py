@@ -13,7 +13,8 @@ from . import models, safeguards
 def _pipe(a):
     from .pipeline import build
 
-    return build(swapper=a.swapper, blender=a.blend, restorer=a.restore, accept=tuple(a.accept_license))
+    return build(swapper=a.swapper, blender=a.blend, restorer=a.restore, accept=tuple(a.accept_license),
+                 masker=a.mask)
 
 
 def _common(p):
@@ -21,6 +22,8 @@ def _common(p):
     p.add_argument("--swapper", default="classic", choices=["classic", "inswapper_128"],
                    help="classic = permissive (default); inswapper_128 = RESEARCH-ONLY")
     p.add_argument("--blend", default="feather", choices=["feather", "poisson"])
+    p.add_argument("--mask", default="ellipse", choices=["ellipse", "parser"],
+                   help="parser = MediaPipe multiclass segmenter (Apache-2.0); needs fbswap[parser]")
     p.add_argument("--restore", default="none", choices=["none", "unsharp"])
     p.add_argument("--all-faces", action="store_true")
     p.add_argument("--accept-license", action="append", default=[], metavar="MODEL")
@@ -74,7 +77,12 @@ def main(argv=None) -> int:
                 print(models.fetch(n, a.accept_license, a.path))
             return 0
         if a.cmd == "inspect":
-            print(json.dumps(safeguards.read_marks(a.file), indent=2, default=str))
+            marks = safeguards.read_marks(a.file)
+            print(json.dumps(marks, indent=2, default=str))
+            c = marks["c2pa"]
+            if not (c["signature_valid"] and c["ai_generated"]):
+                print("fbswap: C2PA signature missing or INVALID", file=sys.stderr)
+                return 3
             return 0
         if a.cmd == "web":
             from .web import serve
