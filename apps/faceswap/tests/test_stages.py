@@ -84,3 +84,46 @@ def test_pipeline_swappable_part(imgs):
     assert pipe.parts()["swapper"] == "identity"
     out = pipe.swap_frame(imgs[0], MockDetector().detect(imgs[0])[0], imgs[1])
     assert np.abs(out.astype(int) - imgs[1]).max() <= 1
+
+
+class _FakeInterp:
+    """Mocked LiteRT interpreter: labels a centred disc as face-skin (class 3)."""
+
+    def get_input_details(self):
+        return [{"index": 0, "shape": np.array([1, 64, 64, 3])}]
+
+    def get_output_details(self):
+        return [{"index": 1}]
+
+    def set_tensor(self, i, x):
+        assert x.shape == (1, 64, 64, 3) and x.dtype == np.float32 and 0 <= x.min() and x.max() <= 1
+
+    def invoke(self):
+        pass
+
+    def get_tensor(self, i):
+        yy, xx = np.mgrid[:64, :64]
+        out = np.zeros((1, 64, 64, 6), np.float32)
+        out[0, ..., 0] = 1
+        out[0, ..., 3] = ((yy - 32) ** 2 + (xx - 32) ** 2 < 15 ** 2) * 2.0
+        return out
+
+
+def test_segmenter_masker_with_mock(imgs):
+    from fbswap.mask import SegmenterMasker
+
+    m = SegmenterMasker(interpreter=_FakeInterp())
+    assert isinstance(m, types.Masker)
+    f = MockDetector().detect(imgs[1])[0]
+    mask = m.mask(imgs[1], f)
+    assert mask.shape == imgs[1].shape[:2] and mask.dtype == np.float32
+    assert mask[80, 80] > 0.9 and mask[2, 2] == 0 and 0 <= mask.min() and mask.max() <= 1
+    pipe = Pipeline(detector=MockDetector(), masker=m)
+    assert pipe.run_image(imgs[0], imgs[1], consent=True).shape == imgs[1].shape
+
+
+def test_parser_model_is_permissive():
+    from fbswap import models
+
+    s = models.REGISTRY["mp_multiclass"]
+    assert s.commercial_ok and s.license == "Apache-2.0" and s.sha256

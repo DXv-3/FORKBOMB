@@ -81,7 +81,7 @@ class Pipeline:
 
 
 def build(swapper: str = "classic", blender: str = "feather", restorer: str = "none",
-          accept: tuple[str, ...] = (), detector=None) -> Pipeline:
+          accept: tuple[str, ...] = (), detector=None, masker: str = "ellipse") -> Pipeline:
     """Build a pipeline from registry models. Default = fully permissive set."""
     from .detect import YuNetDetector
     from .embed import SFaceEmbedder
@@ -109,8 +109,16 @@ def build(swapper: str = "classic", blender: str = "feather", restorer: str = "n
         swap_emb = ArcFaceOnnxEmbedder(str(arc))
     else:
         raise ValueError(f"unknown swapper {swapper}")
-    return Pipeline(detector=det, swapper=sw, blender=blend_part, restorer=rest_part, embedder=emb,
-                    swap_embedder=swap_emb)
+    if masker == "ellipse":
+        mask_part = LandmarkEllipseMasker()
+    elif masker == "parser":
+        from .mask import SegmenterMasker
+
+        mask_part = SegmenterMasker(str(models.require("mp_multiclass")))
+    else:
+        raise ValueError(f"unknown masker {masker}")
+    return Pipeline(detector=det, swapper=sw, masker=mask_part, blender=blend_part, restorer=rest_part,
+                    embedder=emb, swap_embedder=swap_emb)
 
 
 def imread(path: str) -> np.ndarray:

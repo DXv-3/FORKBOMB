@@ -50,6 +50,15 @@ REGISTRY: dict[str, ModelSpec] = {
         license_url="https://github.com/opencv/opencv_zoo/blob/main/models/face_recognition_sface/LICENSE",
         note="SFace 128-d identity embedding. Default embedder.",
     ),
+    "mp_multiclass": ModelSpec(
+        name="mp_multiclass", stage="mask", filename="selfie_multiclass_256x256.tflite",
+        license="Apache-2.0", commercial_ok=True,
+        url="https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_multiclass_256x256/float32/latest/"
+            "selfie_multiclass_256x256.tflite",
+        sha256="c6748b1253a99067ef71f7e26ca71096cd449baefa8f101900ea23016507e0e0",
+        license_url="https://storage.googleapis.com/mediapipe-assets/Model%20Card%20Multiclass%20Segmentation.pdf",
+        note="MediaPipe selfie multiclass segmenter (face-skin class). Optional: pip install fbswap[parser].",
+    ),
     "buffalo_l": ModelSpec(
         name="buffalo_l", stage="embed", filename="buffalo_l.zip",
         license="InsightFace models: non-commercial research only", commercial_ok=False,
